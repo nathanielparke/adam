@@ -1,0 +1,1566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <style type="text/css">
+  body {
+      margin: auto;
+      padding-right: 1em;
+      padding-left: 1em;
+      max-width: 60em; 
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      color: black;
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      line-height: 140%;
+      color: #333; 
+  }
+  code {
+      font-family: monospace;
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a { 
+      text-decoration: none;
+      color: #000066; 
+  }
+  h1, h2, h3, h4, h5 { font-family: verdana;
+                       font-weight: bold;
+                       border-bottom: 1px dotted black;
+                       color: #000066; }
+  h1 {
+          font-size: 130%;
+  }
+  
+  h2 {
+          font-size: 110%;
+  }
+  
+  h3 {
+          font-size: 95%;
+  }
+  
+  h4 {
+          font-size: 90%;
+          font-style: italic;
+  }
+  
+  h5 {
+  	
+          font-size: 90%;
+          font-style: italic;
+  }
+  
+  h1.title {
+          font-size: 200%;
+          font-weight: bold;
+          padding-top: 0.2em;
+          padding-bottom: 0.2em;
+          text-align: left;
+          border: none;
+  }
+  
+  dt code {
+          font-weight: bold;
+  }
+  dd p {
+          margin-top: 0;
+  }
+  
+  #footer {
+          padding-top: 1em;
+          font-size: 70%;
+          color: gray;
+          text-align: center;
+          }
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">ADAM User Guide</h1>
+<h2 class="author">http://bdgenomics.org/</h2>
+<h3 class="date">2017-03-30 git:65d8c9e</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#apache-spark">Apache Spark</a></li>
+<li><a href="#apache-parquet">Apache Parquet</a></li>
+<li><a href="#apache-avro">Apache Avro</a></li>
+<li><a href="#more-than-k-mer-counting">More than k-mer counting</a></li>
+</ul></li>
+<li><a href="#building-adam-from-source">Building ADAM from Source</a><ul>
+<li><a href="#running-adam">Running ADAM</a></li>
+<li><a href="#flagstat">flagstat</a></li>
+<li><a href="#running-on-a-cluster">Running on a cluster</a></li>
+</ul></li>
+<li><a href="#deploying-adam">Deploying ADAM</a><ul>
+<li><a href="#running-adam-on-aws-ec2-using-cgcloud">Running ADAM on AWS EC2 using CGCloud</a></li>
+<li><a href="#running-adam-on-cdh-5-hdp-and-other-yarn-based-distros">Running ADAM on CDH 5, HDP, and other YARN based Distros</a></li>
+<li><a href="#running-adam-on-toil">Running ADAM on Toil</a><ul>
+<li><a href="#an-example-workflow-toil_scripts.adam_kmers.count_kmers">An example workflow: <code>toil_scripts.adam_kmers.count_kmers</code></a></li>
+<li><a href="#using-pyspark-in-toil">Using PySpark in Toil</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#running-adams-command-line-tools">Running ADAM’s command line tools</a><ul>
+<li><a href="#actions">Action tools</a><ul>
+<li><a href="#countKmers">countKmers and countContigKmers</a></li>
+<li><a href="#transform">transform</a></li>
+<li><a href="#transformfeatures">transformFeatures</a></li>
+<li><a href="#mergeshards">mergeShards</a></li>
+<li><a href="#reads2coverage">reads2coverage</a></li>
+</ul></li>
+<li><a href="#conversions">Conversion tools</a><ul>
+<li><a href="#vcf2adam-and-adam2vcf">vcf2adam and adam2vcf</a></li>
+<li><a href="#fasta2adam-and-adam2fasta">fasta2adam and adam2fasta</a></li>
+<li><a href="#adam2fastq">adam2fastq</a></li>
+<li><a href="#reads2fragments-and-fragments2reads">reads2fragments and fragments2reads</a></li>
+</ul></li>
+<li><a href="#printers">Printing tools</a><ul>
+<li><a href="#print">print</a></li>
+<li><a href="#flagstat">flagstat</a></li>
+<li><a href="#view">view</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#api">API Overview</a><ul>
+<li><a href="#adding-dependencies-on-adam-libraries">Adding dependencies on ADAM libraries</a></li>
+<li><a href="#adam-context">Loading data with the ADAMContext</a></li>
+<li><a href="#genomic-rdd">Working with genomic data using GenomicRDDs</a><ul>
+<li><a href="#transforming">Transforming GenomicRDDs</a></li>
+</ul></li>
+<li><a href="#join">Using ADAM’s RegionJoin API</a></li>
+<li><a href="#pipes">Using ADAM’s Pipe API</a></li>
+</ul></li>
+<li><a href="#apps">Building Downstream Applications</a><ul>
+<li><a href="#commands">Extend the ADAM CLI by adding new commands</a></li>
+<li><a href="#external-commands">Extend the ADAM CLI by adding new commands in an external repository</a></li>
+<li><a href="#library">Use ADAM as a library in new applications</a><ul>
+<li><a href="#registrator">Writing your own registrator that calls the ADAM registrator</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#algorithms">Core Algorithms</a><ul>
+<li><a href="#read-preprocessing-algorithms">Read Preprocessing Algorithms</a><ul>
+<li><a href="#bqsr">BQSR Implementation</a></li>
+<li><a href="#realignment">Indel Realignment Implementation</a></li>
+<li><a href="#duplicate-marking">Duplicate Marking Implementation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction</h1>
+<ul>
+<li>Follow our Twitter account at <a href="https://twitter.com/bigdatagenomics/" class="uri">https://twitter.com/bigdatagenomics/</a></li>
+<li>Chat with ADAM developers at <a href="https://gitter.im/bigdatagenomics/adam" class="uri">https://gitter.im/bigdatagenomics/adam</a></li>
+<li>Join our mailing list at <a href="http://bdgenomics.org/mail" class="uri">http://bdgenomics.org/mail</a></li>
+<li>Checkout the current build status at <a href="https://amplab.cs.berkeley.edu/jenkins/view/Big%20Data%20Genomics/">https://amplab.cs.berkeley.edu/jenkins/</a></li>
+<li>Download official releases at <a href="https://github.com/bigdatagenomics/adam/releases" class="uri">https://github.com/bigdatagenomics/adam/releases</a></li>
+<li>View our software artifacts on Maven Central at <a href="http://search.maven.org/#search%7Cga%7C1%7Corg.bdgenomics">http://search.maven.org/#search%7Cga%7C1%7Corg.bdgenomics</a></li>
+<li>See our snapshots at <a href="https://oss.sonatype.org/index.html#nexus-search;quick~bdgenomics" class="uri">https://oss.sonatype.org/index.html#nexus-search;quick~bdgenomics</a></li>
+<li>Look at our CHANGES file at <a href="https://github.com/bigdatagenomics/adam/blob/master/CHANGES.md" class="uri">https://github.com/bigdatagenomics/adam/blob/master/CHANGES.md</a></li>
+</ul>
+<p>ADAM is a genomics analysis platform with specialized file formats built using <a href="http://avro.apache.org">Apache Avro</a>, <a href="http://spark.apache.org/">Apache Spark</a> and <a href="http://parquet.io/">Parquet</a>. Apache 2 licensed.</p>
+<h2 id="apache-spark">Apache Spark</h2>
+<p><a href="http://spark.apache.org/">Apache Spark</a> allows developers to write algorithms in succinct code that can run fast locally, on an in-house cluster or on Amazon, Google or Microsoft clouds.</p>
+<p>For example, the following code snippet will print the top 10 21-mers in <code>NA2114</code> from 1000 Genomes.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ac = <span class="kw">new</span> <span class="fu">ADAMContext</span>(sc)
+<span class="co">// Load alignments from disk</span>
+<span class="kw">val</span> reads = ac.<span class="fu">loadAlignments</span>(
+  <span class="st">&quot;/data/NA21144.chrom11.ILLUMINA.adam&quot;</span>,
+  predicate = Some(classOf[ExamplePredicate]),
+  projection = Some(<span class="fu">Projection</span>(
+    AlignmentRecordField.<span class="fu">sequence</span>,
+    AlignmentRecordField.<span class="fu">readMapped</span>,
+    AlignmentRecordField.<span class="fu">mapq</span>)))
+<span class="co">// Generate, count and sort 21-mers</span>
+<span class="kw">val</span> kmers = reads.<span class="fu">flatMap</span> { read =&gt;
+  read.<span class="fu">getSequence</span>.<span class="fu">sliding</span>(<span class="dv">21</span>).<span class="fu">map</span>(k =&gt; (k, 1L))
+}.<span class="fu">reduceByKey</span>((k1: Long, k2: Long) =&gt; k1 + k2)
+  .<span class="fu">map</span>(_.<span class="fu">swap</span>)
+  .<span class="fu">sortByKey</span>(ascending = <span class="kw">false</span>)
+<span class="co">// Print the top 10 most common 21-mers</span>
+kmers.<span class="fu">take</span>(<span class="dv">10</span>).<span class="fu">foreach</span>(println)</code></pre></div>
+<p>Executing this Spark job will output the following:</p>
+<pre><code>(121771,TTTTTTTTTTTTTTTTTTTTT)
+(44317,ACACACACACACACACACACA)
+(44023,TGTGTGTGTGTGTGTGTGTGT)
+(42474,CACACACACACACACACACAC)
+(42095,GTGTGTGTGTGTGTGTGTGTG)
+(33797,TAATCCCAGCACTTTGGGAGG)
+(33081,AATCCCAGCACTTTGGGAGGC)
+(32775,TGTAATCCCAGCACTTTGGGA)
+(32484,CCTCCCAAAGTGCTGGGATTA)</code></pre>
+<p>You don’t need to be Scala developer to use ADAM. You could also run the following ADAM CLI command for the same result:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">adam-submit</span> count_kmers \
+       /data/NA21144.chrom11.ILLUMINA.adam \
+       /data/results.txt 21</code></pre></div>
+<h2 id="apache-parquet">Apache Parquet</h2>
+<p><a href="http://parquet.apache.org">Apache Parquet</a> is a columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.</p>
+<ul>
+<li>Parquet compresses legacy genomic formats using standard columnar techniques (e.g. RLE, dictionary encoding). ADAM files are typically ~20% smaller than compressed BAM files.</li>
+<li>Parquet integrates with:
+<ul>
+<li><strong>Query engines</strong>: Hive, Impala, HAWQ, IBM Big SQL, Drill, Tajo, Pig, Presto</li>
+<li><strong>Frameworks</strong>: Spark, MapReduce, Cascading, Crunch, Scalding, Kite</li>
+<li><strong>Data models</strong>: Avro, Thrift, ProtocolBuffers, POJOs</li>
+</ul></li>
+<li>Parquet is simply a file format which makes it easy to sync and share data using tools like <code>distcp</code>, <code>rsync</code>, etc</li>
+<li>Parquet provides a command-line tool, <code>parquet.hadoop.PrintFooter</code>, which reports useful compression statistics</li>
+</ul>
+<p>In the counting k-mers example above, you can see there is a defined <em>predicate</em> and <em>projection</em>. The <em>predicate</em> allows rapid filtering of rows while a <em>projection</em> allows you to efficiently materialize only specific columns for analysis. For this k-mer counting example, we filter out any records that are not mapped or have a <code>MAPQ</code> less than 20 using a <code>predicate</code> and only materialize the <code>Sequence</code>, <code>ReadMapped</code> flag and <code>MAPQ</code> columns and skip over all other fields like <code>Reference</code> or <code>Start</code> position, e.g.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sequence</th>
+<th align="left">ReadMapped</th>
+<th align="left">MAPQ</th>
+<th align="left"><del>Reference</del></th>
+<th align="left"><del>Start</del></th>
+<th align="left">…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><del>GGTCCAT</del></td>
+<td align="left"><del>false</del></td>
+<td align="left">-</td>
+<td align="left"><del>chrom1</del></td>
+<td align="left">-</td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">TACTGAA</td>
+<td align="left">true</td>
+<td align="left">30</td>
+<td align="left"><del>chrom1</del></td>
+<td align="left"><del>34232</del></td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left"><del>TTGAATG</del></td>
+<td align="left"><del>true</del></td>
+<td align="left"><del>17</del></td>
+<td align="left"><del>chrom1</del></td>
+<td align="left"><del>309403</del></td>
+<td align="left">…</td>
+</tr>
+</tbody>
+</table>
+<h2 id="apache-avro">Apache Avro</h2>
+<ul>
+<li>Apache Avro is a data serialization system (<a href="http://avro.apache.org" class="uri">http://avro.apache.org</a>)</li>
+<li>All Big Data Genomics schemas are published at <a href="https://github.com/bigdatagenomics/bdg-formats" class="uri">https://github.com/bigdatagenomics/bdg-formats</a></li>
+<li>Having explicit schemas and self-describing data makes integrating, sharing and evolving formats easier</li>
+</ul>
+<p>Our Avro schemas are directly converted into source code using Avro tools. Avro supports a number of computer languages. ADAM uses Java; you could just as easily use this Avro IDL description as the basis for a Python project. Avro currently supports c, c++, csharp, java, javascript, php, python and ruby.</p>
+<h2 id="more-than-k-mer-counting">More than k-mer counting</h2>
+<p>ADAM does much more than just k-mer counting. Running the ADAM CLI without arguments or with <code>--help</code> will display available commands, e.g.</p>
+<p>$ adam-submit</p>
+<pre><code>       e         888~-_          e             e    e
+      d8b        888   \        d8b           d8b  d8b
+     /Y88b       888    |      /Y88b         d888bdY88b
+    /  Y88b      888    |     /  Y88b       / Y88Y Y888b
+   /____Y88b     888   /     /____Y88b     /   YY   Y888b
+  /      Y88b    888_-~     /      Y88b   /          Y888b
+
+Usage: adam-submit [&lt;spark-args&gt; --] &lt;adam-args&gt;
+
+Choose one of the following commands:
+
+ADAM ACTIONS
+               depth : Calculate the depth from a given ADAM file, at each variant in a VCF
+         count_kmers : Counts the k-mers/q-mers from a read dataset.
+  count_contig_kmers : Counts the k-mers/q-mers from a read dataset.
+           transform : Convert SAM/BAM to ADAM format and optionally perform read pre-processing transformations
+          adam2fastq : Convert BAM to FASTQ files
+              plugin : Executes an ADAMPlugin
+             flatten : Convert a ADAM format file to a version with a flattened schema, suitable for querying with tools like Impala
+
+CONVERSION OPERATIONS
+            vcf2adam : Convert a VCF file to the corresponding ADAM format
+           anno2adam : Convert a annotation file (in VCF format) to the corresponding ADAM format
+            adam2vcf : Convert an ADAM variant to the VCF ADAM format
+          fasta2adam : Converts a text FASTA sequence file into an ADAMNucleotideContig Parquet file which represents assembled sequences.
+          adam2fasta : Convert ADAM nucleotide contig fragments to FASTA files
+       features2adam : Convert a file with sequence features into corresponding ADAM format
+          wigfix2bed : Locally convert a wigFix file to BED format
+     fragments2reads : Convert alignment records into fragment records.
+     reads2fragments : Convert alignment records into fragment records.
+
+PRINT
+               print : Print an ADAM formatted file
+         print_genes : Load a GTF file containing gene annotations and print the corresponding gene models
+            flagstat : Print statistics on reads in an ADAM file (similar to samtools flagstat)
+          print_tags : Prints the values and counts of all tags in a set of records
+            listdict : Print the contents of an ADAM sequence dictionary
+         allelecount : Calculate Allele frequencies
+                view : View certain reads from an alignment-record file.</code></pre>
+<p>You can learn more about a command, by calling it without arguments or with <code>--help</code>, e.g.</p>
+<pre><code>$ adam-submit transform
+Argument &quot;INPUT&quot; is required
+ INPUT                                                           : The ADAM, BAM or SAM file to apply the transforms to
+ OUTPUT                                                          : Location to write the transformed data in ADAM/Parquet format
+ -add_md_tags VAL                                                : Add MD Tags to reads based on the FASTA (or equivalent) file passed to this option.
+ -aligned_read_predicate                                         : Only load aligned reads. Only works for Parquet files.
+ -cache                                                          : Cache data to avoid recomputing between stages.
+ -coalesce N                                                     : Set the number of partitions written to the ADAM output directory
+ -concat VAL                                                     : Concatenate this file with &lt;INPUT&gt; and write the result to &lt;OUTPUT&gt;
+ -dump_observations VAL                                          : Local path to dump BQSR observations to. Outputs CSV format.
+ -force_load_bam                                                 : Forces Transform to load from BAM/SAM.
+ -force_load_fastq                                               : Forces Transform to load from unpaired FASTQ.
+ -force_load_ifastq                                              : Forces Transform to load from interleaved FASTQ.
+ -force_load_parquet                                             : Forces Transform to load from Parquet.
+ -force_shuffle_coalesce                                         : Even if the repartitioned RDD has fewer partitions, force a shuffle.
+ -h (-help, --help, -?)                                          : Print help
+ -known_indels VAL                                               : VCF file including locations of known INDELs. If none is provided, default
+                                                                   consensus model will be used.
+ -known_snps VAL                                                 : Sites-only VCF giving location of known SNPs
+ -limit_projection                                               : Only project necessary fields. Only works for Parquet files.
+ -log_odds_threshold N                                           : The log-odds threshold for accepting a realignment. Default value is 5.0.
+ -mark_duplicate_reads                                           : Mark duplicate reads
+ -max_consensus_number N                                         : The maximum number of consensus to try realigning a target region to. Default
+                                                                   value is 30.
+ -max_indel_size N                                               : The maximum length of an INDEL to realign to. Default value is 500.
+ -max_target_size N                                              : The maximum length of a target region to attempt realigning. Default length is
+                                                                   3000.
+ -md_tag_fragment_size N                                         : When adding MD tags to reads, load the reference in fragments of this size.
+ -md_tag_overwrite                                               : When adding MD tags to reads, overwrite existing incorrect tags.
+ -paired_fastq VAL                                               : When converting two (paired) FASTQ files to ADAM, pass the path to the second file
+                                                                   here.
+ -parquet_block_size N                                           : Parquet block size (default = 128mb)
+ -parquet_compression_codec [UNCOMPRESSED | SNAPPY | GZIP | LZO] : Parquet compression codec
+ -parquet_disable_dictionary                                     : Disable dictionary encoding
+ -parquet_logging_level VAL                                      : Parquet logging level (default = severe)
+ -parquet_page_size N                                            : Parquet page size (default = 1mb)
+ -print_metrics                                                  : Print metrics to the log on completion
+ -realign_indels                                                 : Locally realign indels present in reads.
+ -recalibrate_base_qualities                                     : Recalibrate the base quality scores (ILLUMINA only)
+ -record_group VAL                                               : Set converted FASTQs&#39; record-group names to this value; if empty-string is passed,
+                                                                   use the basename of the input file, minus the extension.
+ -repartition N                                                  : Set the number of partitions to map data to
+ -single                                                         : Saves OUTPUT as single file
+ -sort_fastq_output                                              : Sets whether to sort the FASTQ output, if saving as FASTQ. False by default.
+                                                                   Ignored if not saving as FASTQ.
+ -sort_reads                                                     : Sort the reads by referenceId and read position
+ -storage_level VAL                                              : Set the storage level to use for caching.
+ -stringency VAL                                                 : Stringency level for various checks; can be SILENT, LENIENT, or STRICT. Defaults
+                                                                   to LENIENT</code></pre>
+<p>The ADAM transform command allows you to mark duplicates, run base quality score recalibration (BQSR) and other pre-processing steps on your data.</p>
+<p>There are also a number of projects built on ADAM, e.g.</p>
+<ul>
+<li><a href="https://github.com/bigdatagenomics/avocado">Avocado</a> is a variant caller built on top of ADAM for germline and somatic calling</li>
+<li><a href="https://github.com/bigdatagenomics/mango">Mango</a> a library for visualizing large scale genomics data with interactive latencies</li>
+</ul>
+<h1 id="building-adam-from-source">Building ADAM from Source</h1>
+<p>You will need to have <a href="http://maven.apache.org/">Apache Maven</a> version 3.1.1 or later installed in order to build ADAM.</p>
+<blockquote>
+<p><strong>Note:</strong> The default configuration is for Hadoop 2.7.3. If building against a different version of Hadoop, please pass <code>-Dhadoop.version=&lt;HADOOP_VERSION&gt;</code> to the Maven command. ADAM will cross-build for both Spark 1.x and 2.x, but builds by default against Spark 1.6.3. To build for Spark 2, run the <code>./scripts/move_to_spark2.sh</code> script.</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/bigdatagenomics/adam.git
+$ <span class="kw">cd</span> adam
+$ <span class="kw">export</span> <span class="ot">MAVEN_OPTS=</span><span class="st">&quot;-Xmx512m -XX:MaxPermSize=128m&quot;</span>
+$ <span class="kw">mvn</span> clean package -DskipTests</code></pre></div>
+<p>Outputs</p>
+<pre><code>...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.647s
+[INFO] Finished at: Thu May 23 15:50:42 PDT 2013
+[INFO] Final Memory: 19M/81M
+[INFO] ------------------------------------------------------------------------</code></pre>
+<p>You might want to take a peek at the <code>scripts/jenkins-test</code> script and give it a run. It will fetch a mouse chromosome, encode it to ADAM reads and pileups, run flagstat, etc. We use this script to test that ADAM is working correctly.</p>
+<h2 id="running-adam">Running ADAM</h2>
+<p>ADAM is packaged as an <a href="https://maven.apache.org/plugins/maven-shade-plugin/">überjar</a> and includes all necessary dependencies, except for Apache Hadoop and Apache Spark.</p>
+<p>You might want to add the following to your <code>.bashrc</code> to make running ADAM easier:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">alias</span> adam-submit=<span class="st">&quot;</span><span class="ot">${ADAM_HOME}</span><span class="st">/bin/adam-submit&quot;</span>
+<span class="kw">alias</span> adam-shell=<span class="st">&quot;</span><span class="ot">${ADAM_HOME}</span><span class="st">/bin/adam-shell&quot;</span></code></pre></div>
+<p><code>$ADAM_HOME</code> should be the path to where you have checked ADAM out on your local filesystem. The first alias should be used for running ADAM jobs that operate locally. The latter two aliases call scripts that wrap the <code>spark-submit</code> and <code>spark-shell</code> commands to set up ADAM. You’ll need to have the Spark binaries on your system; prebuilt binaries can be downloaded from the <a href="http://spark.apache.org/downloads.html">Spark website</a>. Our <a href="https://amplab.cs.berkeley.edu/jenkins/job/ADAM/">continuous integration setup</a> builds ADAM against Spark versions 1.6.1 and 2.0.0, Scala versions 2.10 and 2.11, and Hadoop versions 2.3.0 and 2.6.0.</p>
+<p>Once this alias is in place, you can run ADAM by simply typing <code>adam-submit</code> at the commandline, e.g.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">adam-submit</span></code></pre></div>
+<h2 id="flagstat">flagstat</h2>
+<p>Once you have data converted to ADAM, you can gather statistics from the ADAM file using <a href="#flagstat"><code>flagstat</code></a>. This command will output stats identically to the samtools <code>flagstat</code> command, e.g.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">./bin/adam-submit</span> flagstat NA12878_chr20.adam</code></pre></div>
+<p>Outputs:</p>
+<pre><code>51554029 + 0 in total (QC-passed reads + QC-failed reads)
+0 + 0 duplicates
+50849935 + 0 mapped (98.63%:0.00%)
+51554029 + 0 paired in sequencing
+25778679 + 0 read1
+25775350 + 0 read2
+49874394 + 0 properly paired (96.74%:0.00%)
+50145841 + 0 with itself and mate mapped
+704094 + 0 singletons (1.37%:0.00%)
+158721 + 0 with mate mapped to a different chr
+105812 + 0 with mate mapped to a different chr (mapQ&gt;=5)</code></pre>
+<p>In practice, you’ll find that the ADAM <code>flagstat</code> command takes orders of magnitude less time than samtools to compute these statistics. For example, on a MacBook Pro the command above took 17 seconds to run while <code>samtools flagstat NA12878_chr20.bam</code> took 55 secs. On larger files, the difference in speed is even more dramatic. ADAM is faster because it’s multi-threaded and distributed and uses a columnar storage format (with a projected schema that only materializes the read flags instead of the whole read).</p>
+<h2 id="running-on-a-cluster">Running on a cluster</h2>
+<p>We provide the <code>adam-submit</code> and <code>adam-shell</code> commands under the <code>bin</code> directory. These can be used to submit ADAM jobs to a spark cluster, or to run ADAM interactively.</p>
+<h1 id="deploying-adam">Deploying ADAM</h1>
+<h2 id="running-adam-on-aws-ec2-using-cgcloud">Running ADAM on AWS EC2 using CGCloud</h2>
+<p>CGCloud provides an automated means to create a cluster on EC2 for use with ADAM.</p>
+<p><a href="https://github.com/BD2KGenomics/cgcloud">CGCloud</a> lets you automate the creation, management and provisioning of VMs and clusters of VMs in Amazon EC2.<br />
+The [CGCloud plugin for Spark] (https://github.com/BD2KGenomics/cgcloud/blob/master/spark/README.rst) lets you setup a fully configured Apache Spark cluster in EC2.</p>
+<p>Prior to following these instructions, you need to already have setup your AWS account and know your AWS access keys. See https://aws.amazon.com/ for details.</p>
+<h4 id="configure-cgcloud">Configure CGCloud</h4>
+<p>Begin by reading the CGcloud <a href="https://github.com/BD2KGenomics/cgcloud">readme</a>.</p>
+<p>Next, configure [CGCloud core] (https://github.com/BD2KGenomics/cgcloud/blob/master/core/README.rst) and then install the [CGcloud spark plugin] (https://github.com/BD2KGenomics/cgcloud/blob/master/spark/README.rst).</p>
+<p>One modification to CGCloud install instructions: replace the two pip calls<br />
+<code>pip install cgcloud-core</code> and <code>pip install cgcloud-spark</code> with the single command:</p>
+<pre><code>pip install cgcloud-spark==1.6.0</code></pre>
+<p>which will install the correct version of both cgcloud-core and cgcloud-spark.</p>
+<p>Note, the steps to register your ssh key and create the template boxes below need only be done once.</p>
+<pre><code>cgcloud register-key ~/.ssh/id_rsa.pub
+cgcloud create generic-ubuntu-trusty-box
+cgcloud create -IT spark-box</code></pre>
+<h4 id="launch-a-cluster">Launch a cluster</h4>
+<p>Spin up a Spark cluster named <code>cluster1</code> with one leader and two workers nodes of instance type <code>m3.large</code> with the command:</p>
+<pre><code>cgcloud create-cluster spark -c cluster1 -s 2 -t m3.large</code></pre>
+<p>Once running, you can ssh to <code>spark-master</code> with the command:</p>
+<pre><code>cgcloud ssh -c cluster1 spark-master</code></pre>
+<p>Spark is already installed on the <code>spark-master</code> machine and slaves, test it by starting a spark-shell.</p>
+<pre><code>spark-shell
+exit()</code></pre>
+<h4 id="install-adam">Install ADAM</h4>
+<p>To use the ADAM application on top of Spark, we need to download and install ADAM on <code>spark-master</code>. From the command line on <code>spark-master</code> download a release <a href="https://github.com/bigdatagenomics/adam/releases">here</a>. As of this writing, CGCloud supports Spark 1.6.2, not Spark 2.x, so download the Spark 1.x Scala2.10 release:</p>
+<pre><code>wget https://repo1.maven.org/maven2/org/bdgenomics/adam/adam-distribution_2.10/0.20.0/adam-distribution_2.10-0.20.0-bin.tar.gz
+
+tar -xvfz adam-distribution_2.10-0.20.0-bin.tar.gz</code></pre>
+<p>You can now run <code>./bin/adam-submit</code> and <code>./bin/adam-shell</code> using your EC2 cluster.</p>
+<h4 id="input-and-output-data-on-hdfs-and-s3">Input and Output data on HDFS and S3</h4>
+<p>Spark requires a file system, such a HDFS or a network file mount, that all machines can access. The CGCloud EC2 Spark cluster you just created is already running HDFS.</p>
+<p>The typical flow of data to and from your ADAM application on EC2 will be: - Upload data to AWS S3 - Transfer from S3 to the HDFS on your cluster - Compute with ADAM, write output to HDFS - Copy data you wish to persist for later use to S3</p>
+<p>For small test files you may wish to skip S3 by uploading directly to spark-master using <code>scp</code> and then copy to HDFS using <code>hadoop fs -put sample1.bam /datadir/</code></p>
+<p>From ADAM shell, or as parameter to ADAM submit, you would refer HDFS URLs such as:</p>
+<pre><code>adam-submit transform hdfs://spark-master/work_dir/sample1.bam \
+                      hdfs://spark-master/work_dir/sample1.adam</code></pre>
+<h4 id="bulk-transfer-between-hdfs-and-s3">Bulk Transfer between HDFS and S3</h4>
+<p>To transfer large amounts of data back and forth from S3 to HDFS, we suggest using <a href="https://github.com/BD2KGenomics/conductor">Conductor</a>. It is also possible to directly use AWS S3 as a distributed file system, but with some loss of performance.</p>
+<h4 id="terminate-cluster">Terminate Cluster</h4>
+<p>Shutdown the cluster using:</p>
+<pre><code>cgcloud terminate-cluster -c cluster1 spark</code></pre>
+<h4 id="cgcoud-options-and-spot-instances">CGCoud options and Spot Instances</h4>
+<p>View help docs for all options of the the <code>cgcloud create-cluster</code> command:</p>
+<pre><code>cgcloud create-cluster -h</code></pre>
+<p>In particular, note the <code>--spot-bid</code> and related spot options to utilize AWS spot instances inorder to save on costs. Also, it’s a good idea to double check in AWS console that your instances have terminated to avoid unintended costs.</p>
+<h4 id="access-spark-gui">Access Spark GUI</h4>
+<p>In order to view the Spark server or application GUI pages on port 4040 and 8080 on <code>spark-master</code> go to Security Groups in AWS console and open inbound TCP for those ports from your local IP address. Find the IP address of <code>spark-master</code> which is part of the Linux command prompt, then on your local machine point your web-browser to http://ip_of_spark_master:4040/</p>
+<h2 id="running-adam-on-cdh-5-hdp-and-other-yarn-based-distros">Running ADAM on CDH 5, HDP, and other YARN based Distros</h2>
+<p><a href="http://hadoop.apache.org/docs/stable2/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop YARN</a> is a widely used scheduler in the Hadoop ecosystem. YARN stands for “Yet Another Resource Negotiator”, and the YARN architecture is described in <span class="citation">(Vavilapalli et al. 2013)</span>. YARN is used in several common Hadoop distributions, including the <a href="http://www.cloudera.com/products/apache-hadoop/key-cdh-components.html">Cloudera Hadoop Distribution (CDH)</a> and the <a href="http://hortonworks.com/products/data-center/hdp/">Hortonworks Data Platform (HDP)</a>. YARN is supported natively in <a href="http://spark.apache.org/docs/latest/running-on-yarn.html">Spark</a>.</p>
+<p>The ADAM CLI and Shell can both be run on YARN. The ADAM CLI can be run in both Spark’s YARN <code>cluster</code> and <code>client</code> modes, while the ADAM shell can only be run in <code>client</code> mode. In the <code>cluster</code> mode, the Spark driver runs in the YARN <code>ApplicationMaster</code> container. In the <code>client</code> mode, the Spark driver runs in the submitting process. Since the Spark driver for the Spark/ADAM shell takes input on standard in, it cannot run in <code>cluster</code> mode.</p>
+<p>To run the ADAM CLI in YARN <code>cluster</code> mode, run the following command:</p>
+<pre><code>./bin/adam-submit \
+  --master yarn \
+  --deploy-mode cluster \
+  -- \
+  &lt;adam_command_name&gt; [options] \</code></pre>
+<p>In the <code>adam-submit</code> command, all options before the <code>--</code> are passed to the <code>spark-submit</code> script, which launches the Spark job. To run in <code>client</code> mode, we simply change the <code>deploy-mode</code> to <code>client</code>:</p>
+<pre><code>./bin/adam-submit \
+  --master yarn \
+  --deploy-mode client \
+  -- \
+  &lt;adam_command_name&gt; [options] \</code></pre>
+<p>In the <code>adam-shell</code> command, all of the arguments are passed to the <code>spark-shell</code> command. Thus, to run the <code>adam-shell</code> on YARN, we run:</p>
+<pre><code>./bin/adam-shell \
+  --master yarn \
+  --deploy-mode client</code></pre>
+<p>All of these commands assume that the Spark assembly that you are using is properly configured for your YARN deployment. Typically, if your Spark assembly is configured properly to use YARN, there will be symbolic link at <code>${SPARK_HOME}/conf/yarn-conf/</code> that points to the core Hadoop/YARN configuration. This may vary though by the distribution you are running.</p>
+<p>The full list of configuration options for running Spark-on-YARN can be found <a href="http://spark.apache.org/docs/latest/running-on-yarn.html#configuration">online</a>. Most of the standard configurations are consistent between Spark Standalone and Spark-on-YARN. One important configuration option to be aware of is the YARN memory overhead parameter. From 1.5.0 onwards, Spark makes aggressive use of off-heap memory allocation in the JVM. These allocations may cause the amount of memory taken up by a single executor (or, theoretically, the driver) to exceed the <code>--driver-memory</code>/<code>--executor-memory</code> parameters. These parameters are what Spark provides as a memory resource request to YARN. By default, if one of your Spark containers (an executors or the driver) exceeds itss memory request, YARN will kill the container by sending a <code>SIGTERM</code>. This can cause jobs to fail. To eliminate this issue, you can set the <code>spark.yarn.&lt;role&gt;.memoryOverhead</code> parameter, where <code>&lt;role&gt;</code> is one of <code>driver</code> or <code>executor</code>. This parameter is used by Spark to increase its resource request to YARN over the JVM Heap size indicated by <code>--driver-memory</code> or <code>--executor-memory</code>.</p>
+<p>As a final example, to run the ADAM <a href="#transform">transform</a> CLI using YARN cluster mode on a 64 node cluster with one executor per node and a 2GB per executor overhead, we would run:</p>
+<pre><code>./bin/adam-submit \
+  --master yarn \
+  --deploy-mode cluster \
+  --driver-memory 200g \
+  --executor-memory 200g \
+  --conf spark.driver.cores=16 \
+  --conf spark.executor.cores=16 \
+  --conf spark.yarn.executor.memoryOverhead=2048 \
+  --conf spark.executor.instances=64 \
+  -- \
+  transform in.sam out.adam</code></pre>
+<p>In this example, we are allocating 200GB of JVM heap space per executor and for the driver, and we are telling Spark to request 16 cores per executor and for the driver.</p>
+<h2 id="running-adam-on-toil">Running ADAM on Toil</h2>
+<p><a href="https://github.com/BD2KGenomics/toil">Toil</a> is a workflow management tool that supports running multi-tool workflows. Unlike traditional workflow managers that are limited to supporting jobs that run on a single node, Toil includes support for clusters of long lived services through the Service Job abstraction. This abstraction enables workflows that mix Spark-based tools like ADAM in with traditional, single-node tools. <span class="citation">(Vivian et al. 2016)</span> describes the Toil architecture, and demonstrates the use of Toil at scale in the Amazon Web Services EC2 cloud. Toil can be run on various on-premises High Performance Computing schedulers, and on the Amazon EC2 and Microsoft Azure clouds. A quick start guide to deploying Toil in the cloud or in an on-premises cluster can be found at <a href="https://toil.readthedocs.io">Read the Docs</a>.</p>
+<p><a href="https://github.com/BD2KGenomics/toil-lib">toil-lib</a> is a library downstream from Toil that provides common functionality that is useful across varied genomics workflows. There are two useful modules that help to set up an Apache Spark cluster, and to run an ADAM job:</p>
+<ul>
+<li><code>toil_lib.spark</code>: This module contains all the code necessary to set up a set of Service Jobs that launch and run an Apache Spark cluster backed by the Apache Hadoop Distributed File System (HDFS).</li>
+<li><code>toil_lib.tools.spark_tools</code>: This module contains functions that run ADAM in Toil using <a href="https://www.docker.com">Docker</a>, as well as <a href="https://github.com/BD2KGenomics/conductor">Conductor</a>, a tool for running transfers between HDFS and <a href="https://aws.amazon.com/s3">Amazon’s S3</a> storage service.</li>
+</ul>
+<p>Several example workflows that run ADAM in Toil can be found in <a href="https://github.com/BD2KGenomics/toil-scripts">toil-scripts</a>. These workflows include:</p>
+<ul>
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/tree/master/src/toil_scripts/adam_kmers">adam-kmers</a>: this workflow was demonstrated in <span class="citation">(Vivian et al. 2016)</span> and sets up a Spark cluster which then runs ADAM’s <a href="#countKmers"><code>countKmers</code> CLI</a>.</li>
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/tree/master/src/toil_scripts/adam_pipeline">adam-pipeline</a>: this workflow runs several stages in the ADAM <a href="#transform"><code>transform</code> CLI</a>. This pipeline is the ADAM equivalent to the GATK’s “Best Practice” read preprocessing pipeline. We then stitch together this pipeline with <a href="https://github.com/lh3/bwa">BWA-MEM</a> and the GATK in the <a href="https://github.com/BD2KGenomics/toil-scripts/tree/master/src/toil_scripts/adam_gatk_pipeline">adam-gatk-pipeline</a>.</li>
+</ul>
+<h3 id="an-example-workflow-toil_scripts.adam_kmers.count_kmers">An example workflow: <code>toil_scripts.adam_kmers.count_kmers</code></h3>
+<p>For an example of how to use ADAM with Toil, let’s look at the <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py">toil_scripts.adam_kmers.count_kmers</a> module. This module has three parts:</p>
+<ul>
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L177-L228">A main method</a> that configures and launches a Toil workflow.</li>
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L22-L76">A job function</a> that launches both the Spark cluster service and the ADAM job.</li>
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L78-L174">A child job function</a> that calls ADAM and <a href="https://github.com/BD2KGenomics/conductor">Conductor</a> to transfer a BAM file from S3, convert that BAM file to Parquet, count <em>k</em>-mers, and upload the <em>k</em>-mer counts back to S3.</li>
+</ul>
+<h4 id="configuring-and-launching-toil">Configuring and launching Toil</h4>
+<p>Toil takes most of it’s configuration from the command line. To make this easy, Toil includes a function in the <code>toil.job.Job</code> class to register Toil’s argument parsing code with the <a href="https://docs.python.org/2/library/argparse.html">Python standard <code>argparse</code></a> library. E.g., <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L183-L214">in <code>count_kmers.py</code></a>, we set up our arguments and then add the Toil specific arguments by:</p>
+<pre><code>    parser = argparse.ArgumentParser()
+
+    # add parser arguments
+    parser.add_argument(&#39;--input_path&#39;,
+                        help=&#39;The full path to the input SAM/BAM/ADAM/FASTQ file.&#39;)
+    parser.add_argument(&#39;--output-path&#39;,
+                        help=&#39;full path where final results will be output.&#39;)
+    parser.add_argument(&#39;--kmer-length&#39;,
+                        help=&#39;Length to use for k-mer counting. Defaults to 20.&#39;,
+                        default=20,
+                        type=int)
+    parser.add_argument(&#39;--spark-conf&#39;,
+                        help=&#39;Optional configuration to pass to Spark commands. Either this or --workers must be specified.&#39;,
+                        default=None)
+    parser.add_argument(&#39;--memory&#39;,
+                        help=&#39;Optional memory configuration for Spark workers/driver. This must be specified if --workers is specified.&#39;,
+                        default=None,
+                        type=int)
+    parser.add_argument(&#39;--cores&#39;,
+                        help=&#39;Optional core configuration for Spark workers/driver. This must be specified if --workers is specified.&#39;,
+                        default=None,
+                        type=int)
+    parser.add_argument(&#39;--workers&#39;,
+                        help=&#39;Number of workers to spin up in Toil. Either this or --spark-conf must be specified. If this is specified, --memory and --cores must be specified.&#39;,
+                        default=None,
+                        type=int)
+    parser.add_argument(&#39;--sudo&#39;,
+                        help=&#39;Run docker containers with sudo. Defaults to False.&#39;,
+                        default=False,
+                        action=&#39;store_true&#39;)
+
+    Job.Runner.addToilOptions(parser)</code></pre>
+<p>Then, <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L215-L225">we parse the arguments and start Toil</a>:</p>
+<pre><code>    args = parser.parse_args()
+    Job.Runner.startToil(Job.wrapJobFn(kmer_dag,
+                                       args.kmer_length,
+                                       args.input_path,
+                                       args.output_path,
+                                       args.spark_conf,
+                                       args.workers,
+                                       args.cores,
+                                       args.memory,
+                                       args.sudo,
+                                       checkpoint=True), args)</code></pre>
+<p>Note that we are passing the parsed arguments to the <code>Job.Runner.startToil</code> function. The other argument that we are passing is the <a href="https://toil.readthedocs.io/en/latest/developing.html#job-basics">Job</a> that we would like Toil to run. In this example, Toil is wrapping the <code>kmer_dag</code> function that is discussed in the next section up as a Job. The <code>Job.wrapJobFn</code> call takes the <code>kmer_dag</code> function and all of the arguments that are being passed and serializes them up so they can be run locally or on a remote node. Additionally, we pass the optional argument <code>checkpoint=True</code>. This argument indicates that the <code>kmer_dag</code> Job function is a “checkpoint” job. If a job is a checkpoint job and any of it’s children jobs fail, then we are saying that the workflow can be successfully rerun from this point. In Toil, service jobs should always be launched from a checkpointed job in order to allow the service jobs to successfully resume after a service job failure.</p>
+<p>More detailed information about launching a Toil workflow can be found in the <a href="https://toil.readthedocs.io/en/latest/developing.html#invoking-a-workflow">Toil documentation</a>.</p>
+<h4 id="launching-a-spark-service">Launching a Spark Service</h4>
+<p>In the <code>toil_scripts.adam_kmers.count_kmers</code> example, we wrap the <code>kmer_dag</code> function as a job, and then use this function to launch a Spark cluster as a set of service jobs using the <code>toil_lib.spark</code> module. Once we’ve done that, we also launch a job to run ADAM by starting the <code>download_count_upload</code> child job function. <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L66-L69">We launch the Spark service cluster</a> by calling the <code>spawn_spark_cluster</code>function, which was imported from the <code>toil_lib.spark</code> module:</p>
+<pre><code>        master_hostname = spawn_spark_cluster(job,
+                                              workers,
+                                              cores)</code></pre>
+<p>This function takes in three parameters:</p>
+<ul>
+<li><code>job</code>: A handle to the currently running Toil Job. This is used to enqueue the service jobs needed to start the Spark cluster.</li>
+<li><code>workers</code>: The number of Spark workers to allocate.</li>
+<li><code>cores</code>: The number of cores to request per worker/leader node.</li>
+</ul>
+<p>When called, this method does not return a hostname string, rather, it returns a <a href="https://toil.readthedocs.io/en/latest/developing.html#promises">promise</a> for the hostname string. This promise is not valid inside of the <code>kmer_dag</code> job, but will be valid in the child job (<code>download_count_upload</code>) that runs Spark. Toil cannot guarantee that the Spark Service job will start until after the job that enqueues it completes.</p>
+<p>Finally, <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L73-L76">we enqueue the child job that runs ADAM and Conductor</a>:</p>
+<pre><code>    job.addChildJobFn(download_count_upload,
+                      masterHostname,
+                      input_file, output_file, kmer_length,
+                      spark_conf, memory, sudo)</code></pre>
+<p>Detailed documentation for the <code>toil_lib.spark</code> module can be found in the <a href="https://github.com/BD2KGenomics/toil-lib/tree/master/docs">toil-lib docs</a>.</p>
+<h4 id="running-adam-and-other-spark-applications">Running ADAM and other Spark applications</h4>
+<p>Once we’ve enqueued the Spark service jobs and the child job that interacts with the services, we can launch Spark applications from the child job. In our example application, our <a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L78-L174">child job function</a> does the following work:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L113-L117">We check to see if the input file is already in HDFS.</a>:</li>
+</ol>
+<pre><code>    if master_ip is not None:
+        hdfs_dir = &quot;hdfs://{0}:{1}/&quot;.format(master_ip, HDFS_MASTER_PORT)
+    else:
+        _log.warn(&#39;Master IP is not set. If default filesystem is not set, jobs may fail.&#39;)
+        hdfs_dir = &quot;&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L119-L129">If it isn’t in HDFS, we copy it in using Conductor</a>:</li>
+</ol>
+<pre><code>    # if the file isn&#39;t already in hdfs, copy it in
+    hdfs_input_file = hdfs_dir
+    if input_file.startswith(&quot;s3://&quot;):
+
+        # append the s3 file name to our hdfs path
+        hdfs_input_file += input_file.split(&quot;/&quot;)[-1]
+
+        # run the download
+        _log.info(&quot;Downloading input file %s to %s.&quot;, input_file, hdfs_input_file)
+        call_conductor(master_ip, input_file, hdfs_input_file,
+                       memory=memory, override_parameters=spark_conf)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L143-L159">We check to see if the file is a Parquet file, and convert it to Parquet if it isn’t</a>:</li>
+</ol>
+<pre><code>    # do we need to convert to adam?
+    if (hdfs_input_file.endswith(&#39;.bam&#39;) or
+        hdfs_input_file.endswith(&#39;.sam&#39;) or
+        hdfs_input_file.endswith(&#39;.fq&#39;) or
+        hdfs_input_file.endswith(&#39;.fastq&#39;)):
+        
+        hdfs_tmp_file = hdfs_input_file
+
+        # change the file extension to adam
+        hdfs_input_file = &#39;.&#39;.join(hdfs_input_file.split(&#39;.&#39;)[:-1].append(&#39;adam&#39;))
+
+        # convert the file
+        _log.info(&#39;Converting %s into ADAM format at %s.&#39;, hdfs_tmp_file, hdfs_input_file)
+        call_adam(master_ip,
+                  [&#39;transform&#39;,
+                   hdfs_tmp_file, hdfs_input_file],
+                  memory=memory, override_parameters=spark_conf)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L161-L168">We use the ADAM CLI to count the <em>k</em>-mers in the file</a>:</li>
+</ol>
+<pre><code>    # run k-mer counting
+    _log.info(&#39;Counting %d-mers in %s, and saving to %s.&#39;,
+              kmer_length, hdfs_input_file, hdfs_output_file)
+    call_adam(master_ip,
+              [&#39;countKmers&#39;,
+               hdfs_input_file, hdfs_output_file,
+               str(kmer_length)],
+              memory=memory, override_parameters=spark_conf)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><a href="https://github.com/BD2KGenomics/toil-scripts/blob/master/src/toil_scripts/adam_kmers/count_kmers.py#L170-L174">If requested, we use Conductor to copy the <em>k</em>-mer counts back to S3</a>:</li>
+</ol>
+<pre><code>    # do we need to upload the file back? if so, run upload
+    if run_upload:
+        _log.info(&quot;Uploading output file %s to %s.&quot;, hdfs_output_file, output_file)
+        call_conductor(master_ip, hdfs_output_file, output_file,
+                       memory=memory, override_parameters=spark_conf)</code></pre>
+<p>The <code>call_adam</code> and <code>call_conductor</code> functions are imported from the <code>toil_lib.tools.spark_tools</code> module. These functions run ADAM and Conductor using Docker containers from <a href="https://github.com/BD2KGenomics/cgl-docker-lib">cgl-docker-lib</a>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> These two functions launch the Docker containers using the <code>call_docker</code> function from the <code>toil_lib.programs</code> module, and do some basic configuration of the command line. In the ADAM example, all the user needs to pass is the exact arguments that they would like run from the ADAM CLI, and the Spark configuration parameters that are passed to the <code>adam-submit</code> script are automatically configured.</p>
+<p>As you may have noticed, all of this functionality is contained in a single Toil job. This is important for fault tolerance. Toil provides tolerance against data loss through the use of a <a href="https://toil.readthedocs.io/en/latest/developing.html#managing-files-within-a-workflow">file store</a>, which manages the persistance of local files to a persistant store (e.g., S3). Since we store intermediate files in HDFS, thus bypassing the file store, our intermediate results are not persistant, and thus individual Spark applications are not atomic.</p>
+<h3 id="using-pyspark-in-toil">Using PySpark in Toil</h3>
+<p>As an aside, a nice benefit of Toil is that we can run PySpark jobs inline with Toil workflows. A small demo of this is seen in the <code>toil_lib.spark</code> <a href="https://github.com/BD2KGenomics/toil-lib/blob/master/src/toil_lib/test/test_spark.py#L58-L71">unit tests</a>:</p>
+<pre><code>def _count_child(job, masterHostname):
+
+    # noinspection PyUnresolvedReferences
+    from pyspark import SparkContext
+
+    # start spark context and connect to cluster
+    sc = SparkContext(master=&#39;spark://%s:7077&#39; % masterHostname,
+                      appName=&#39;count_test&#39;)
+
+    # create an rdd containing 0-9999 split across 10 partitions
+    rdd = sc.parallelize(xrange(10000), 10)
+    
+    # and now, count it
+    assert rdd.count() == 10000</code></pre>
+<h1 id="running-adams-command-line-tools">Running ADAM’s command line tools</h1>
+<p>In addition to being used as an API for <a href="#apps">building applications</a>, ADAM provides a command line interface (CLI) for extracting, transforming, and loading (ETL-ing) genomics data. Our CLI is roughly divided into three sections:</p>
+<ul>
+<li><a href="#actions">Actions</a> that manipulate data using the ADAM schemas</li>
+<li><a href="#conversions">Conversions</a> that convert data from legacy formats into Parquet</li>
+<li><a href="#printers">Printers</a> that provide detailed or summarized views of genomic data</li>
+</ul>
+<p>ADAM’s various CLI actions can be run from the command line using the <code>scripts/adam-submit</code> script. This script uses the <code>spark-submit</code> script to run an ADAM application on a Spark cluster. To use this script, either <code>spark-submit</code> must be on the <code>$PATH</code>, or the <code>$SPARK_HOME</code> environment variable must be set.</p>
+<h4 id="default-args">Default arguments</h4>
+<p>There are several command line options that are present across most commands. These include:</p>
+<ul>
+<li><code>-h</code>, <code>-help</code>, <code>--help</code>, <code>-?</code>: prints the usage for this command</li>
+<li><code>-parquet_block_size N</code>: sets the block size for Parquet in bytes, if writing a Parquet output file. Defaults to 128 MB (128 * 1024 * 1024).</li>
+<li><code>-parquet_compression_codec</code>: The codec to use for compressing a Parquet page. Choices are:
+<ul>
+<li><code>UNCOMPRESSED</code>: No compression.</li>
+<li><code>SNAPPY</code>: Use the <a href="https://github.com/google/snappy">Snappy</a> compression codec.</li>
+<li><code>GZIP</code>: Use a <a href="https://www.gnu.org/software/gzip/">Gzip</a> based compression codec.</li>
+<li><code>LZO</code>: Use a <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Oberhumer">LZO</a> based compression codec. To use LZO, the <a href="http://hbase.apache.org/book.html#trouble.rs.startup.compression">LZO libraries must be installed</a>.</li>
+</ul></li>
+<li><code>-parquet_disable_dictionary</code>: Disables dictionary encoding in Parquet, and enables delta encoding.</li>
+<li><code>-parquet_logging_level VAL</code>: The <a href="http://logging.apache.org/log4j/">Log4j</a> logging level to set for Parquet’s loggers. Defaults to <code>severe</code>.</li>
+<li><code>-parquet_page_size N</code>: The page size in bytes to use when writing Parquet files. Defaults to 1MB (1024 * 1024).</li>
+<li><code>-print_metrics</code>: If provided, prints the <a href="https://github.com/bigdatagenomics/utils#instrumentation">instrumentation</a> metrics to the log when the CLI operation terminates.</li>
+</ul>
+<h4 id="legacy-output">Legacy output options</h4>
+<p>Several tools in ADAM support saving back to legacy genomics output formats. Any tool saving to one of these formats supports the following options:</p>
+<ul>
+<li><code>-single</code>: Merge sharded output files. If this is not provided, the output will be written as sharded files where each shard is a valid file. If this <em>is</em> provided, the shards will be written without headers as a <code>${OUTPUTNAME}_tail</code> directory, and a single header will be written to <code>${OUTPUTNAME}_head</code>. If <code>-single</code> is provided and <code>-defer_merging</code> is <em>not</em> provided, the header file and the shard directory will be merged into a single file at <code>${OUTPUTPATH}</code>.</li>
+<li><code>-defer_merging</code>: If both <code>-defer_merging</code> and <code>-single</code> are provided, the output will be saved as if is a single file, but the output files will not be merged.</li>
+</ul>
+<h4 id="validation">Validation stringency</h4>
+<p>Various components in ADAM support passing a validation stringency level. This is a three level scale:</p>
+<ul>
+<li><code>STRICT</code>: If validation fails, throw an exception.</li>
+<li><code>LENIENT</code>: If validation fails, ignore the data and write a warning to the log.</li>
+<li><code>SILENT</code>: If validation fails, ignore the data silently.</li>
+</ul>
+<h2 id="actions">Action tools</h2>
+<p>Roughly speaking, “action” tools apply some form of non-trivial transformation to data using the ADAM APIs.</p>
+<h3 id="countKmers">countKmers and countContigKmers</h3>
+<p>Counts the <span class="math inline">\(k\)</span> length substrings in either a set of reads or reference fragments. Takes three required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A set of reads for <code>countKmers</code> or a set of reference contigs for <code>countContigKmers</code>.</li>
+<li><code>OUTPUT</code>: The path to save the output to. Saves the output as <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> containing the <span class="math inline">\(k\)</span>-mer sequence and count.</li>
+<li><code>KMER_LENGTH</code>: The length <span class="math inline">\(k\)</span> of substrings to count.</li>
+</ol>
+<p>Beyond the <a href="#default-args">default options</a>, both <code>countKmers</code> and <code>countContigKmers</code> take one option:</p>
+<ul>
+<li><code>-print_histogram</code>: If provided, prints a histogram of the <span class="math inline">\(k\)</span>-mer count distribution to standard out.</li>
+</ul>
+<h3 id="transform">transform</h3>
+<p>The <code>transform</code> CLI is the entrypoint to ADAM’s read preprocessing tools. This command provides drop-in replacement commands for several commands in the <a href="https://software.broadinstitute.org/gatk/">Genome Analysis Toolkit</a> “Best Practices” read preprocessing pipeline and more <span class="citation">(DePristo et al. 2011)</span>. This CLI tool takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A file containing reads in any of the supported ADAM read input formats.</li>
+<li><code>OUTPUT</code>: The path to save the transformed reads to. Supports any of ADAM’s read output formats.</li>
+</ol>
+<p>Beyond the <a href="#default-args">default options</a> and the <a href="#legacy-output">legacy output options</a>, <code>transform</code> supports a vast range of options. These options fall into several general categories:</p>
+<ul>
+<li>General options:
+<ul>
+<li><code>-cache</code>: If provided, the results of intermediate stages will be cached. This is necessary to avoid recomputation if running multiple transformations (e.g., Indel realignment, BQSR, etc) back to back.</li>
+<li><code>-storage_level</code>: Along with <code>-cache</code>, this can be used to set the Spark <a href="http://spark.apache.org/docs/latest/programming-guide.html#which-storage-level-to-choose">persistance level</a> for cached data. If not provided, this defaults to <code>MEM_ONLY</code>.</li>
+<li><code>-stringency</code>: Sets the validation stringency for various operations. Defaults to <code>LENIENT.</code> See <a href="#validation">validation stringency</a> for more details.</li>
+</ul></li>
+<li>Loading options:
+<ul>
+<li><code>-repartition</code>: Forces a repartition on load. Useful to increase the available parallelism on a small dataset. Forces a shuffle. Takes the number of partitions to repartition to.</li>
+<li><code>-force_load_bam</code>: Forces ADAM to try to load the input as SAM/BAM/CRAM.</li>
+<li><code>-force_load_fastq</code>: Forces ADAM to try to load the input as FASTQ.</li>
+<li><code>-paired_fastq</code>: Forces <code>-force_load_fastq</code>, and passes the path of a second-of-pair FASTQ file to load.</li>
+<li><code>-record_group</code>: If loading FASTQ, sets the record group name on each read to this value.</li>
+<li><code>-force_load_ifastq</code>: Forces ADAM to try to load the input as interleaved FASTQ.</li>
+<li><code>-force_load_parquet</code>: Forces ADAM to try to load the input as Parquet encoded using the ADAM <code>AlignmentRecord</code> schema.</li>
+<li><code>-limit_projection</code>: If loading as Parquet, sets a projection that does not load the <code>attributes</code> or <code>origQual</code> fields of the <code>AlignmentRecord</code>.</li>
+<li><code>-aligned_read_predicate</code>: If loading as Parquet, only loads aligned reads.</li>
+<li><code>-concat</code>: Provides a path to an optional second file to load, which is then concatenated to the file given as the <code>INPUT</code> path.</li>
+</ul></li>
+<li>Duplicate marking options: Duplicate marking is run with the <code>-mark_duplicate_reads</code> option. It takes no optional parameters.</li>
+<li>BQSR options: BQSR is run with the <code>-recalibrate_base_qualities</code> flag. Additionally, the BQSR engine takes the following parameters:
+<ul>
+<li><code>-known_snps</code>: Path to a VCF file/Parquet variant file containing known point variants. These point variants are used to mask read errors during recalibration. Specifically, putative read errors that are at variant sites are treated as correct observations. If BQSR is run, this option should be passed, along with a path to a known variation database (e.g., <a href="https://www.ncbi.nlm.nih.gov/projects/SNP/">dbSNP</a>). {#known-snps}</li>
+</ul></li>
+<li>Indel realignment options: Indel realignment is run with the <code>-realign_indels</code> flag. Additionally, the Indel realignment engine takes the following options:
+<ul>
+<li><code>-known_indels</code>: Path to a VCF file/Parquet variant file containing known Indel variants to realign against. If provided, forces the <code>KNOWNS_ONLY</code> consensus model. If not provided, forces the <code>CONSENSUS_FROM_READS</code> model. See <a href="#consensus-model">candidate generation and realignment</a>. {#known-indels}</li>
+<li><code>-max_consensus_number</code>: The maximum number of consensus sequences to realign a single target against. If more consensus sequences are seen at a single target, we randomly downsample. Defaults to 30.</li>
+<li><code>-max_indel_size</code>: The maximum length of an Indel to realign against. Indels longer than this size are dropped before generating consensus sequences. Defaults to 500bp.</li>
+<li><code>-max_target_size</code>: The maximum length of a target to realign. Targets longer than this size are dropped before trying to realign. Defaults to 3,000bp.</li>
+<li><code>-log_odds_threshold</code>: The log odds threshold to use for picking a consensus sequence to finalize realignments against. A consensus will not be realigned against unless the Phred weighted edit distance against the given consensus/reference pair is a sufficient improvement over the original reference realignments. This option sets that improvement weight. Defaults to 5.0.</li>
+</ul></li>
+<li><code>mismatchingPositions</code> tagging options: We can recompute the <code>mismatchingPositions</code> field of an AlignmentRecord (SAM “MD” tag) with the <code>-add_md_tags</code> flag. This flag takes a path to a reference file in either FASTA or Parquet <code>NucleotideContigFragment</code> format. Additionally, this engine takes the following options:
+<ul>
+<li><code>-md_tag_fragment_size</code>: If loading from FASTA, sets the size of each fragment to load. Defaults to 10,000bp.</li>
+<li><code>-md_tag_overwrite</code>: If provided, recomputes and overwrites the <code>mismatchingPositions</code> field for records where this field was provided.</li>
+</ul></li>
+<li>Output options: <code>transform</code> supports the <a href="#legacy-output">legacy output</a> options. Additionally, there are the following options:
+<ul>
+<li><code>-coalesce</code>: Sets the number of partitions to coalesce the output to. If <code>-force_shuffle_coalesce</code> is not provided, the Spark engine may ignore the coalesce directive.</li>
+<li><code>-force_shuffle_coalesce</code>: Forces a shuffle that leads to the output being saved with the number of partitions requested by <code>-coalesce</code>. This is necessary if the <code>-coalesce</code> would increase the number of partitions, or if it would reduce the number of partitions to fewer than the number of Spark executors. This may have a substantial performance cost, and will invalidate any sort order.</li>
+<li><code>-sort_reads</code>: Sorts reads by alignment position. Unmapped reads are placed at the end of all reads. Contigs are ordered by sequence record index.</li>
+<li><code>-sort_lexicographically</code>: Sorts reads by alignment position. Unmapped reads are placed at the end of all reads. Contigs are ordered lexicographically.</li>
+<li><code>-sort_fastq_output</code>: Ignored if not saving to FASTQ. If saving to FASTQ, sorts the output reads by read name.</li>
+</ul></li>
+</ul>
+<h3 id="transformfeatures">transformFeatures</h3>
+<p>Loads a feature file into the ADAM <code>Feature</code> schema, and saves it back. The input and output formats are autodetected. Takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A file containing features in any of the supported ADAM feature input formats.</li>
+<li><code>OUTPUT</code>: The path to save the transformed features to. Supports any of ADAM’s feature output formats.</li>
+</ol>
+<p>Beyond the <a href="#default-args">default options</a> and the <a href="#legacy-output">legacy output options</a>{#legacy-output}, <code>transformFeatures</code> has one optional argument:</p>
+<ul>
+<li><code>-num_partitions</code>: If loading from a textual feature format (i.e., not Parquet), sets the number of partitions to load. If not provided, this is chosen by Spark.</li>
+</ul>
+<h3 id="mergeshards">mergeShards</h3>
+<p>A CLI tool for merging a <a href="#legacy-output">sharded legacy file</a> that was written with the <code>-single</code> and <code>-defer_merging</code> flags. Runs the file merging process. Takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input directory of sharded files to merge.</li>
+<li><code>OUTPUT</code>: The path to save the merged file at.</li>
+</ol>
+<p>This command takes several optional arguments:</p>
+<ul>
+<li><code>-buffer_size</code>: The buffer size in bytes to use for copying data on the driver. Defaults to 4MB (4 * 1024 * 1024).</li>
+<li><code>-header_path</code>: The path to a header file that should be written to the start of the merged output.</li>
+<li><code>-write_cram_eof</code>: Writes an empty CRAM container at the end of the merged output file. This should not be provided unless merging a sharded CRAM file.</li>
+<li><code>-write_empty_GZIP_at_eof</code>: Writes an empty GZIP block at the end of the merged output file. This should be provided if merging a sharded BAM file or any other BGZIPed format.</li>
+</ul>
+<p>This command does not support Parquet output, so the only <a href="#default-args">default options</a> that this command supports is <code>-print_metrics</code>.</p>
+<h3 id="reads2coverage">reads2coverage</h3>
+<p>The <code>reads2coverage</code> command computes per-locus coverage from reads and saves the coverage counts as features. Takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A file containing reads in any of the supported ADAM read input formats.</li>
+<li><code>OUTPUT</code>: The path to save the coverage counts to. Saves in any of the ADAM supported feature file formats.</li>
+</ol>
+<p>In addition to the <a href="#default-args">default options</a>, <code>reads2coverage</code> takes the following options:</p>
+<ul>
+<li><code>-collapse</code>: If two (or more) neighboring sites have the same coverage, we collapse them down into a single genomic feature.</li>
+<li><code>-only_negative_strands</code>: Only computes coverage for reads aligned on the negative strand. Conflicts with <code>-only_positive_strands</code>.</li>
+<li><code>-only_positive_strands</code>: Only computes coverage for reads aligned on the positive strand. Conflicts with <code>-only_negative_strands</code>.</li>
+</ul>
+<h2 id="conversions">Conversion tools</h2>
+<p>These tools convert data between a legacy genomic file format and using ADAM’s schemas to store data in Parquet.</p>
+<h3 id="vcf2adam-and-adam2vcf">vcf2adam and adam2vcf</h3>
+<p>These commands convert between VCF and Parquet using the Genotype and Variant schemas.</p>
+<p><code>vcf2adam</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>VCF</code>: The VCF file to convert to Parquet.</li>
+<li><code>ADAM</code>: The path to save the converted Parquet data at.</li>
+</ol>
+<p><code>vcf2adam</code> supports the full set of <a href="#default-args">default options</a>. Additionally, <code>vcf2adam</code> takes the following options:</p>
+<ul>
+<li><code>-only_variants</code>: Instead of saving the VCF file as Genotypes, only save the Variants from the VCF. This is useful if loading a sites-only VCF, e.g., for <a href="#known-snps">BQSR</a> or <a href="#known-indels">Indel realignment</a>.</li>
+<li><code>-coalesce</code>: Sets the number of partitions to coalesce the output to. If <code>-force_shuffle_coalesce</code> is not provided, the Spark engine may ignore the coalesce directive.</li>
+<li><code>-force_shuffle_coalesce</code>: Forces a shuffle that leads to the output being saved with the number of partitions requested by <code>-coalesce</code>. This is necessary if the <code>-coalesce</code> would increase the number of partitions, or if it would reduce the number of partitions to fewer than the number of Spark executors. This may have a substantial performance cost, and will invalidate any sort order.</li>
+<li><code>-stringency</code>: Sets the validation stringency for conversion. Defaults to <code>LENIENT.</code> See <a href="#validation">validation stringency</a> for more details.</li>
+</ul>
+<p><code>adam2vcf</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>ADAM</code>: The Parquet file of Genotypes to convert to VCF.</li>
+<li><code>VCF</code>: The path to save the VCF file to.</li>
+</ol>
+<p><code>adam2vcf</code> only supports the <code>-print_metrics</code> option from the <a href="#default-args">default options</a>. Additionally, <code>adam2vcf</code> takes the following options:</p>
+<ul>
+<li><code>-coalesce</code>: Sets the number of partitions to coalesce the output to. The Spark engine may ignore the coalesce directive.</li>
+<li><code>-sort_on_save</code>: Sorts the variants when saving, where contigs are ordered by sequence index. Conflicts with <code>-sort_lexicographically_on_save</code>.</li>
+<li><code>-sort_lexicographically_on_save</code>: Sorts the variants when saving, where contigs are ordered lexicographically. Conflicts with <code>-sort_on_save</code>.</li>
+<li><code>-single</code>: Saves the VCF file as headerless shards, and then merges the sharded files into a single VCF.</li>
+<li><code>-stringency</code>: Sets the validation stringency for conversion. Defaults to <code>LENIENT.</code> See <a href="#validation">validation stringency</a> for more details.</li>
+</ul>
+<p>In these commands, the validation stringency is applied to the individual variants and genotypes. If a variant or genotype fails validation, the individual variant or genotype will be dropped (for lenient or silent validation, under strict validation, conversion will fail). Header lines are not validated. Due to a constraint imposed by the <a href="https://github.com/samtools/htsjdk">htsjdk</a> library, which we use to parse VCF files, user provided header lines that do not match the header line definitions from the <a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf">VCF 4.2</a> spec will be overridden with the line definitions from the specification. Unfortunately, this behavior cannot be disabled. If there is a user provided vs. spec mismatch in format/info field count or type, this will likely cause validation failures during conversion.</p>
+<h3 id="fasta2adam-and-adam2fasta">fasta2adam and adam2fasta</h3>
+<p>These commands convert between FASTA and Parquet files storing assemblies using the NucleotideContigFragment schema.</p>
+<p><code>fasta2adam</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>FASTA</code>: The input FASTA file to convert.</li>
+<li><code>ADAM</code>: The path to save the Parquet formatted NucleotideContigFragments to.</li>
+</ol>
+<p><code>fasta2adam</code> supports the full set of <a href="#default-args">default options</a>, as well as the following options:</p>
+<ul>
+<li><code>-fragment_length</code>: The fragment length to shard a given contig into. Defaults to 10,000bp.</li>
+<li><code>-reads</code>: Path to a set of reads that includes sequence info. This read path is used to obtain the sequence indices for ordering the contigs from the FASTA file.</li>
+<li><code>-repartition</code>: The number of partitions to save the data to. If provided, forces a shuffle.</li>
+<li><code>-verbose</code>: If given, enables additional logging where the sequence dictionary is printed.</li>
+</ul>
+<p><code>adam2fasta</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>ADAM</code>: The path to a Parquet file containing NucleotideContigFragments.</li>
+<li><code>FASTA</code>: The path to save the FASTA file to.</li>
+</ol>
+<p><code>adam2fasta</code> only supports the <code>-print_metrics</code> option from the <a href="#default-args">default options</a>. Additionally, <code>adam2fasta</code> takes the following options:</p>
+<ul>
+<li><code>-line_width</code>: The line width in characters to use for breaking FASTA lines. Defaults to 60 characters.</li>
+<li><code>-coalesce</code>: Sets the number of partitions to coalesce the output to. If <code>-force_shuffle_coalesce</code> is not provided, the Spark engine may ignore the coalesce directive.</li>
+<li><code>-force_shuffle_coalesce</code>: Forces a shuffle that leads to the output being saved with the number of partitions requested by <code>-coalesce</code>. This is necessary if the <code>-coalesce</code> would increase the number of partitions, or if it would reduce the number of partitions to fewer than the number of Spark executors. This may have a substantial performance cost, and will invalidate any sort order.</li>
+</ul>
+<h3 id="adam2fastq">adam2fastq</h3>
+<p>While the <a href="#transform"><code>transform</code></a> command can export to FASTQ, the <code>adam2fastq</code> provides a simpler CLI with more output options. <code>adam2fastq</code> takes two required arguments and an optional third argument:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input read file, in any ADAM-supported read format.</li>
+<li><code>OUTPUT</code>: The path to save an unpaired or interleaved FASTQ file to, or the path to save the first-of-pair reads to, for paired FASTQ.</li>
+<li>Optional <code>SECOND_OUTPUT</code>: If saving paired FASTQ, the path to save the second-of-pair reads to.</li>
+</ol>
+<p><code>adam2fastq</code> only supports the <code>-print_metrics</code> option from the <a href="#default-args">default options</a>. Additionally, <code>adam2fastq</code> takes the following options:</p>
+<ul>
+<li><code>-no_projection</code>: By default, <code>adam2fastq</code> only projects the fields necessary for saving to FASTQ. This option disables that projection and projects all fields.</li>
+<li><code>-output_oq</code>: Outputs the original read qualities, if available.</li>
+<li><code>-persist_level</code>: Sets the Spark <a href="http://spark.apache.org/docs/latest/programming-guide.html#which-storage-level-to-choose">persistance level</a> for cached data during the conversion back to FASTQ. If not provided, the intermediate RDDs are not cached.</li>
+<li><code>-repartition</code>: The number of partitions to save the data to. If provided, forces a shuffle.</li>
+<li><code>-validation</code>: Sets the validation stringency for checking whether reads are paired when saving paired reads. Defaults to <code>LENIENT.</code> See <a href="#validation">validation stringency</a> for more details.</li>
+</ul>
+<h3 id="reads2fragments-and-fragments2reads">reads2fragments and fragments2reads</h3>
+<p>These two commands translate read data between the single read alignment and fragment representations.</p>
+<p><code>reads2fragments</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>READS</code>: The input read file, in any ADAM-supported read format.</li>
+<li><code>FRAGMENTS</code>: The path to save Parquet data with the Fragment schema.</li>
+</ol>
+<p><code>reads2fragments</code> takes the <a href="#default-args">default options</a>.</p>
+<p><code>fragments2reads</code> takes two required arguments:</p>
+<ol style="list-style-type: decimal">
+<li><code>FRAGMENTS</code>: The input fragment file, in any ADAM-supported fragment format.</li>
+<li><code>READS</code>: The path to save reads at, in any ADAM-supported read format.</li>
+</ol>
+<p><code>fragments2reads</code> takes the <a href="#default-args">default options</a>. Additionally, <code>fragments2reads</code> takes the following options:</p>
+<ul>
+<li><code>-mark_duplicate_reads</code>: Marks reads as fragment duplicates. Running mark duplicates on fragments improves performance by eliminating one <code>groupBy</code> (and therefore, a shuffle) versus running on reads.</li>
+<li><code>-sort_reads</code>: Sorts reads by alignment position. Unmapped reads are placed at the end of all reads. Contigs are ordered by sequence record index.</li>
+<li><code>-sort_lexicographically</code>: Sorts reads by alignment position. Unmapped reads are placed at the end of all reads. Contigs are ordered lexicographically.</li>
+</ul>
+<h2 id="printers">Printing tools</h2>
+<p>The printing tools provide some form of user readable view of an ADAM file. These commands are useful for both quality control and debugging.</p>
+<h3 id="print">print</h3>
+<p>Dumps a Parquet file to either the console or a text file as <a href="http://www.json.org">JSON</a>. Takes one required argument:</p>
+<ol style="list-style-type: decimal">
+<li><code>FILE(S)</code>: The file paths to load. These must be Parquet formatted files.</li>
+</ol>
+<p>This command has several options:</p>
+<ul>
+<li><code>-pretty</code>: Pretty print’s the JSON output.</li>
+<li><code>-o</code>: Provides a path to save the output dump to, instead of writing the output to the console.</li>
+</ul>
+<p>This command does not support Parquet output, so the only <a href="#default-args">default options</a> that this command supports is <code>-print_metrics</code>.</p>
+<h3 id="flagstat">flagstat</h3>
+<p>Runs the ADAM equivalent to the <a href="http://www.htslib.org/doc/samtools.html">SAMTools</a> <code>flagstat</code> command. Takes one required argument:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A file containing reads in any of the supported ADAM read input formats.</li>
+</ol>
+<p>This command has several options:</p>
+<ul>
+<li><code>-stringency</code>: Sets the validation stringency for various operations. Defaults to <code>SILENT.</code> See <a href="#validation">validation stringency</a> for more details.</li>
+<li><code>-o</code>: Provides a path to save the output dump to, instead of writing the output to the console.</li>
+</ul>
+<p>This command does not support Parquet output, so the only <a href="#default-args">default options</a> that this command supports is <code>-print_metrics</code>.</p>
+<h3 id="view">view</h3>
+<p>Runs the ADAM equivalent to the <a href="http://www.htslib.org/doc/samtools.html">SAMTools</a> <code>view</code> command. Takes one required argument:</p>
+<ol style="list-style-type: decimal">
+<li><code>INPUT</code>: The input path. A file containing reads in any of the supported ADAM read input formats.</li>
+</ol>
+<p>In addition to the <a href="#default-args">default options</a>, this command supports the following options:</p>
+<ul>
+<li><code>-o</code>: Provides a path to save the output dump to, instead of writing the output to the console. Format is autodetected as any of the ADAM read outputs.</li>
+<li><code>-F</code>/<code>-f</code>: Filters reads that either match all (<code>-f</code>) or none (<code>-F</code>) of the flag bits.</li>
+<li><code>-G</code>/<code>-g</code>: Filters reads that either mismatch all (<code>-g</code>) or none (<code>-G</code>) of the flag bits.</li>
+<li><code>-c</code>: Prints the number of reads that (mis)matched the filters, instead of the reads themselves. Conflicts with <code>-o</code>.</li>
+</ul>
+<h1 id="api">API Overview</h1>
+<p>The main entrypoint to ADAM is the <a href="#adam-context">ADAMContext</a>, which allows genomic data to be loaded in to Spark as <a href="#genomic-rdd">GenomicRDD</a>. GenomicRDDs can be transformed using ADAM’s built in <a href="#algorithms">pre-processing algorithms</a>, <a href="#transforming">Spark’s RDD primitives</a>, the <a href="#join">region join</a> primitive, and ADAM’s <a href="#pipes">pipe</a> APIs.</p>
+<h2 id="adding-dependencies-on-adam-libraries">Adding dependencies on ADAM libraries</h2>
+<p>ADAM libraries are available from <a href="http://search.maven.org">Maven Central</a> under the groupId <code>org.bdgenomics.adam</code>, such as the <code>adam-core</code> library:</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.bdgenomics.adam&lt;/groupId&gt;
+  &lt;artifactId&gt;adam-core${binary.version}&lt;/artifactId&gt;
+  &lt;version&gt;${adam.version}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<p>Scala apps should depend on <code>adam-core</code>, while Java applications should also depend on <code>adam-apis</code>:</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.bdgenomics.adam&lt;/groupId&gt;
+  &lt;artifactId&gt;adam-apis${binary.version}&lt;/artifactId&gt;
+  &lt;version&gt;${adam.version}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<p>For each release, we support four <code>${binary.version}</code>s:</p>
+<ul>
+<li><code>_2.10</code>: Spark 1.6.x on Scala 2.10</li>
+<li><code>_2.11</code>: Spark 1.6.x on Scala 2.11</li>
+<li><code>-spark2_2.10</code>: Spark 2.x on Scala 2.10</li>
+<li><code>-spark2_2.11</code>: Spark 2.x on Scala 2.11</li>
+</ul>
+<p>Additionally, we push nightly SNAPSHOT releases of ADAM to the <a href="https://oss.sonatype.org/content/repositories/snapshots/org/bdgenomics/adam/">Sonatype snapshot repo</a>, for developers who are interested in working on top of the latest changes in ADAM.</p>
+<h2 id="adam-context">Loading data with the ADAMContext</h2>
+<p>The ADAMContext is the main entrypoint to using ADAM. The ADAMContext wraps an existing <a href="http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.SparkContext">SparkContext</a> to provide methods for loading genomic data. In Scala, we provide an implicit conversion from a <code>SparkContext</code> to an <code>ADAMContext</code>. To use this, import the implicit, and call an <code>ADAMContext</code> method:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">SparkContext</span>
+
+<span class="co">// the ._ at the end imports the implicit from the ADAMContext companion object</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">rdd</span>.<span class="fu">ADAMContext</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">rdd</span>.<span class="fu">read</span>.<span class="fu">AlignmentRecordRDD</span>
+
+<span class="kw">def</span> <span class="fu">loadReads</span>(filePath: String, sc: SparkContext): AlignmentRecordRDD = {
+  sc.<span class="fu">loadAlignments</span>(filePath)
+}</code></pre></div>
+<p>In Java, instantiate a JavaADAMContext, which wraps an ADAMContext:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import org.apache.spark.apis.java.JavaSparkContext;</span>
+<span class="kw">import</span> org.bdgenomics.adam.apis.java.JavaADAMContext
+<span class="kw">import org.bdgenomics.adam.rdd.ADAMContext;</span>
+<span class="kw">import org.bdgenomics.adam.rdd.read.AlignmentRecordRDD;</span>
+
+<span class="kw">class</span> LoadReads {
+
+  <span class="kw">public</span> <span class="dt">static</span> AlignmentRecordRDD <span class="fu">loadReads</span>(String filePath,
+                                             JavaSparkContext jsc) {
+    <span class="co">// create an ADAMContext first</span>
+    ADAMContext ac = <span class="kw">new</span> <span class="fu">ADAMContext</span>(jsc.<span class="fu">sc</span>());
+    
+    <span class="co">// then wrap that in a JavaADAMContext</span>
+    JavaADAMContext jac = <span class="kw">new</span> <span class="fu">JavaADAMContext</span>(ac);
+
+    <span class="kw">return</span> jac.<span class="fu">loadAlignments</span>(filePath);
+  }
+}</code></pre></div>
+<p>With an <code>ADAMContext</code>, you can load:</p>
+<ul>
+<li>Single reads as an <code>AlignmentRecordRDD</code>:</li>
+<li>From SAM/BAM/CRAM using <code>loadBam</code> (Scala only)</li>
+<li>Selected regions from an indexed BAM/CRAM using <code>loadIndexedBam</code> (Scala only)</li>
+<li>From FASTQ using <code>loadFastq</code>, <code>loadPairedFastq</code>, and <code>loadUnpairedFastq</code> (Scala only)</li>
+<li>From Parquet using <code>loadParquetAlignments</code> (Scala only)</li>
+<li>The <code>loadAlignments</code> method will load from any of the above formats, and will autodetect the underlying format (Scala and Java, also supports loading reads from FASTA)</li>
+<li>Paired reads as a <code>FragmentRDD</code>:</li>
+<li>From interleaved FASTQ using <code>loadInterleavedFastqAsFragments</code> (Scala only)</li>
+<li>From Parquet using <code>loadParquetFragments</code> (Scala only)</li>
+<li>The <code>loadFragments</code> method will load from either of the above formats, as well as SAM/BAM/CRAM, and will autodetect the underlying file format. If the file is a SAM/BAM/CRAM file and the file is queryname sorted, the data will be converted to fragments without performing a shuffle. (Scala and Java)</li>
+<li>VCF lines as a <code>VariantContextRDD</code> from VCF/BCF1 using <code>loadVcf</code> (Scala only)</li>
+<li>Selected lines from a tabix indexed VCF using <code>loadIndexedVcf</code> (Scala only)</li>
+<li>Genotypes as a <code>GenotypeRDD</code>:</li>
+<li>From Parquet using <code>loadParquetGenotypes</code> (Scala only)</li>
+<li>From either Parquet or VCF/BCF1 using <code>loadGenotypes</code> (Scala and Java)</li>
+<li>Variants as a <code>VariantRDD</code>:</li>
+<li>From Parquet using <code>loadParquetVariants</code> (Scala only)</li>
+<li>From either Parquet or VCF/BCF1 using <code>loadVariants</code> (Scala and Java)</li>
+<li>Genomic features as a <code>FeatureRDD</code>:</li>
+<li>From BED using <code>loadBed</code> (Scala only)</li>
+<li>From GFF3 using <code>loadGff3</code> (Scala only)</li>
+<li>From GFF2/GTF using <code>loadGtf</code> (Scala only)</li>
+<li>From NarrowPeak using <code>loadNarrowPeak</code> (Scala only)</li>
+<li>From IntervalList using <code>loadIntervalList</code> (Scala only)</li>
+<li>From Parquet using <code>loadParquetFeatures</code> (Scala only)</li>
+<li>Autodetected from any of the above using <code>loadFeatures</code> (Scala and Java)</li>
+<li>Fragmented contig sequence as a <code>NucleotideContigFragmentRDD</code>:</li>
+<li>From FASTA with <code>loadFasta</code> (Scala only)</li>
+<li>From Parquet with <code>loadParquetContigFragments</code> (Scala only)</li>
+<li>Autodetected from either of the above using <code>loadSequences</code> (Scala and Java)</li>
+<li>Coverage data as a <code>CoverageRDD</code>:</li>
+<li>From Parquet using <code>loadParquetCoverage</code> (Scala only)</li>
+<li>From Parquet or any of the feature file formats using <code>loadCoverage</code> (Scala only)</li>
+<li>Contig sequence as a broadcastable <code>ReferenceFile</code> using <code>loadReferenceFile</code>, which supports 2bit files, FASTA, and Parquet (Scala only)</li>
+</ul>
+<p>The methods labeled “Scala only” may be usable from Java, but may not be convenient to use.</p>
+<p>The <code>JavaADAMContext</code> class provides Java-friendly methods that are equivalent to the <code>ADAMContext</code> methods. Specifically, these methods use Java types, and do not make use of default parameters. In addition to the load/save methods described above, the <code>ADAMContext</code> adds the implicit methods needed for using <a href="#pipes">ADAM’s Pipe API</a>.</p>
+<h2 id="genomic-rdd">Working with genomic data using GenomicRDDs</h2>
+<p>As described in the section on using the [ADAMContext}(#adam-context), ADAM loads genomic data into a <code>GenomicRDD</code> which is specialized for each datatype. This <code>GenomicRDD</code> wraps Apache Spark’s Resilient Distributed Dataset (RDD, <span class="citation">(Zaharia et al. 2012)</span>) API with genomic metadata. The <code>RDD</code> abstraction presents an array of data which is distributed across a cluster. <code>RDD</code>s are backed by a computational lineage, which allows them to be recomputed if a node fails and the results of a computation are lost. <code>RDD</code>s are processed by running functional [transformations]{#transforming} across the whole dataset.</p>
+<p>Around an <code>RDD</code>, ADAM adds metadata which describes the genome, samples, or read group that a dataset came from. Specifically, ADAM supports the following metadata:</p>
+<ul>
+<li><code>GenomicRDD</code> base: A sequence dictionary, which describes the reference assembly that data is aligned to, if it is aligned. Applies to all types.</li>
+<li><code>MultisampleGenomicRDD</code>: Adds metadata about the samples in a dataset. Applies to <code>GenotypeRDD</code>.</li>
+<li><code>ReadGroupGenomicRDD</code>: Adds metadata about the read groups attached to a dataset. Applies to <code>AlignmentRecordRDD</code> and <code>FragmentRDD</code>.</li>
+</ul>
+<p>Additionally, <code>GenotypeRDD</code>, <code>VariantRDD</code>, and <code>VariantContextRDD</code> store the VCF header lines attached to the original file, to enable a round trip between Parquet and VCF.</p>
+<p><code>GenomicRDD</code>s can be transformed several ways. These include:</p>
+<ul>
+<li>The <a href="#algorithms">core preprocessing</a> algorithms in ADAM:</li>
+<li>Reads:
+<ul>
+<li>Reads to coverage</li>
+<li><a href="#bqsr">Recalibrate base qualities</a></li>
+<li><a href="#realignment">INDEL realignment</a></li>
+<li><a href="#duplicate-marking">Mark duplicate reads</a></li>
+</ul></li>
+<li>Fragments:
+<ul>
+<li><a href="#duplicate-marking">Mark duplicate fragments</a></li>
+</ul></li>
+<li><a href="#transforming">RDD transformations</a></li>
+<li><a href="#pipes">By using ADAM to pipe out to another tool</a></li>
+</ul>
+<h3 id="transforming">Transforming GenomicRDDs</h3>
+<p>Although <code>GenomicRDD</code>s do not extend Apache Spark’s <code>RDD</code> class, <code>RDD</code> operations can be performed on them using the <code>transform</code> method. Currently, we only support <code>RDD</code> to <code>RDD</code> transformations that keep the same type as the base type of the <code>GenomicRDD</code>. To apply an <code>RDD</code> transform, use the <code>transform</code> method, which takes a function mapping one <code>RDD</code> of the base type into another <code>RDD</code> of the base type. For example, we could use <code>transform</code> on an <code>AlignmentRecordRDD</code> to filter out reads that have a low mapping quality, but we cannot use <code>transform</code> to translate those reads into <code>Feature</code>s showing the genomic locations covered by reads.</p>
+<h2 id="join">Using ADAM’s RegionJoin API</h2>
+<p>Another useful API implemented in ADAM is the RegionJoin API, which joins two genomic datasets that contain overlapping regions. This primitive is useful for a number of applications including variant calling (identifying all of the reads that overlap a candidate variant), coverage analysis (determining the coverage depth for each region in a reference), and INDEL realignment (identify INDELs aligned against a reference).</p>
+<p>There are two overlap join implementations available in ADAM: BroadcastRegionJoin and ShuffleRegionJoin. The result of a ShuffleRegionJoin is identical to the BroadcastRegionJoin, however they serve different purposes depending on the content of the two datasets.</p>
+<p>The ShuffleRegionJoin is at its core a distributed sort-merge overlap join. To ensure that the data is appropriately colocated, we perform a copartition on the right dataset before the each node conducts the join locally. The BroadcastRegionJoin performs an overlap join by broadcasting a copy of the entire left dataset to each node. ShuffleRegionJoin should be used if the right dataset is too large to send to all nodes and both datasets have low cardinality. The BroadcastRegionJoin should be used when you are joining a smaller dataset to a larger one and/or the datasets in the join have high cardinality.</p>
+<p>Another important distinction between ShuffleRegionJoin and BroadcastRegionJoin is the join operations available in ADAM. See the table below for an exact list of what joins are available for each type of RegionJoin.</p>
+<p>To perform a ShuffleRegionJoin, use the following:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">dataset1.<span class="fu">shuffleRegionJoin</span>(dataset2)</code></pre></div>
+<p>To perform a BroadcastRegionJoin, use the following:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">dataset1.<span class="fu">broadcastRegionJoin</span>(dataset2)</code></pre></div>
+<p>Where <code>dataset1</code> and <code>dataset2</code> are <code>GenomicRDD</code>s. If you used the ADAMContext to read a genomic dataset into memory, this condition is met.</p>
+<p>ADAM has a variety of ShuffleRegionJoin types that you can perform on your data, and all are called in a similar way:</p>
+<p>[Joins Available] (img/join_examples.png)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Join call</th>
+<th align="left">action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>dataset1.shuffleRegionJoin(dataset2)</code> <code>dataset1.broadcastRegionJoin(dataset2)</code></td>
+<td align="left">perform an inner join</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dataset1.fullOuterShuffleRegionJoin(datset2)</code></td>
+<td align="left">perform an outer join</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>dataset1.leftOuterShuffleRegionJoin(dataset2)</code></td>
+<td align="left">perform a left outer join</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dataset1.rightOuterShuffleRegionJoin(dataset2)</code> <code>dataset1.rightOuterBroadcastRegionJoin(dataset2)</code></td>
+<td align="left">perform a right outer join</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>dataset1.shuffleRegionJoinAndGroupByLeft(dataset2)</code></td>
+<td align="left">perform an inner join and group joined values by the records on the left</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dataset1.broadcastRegionJoinnAndGroupByRight(dataset2)</code></td>
+<td align="left">perform an inner join and group joined values by the records on the right</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>dataset1.rightOuterShuffleRegionJoinAndGroupByLeft(dataset2)</code></td>
+<td align="left">perform a right outer join and group joined values by the records on the left</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rightOuterBroadcastRegionJoinAndGroupByRight</code></td>
+<td align="left">perform a right outer join and group joined values by the records on the right</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pipes">Using ADAM’s Pipe API</h2>
+<p>ADAM’s <code>GenomicRDD</code> API provides support for piping the underlying genomic data out to a single node process through the use of a <code>pipe</code> API. This builds off of Apache Spark’s <code>RDD.pipe</code> API. However, <code>RDD.pipe</code> prints the objects as strings to the pipe. ADAM’s pipe API adds several important functions:</p>
+<ul>
+<li>It supports on-the-fly conversions to widely used genomic file formats</li>
+<li>It doesn’t require input/output type matching (i.e., you can pipe reads in and get variants back from the pipe)</li>
+<li>It adds the ability to set environment variables and to make local files (e.g., a reference genome) available to the run command</li>
+<li>If the data is aligned, we ensure that each subcommand runs over a contiguious section of the reference genome, and that data is sorted on this chunk. We provide control over the size of any flanking region that is desired.</li>
+</ul>
+<p>The method signature of a pipe command is below:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> pipe[X, Y &lt;: GenomicRDD[X, Y], V &lt;: InFormatter[T, U, V]](cmd: String,
+                                                              files: Seq[String] = Seq.<span class="fu">empty</span>,
+                                                              environment: Map[String, String] = Map.<span class="fu">empty</span>,
+                                                              flankSize: Int = <span class="dv">0</span>)(<span class="kw">implicit</span> tFormatterCompanion: InFormatterCompanion[T, U, V],
+                                                                                  xFormatter: OutFormatter[X],
+                                                                                  convFn: (U, RDD[X]) =&gt; Y,
+                                                                                  tManifest: ClassTag[T],
+                                                                                  xManifest: ClassTag[X]): Y</code></pre></div>
+<p><code>X</code> is the type of the records that are returned (e.g., for reads, <code>AlignmentRecord</code>) and <code>Y</code> is the type of the <code>GenomicRDD</code> that is returned (e.g., for reads, <code>AlignmentRecordRDD</code>). As explicit parameters, we take:</p>
+<ul>
+<li><code>cmd</code>: The command to run.</li>
+<li><code>files</code>: Files to make available locally to each running command. These files can be referenced from <code>cmd</code> by using <code>$#</code> syntax, where <code>#</code> is the number of the file in the <code>files</code> sequence (e.g., <code>$0</code> is the head of the list, <code>$1</code> is the second file in the list, and so on).</li>
+<li><code>environment</code>: Environment variable/value pairs to set locally for each running command.</li>
+<li><code>flankSize</code>: The number of base pairs to flank each partition by, if piping genome aligned data.</li>
+</ul>
+<p>Additionally, we take several important implicit parameters:</p>
+<ul>
+<li><code>tFormatter</code>: The <code>InFormatter</code> that converts the data that is piped into the run command from the underlying <code>GenomicRDD</code> type.</li>
+<li><code>xFormatter</code>: The <code>OutFormatter</code> that converts the data that is piped out of the run command back to objects for the output <code>GenomicRDD</code>.</li>
+<li><code>convFn</code>: A function that applies any necessary metadata conversions and creates a new <code>GenomicRDD</code>.</li>
+</ul>
+<p>The <code>tManifest</code> and <code>xManifest</code> implicit parameters are <a href="http://www.scala-lang.org/api/2.10.3/index.html#scala.reflect.ClassTag">Scala ClassTag</a>s and will be provided by the compiler.</p>
+<p>What are the implicit parameters used for? For each of the genomic datatypes in ADAM, we support multiple legacy genomic filetypes (e.g., reads can be saved to or read from BAM, CRAM, FASTQ, and SAM). The <code>InFormatter</code> and <code>OutFormatter</code> parameters specify the format that is being read into or out of the pipe. We support the following:</p>
+<ul>
+<li><code>AlignmentRecordRDD</code>:</li>
+<li><code>InFormatter</code>s: <code>SAMInFormatter</code> and <code>BAMInFormatter</code> write SAM or BAM out to a pipe.</li>
+<li><code>OutFormatter</code>: <code>AnySAMOutFormatter</code> supports reading SAM and BAM from a pipe, with the exact format autodetected from the stream.</li>
+<li>We do not support piping CRAM due to complexities around the reference-based compression.</li>
+<li><code>FeatureRDD</code>:</li>
+<li><code>InForamtter</code>s: <code>BEDInFormatter</code>, <code>GFF3InFormatter</code>, <code>GTFInFormatter</code>, and <code>NarrowPeakInFormatter</code> for writing features out to a pipe in BED, GFF3, GTF/GFF2, or NarrowPeak format, respectively.</li>
+<li><code>OutFormatter</code>s: <code>BEDOutFormatter</code>, <code>GFF3OutFormatter</code>, <code>GTFOutFormatter</code>, and <code>NarrowPeakInFormatter</code> for reading features in BED, GFF3, GTF/GFF2, or NarrowPeak format in from a pipe, respectively.</li>
+<li><code>FragmentRDD</code>:</li>
+<li><code>InFormatter</code>: <code>InterleavedFASTQInFormatter</code> writes FASTQ with the reads from a paired sequencing protocol interleaved in the FASTQ stream to a pipe.</li>
+<li><code>VariantContextRDD</code>:</li>
+<li><code>InFormatter</code>: <code>VCFInFormatter</code> writes VCF to a pipe.</li>
+<li><code>OutFormatter</code>: <code>VCFOutFormatter</code> reads VCF from a pipe.</li>
+</ul>
+<p>The <code>convFn</code> implementations are provided as implicit values in the <a href="#adam-context">ADAMContext</a>. These conversion functions are needed to adapt the metadata stored in a single <code>GenomicRDD</code> to the type of a different <code>GenomicRDD</code> (e.g., if piping an <code>AlignmentRecordRDD</code> through a command that returns a <code>VariantContextRDD</code>, we will need to convert the <code>AlignmentRecordRDD</code>s <code>RecordGroupDictionary</code> into an array of <code>Sample</code>s for the <code>VariantContextRDD</code>). We provide four implementations:</p>
+<ul>
+<li><code>ADAMContext.sameTypeConversionFn</code>: For piped commands that do not change the type of the <code>GenomicRDD</code> (e.g., <code>AlignmentRecordRDD</code> → <code>AlignmentRecordRDD</code>).</li>
+<li><code>ADAMContext.readsToVCConversionFn</code>: For piped commands that go from an <code>AlignmentRecordRDD</code> to a <code>VariantContextRDD</code>.</li>
+<li><code>ADAMContext.fragmentsToReadsConversionFn</code>: For piped commands that go from a <code>FragmentRDD</code> to an <code>AlignmentRecordRDD</code>.</li>
+</ul>
+<p>To put everything together, here’s an example command. Here, we will run a command <code>my_variant_caller</code>, which accepts one argument <code>-R &lt;reference&gt;.fa</code>, SAM on standard input, and outputs VCF on standard output:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="co">// import RDD load functions and conversion functions</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">rdd</span>.<span class="fu">ADAMContext</span>.<span class="fu">_</span>
+
+<span class="co">// import functionality for piping SAM into pipe</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">rdd</span>.<span class="fu">read</span>.<span class="fu">SAMInFormatter</span>
+
+<span class="co">// import functionality for reading VCF from pipe</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">converters</span>.<span class="fu">DefaultHeaderLines</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">rdd</span>.<span class="fu">variant</span>.{
+  VariantContextRDD,
+  VCFOutFormatter
+}
+
+<span class="co">// load the reads</span>
+<span class="kw">val</span> reads = sc.<span class="fu">loadAlignments</span>(<span class="st">&quot;hdfs://mynamenode/my/read/file.bam&quot;</span>)
+
+<span class="co">// define implicit informatter for sam</span>
+<span class="kw">implicit</span> <span class="kw">val</span> tFormatter = SAMInFormatter
+
+<span class="co">// define implicit outformatter for vcf</span>
+<span class="co">// attach all default headerlines</span>
+<span class="kw">implicit</span> <span class="kw">val</span> uFormatter = <span class="kw">new</span> <span class="fu">VCFOutFormatter</span>(DefaultHeaderLines.<span class="fu">allHeaderLines</span>)
+
+<span class="co">// run the piped command</span>
+<span class="co">// providing the explicit return type (VariantContextRDD) will ensure that</span>
+<span class="co">// the correct implicit convFn is selected</span>
+<span class="kw">val</span> variantContexts: VariantContextRDD = reads.<span class="fu">pipe</span>(<span class="st">&quot;my_variant_caller -R $0&quot;</span>,
+  files = Seq(<span class="st">&quot;hdfs://mynamenode/my/reference/genome.fa&quot;</span>))
+
+<span class="co">// save to vcf</span>
+variantContexts.<span class="fu">saveAsVcf</span>(<span class="st">&quot;hdfs://mynamenode/my/variants.vcf&quot;</span>)</code></pre></div>
+<p>In this example, we assume that <code>my_variant_caller</code> is on the PATH on each machine in our cluster. We suggest several different approaches:</p>
+<ul>
+<li>Install the executable on the local filesystem of each machine on your cluster.</li>
+<li>Install the executable on a shared file system (e.g., NFS) that is accessible from every machine in your cluster, and make sure that necessary prerequisites (e.g., python, dynamically linked libraries) are installed across each node on your cluster.</li>
+<li>Run the command using a container system such as <a href="https://docker.io">Docker</a> or <a href="http://singularity.lbl.gov/">Singularity</a>.</li>
+</ul>
+<h1 id="apps">Building Downstream Applications</h1>
+<p>ADAM is packaged so that it can be used interatively via the ADAM shell, called from the command line interface (CLI), or included as a library when building downstream applications.</p>
+<p>This document covers three patterns for building applications downstream of ADAM:</p>
+<ul>
+<li>Extend the ADAM CLI by <a href="#commands">adding new commands</a></li>
+<li>Extend the ADAM CLI by <a href="#external-commands">adding new commands in an external repository</a></li>
+<li>Use ADAM as a <a href="#library">library in new applications</a></li>
+</ul>
+<h2 id="commands">Extend the ADAM CLI by adding new commands</h2>
+<p>ADAM’s CLI is implemented in the adam-cli Apache Maven module of the <a href="https://github.com/bigdatagenomics/adam">bdgenomics/adam</a> repository, one .scala source file for each CLI action (e.g. <a href="https://github.com/bigdatagenomics/adam/blob/master/adam-cli/src/main/scala/org/bdgenomics/adam/cli/Transform.scala">Transform.scala</a> for the <a href="#transform">transform</a> action), and a main class (<a href="https://github.com/bigdatagenomics/adam/blob/master/adam-cli/src/main/scala/org/bdgenomics/adam/cli/ADAMMain.scala">ADAMMain.scala</a>) that assembles and delegates to the various CLI actions.</p>
+<p>To add a new command:</p>
+<p>Extend <code>Args4jBase</code> class to specify arguments to the command. Arguments are defined using the <a href="http://args4j.kohsuke.org/">args4j library</a>. If reading from or writing to Parquet, consider including Parquet arguments via <code>with ParquetArgs</code>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">class</span> MyCommandArgs <span class="kw">extends</span> Args4jBase <span class="kw">with</span> ParquetArgs {
+  @<span class="fu">Argument</span>(required = <span class="kw">true</span>, metaVar = <span class="st">&quot;INPUT&quot;</span>, usage = <span class="st">&quot;Input to my command&quot;</span>, index = <span class="dv">0</span>)
+  <span class="kw">var</span> inputPath: String = <span class="kw">null</span>
+}</code></pre></div>
+<p>Extend <code>BDGCommandCompanion</code> object to specify the command name and description. The <code>apply</code> method associates <code>MyCommandArgs</code> defined above with <code>MyCommand</code>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> MyCommand <span class="kw">extends</span> BDGCommandCompanion {
+  <span class="kw">val</span> commandName = <span class="st">&quot;myCommand&quot;</span>
+  <span class="kw">val</span> commandDescription = <span class="st">&quot;My command example.&quot;</span>
+
+  <span class="kw">def</span> <span class="fu">apply</span>(cmdLine: Array[String]) = {
+    <span class="kw">new</span> <span class="fu">MyCommand</span>(Args4j[MyCommandArgs](cmdLine))
+  }
+}</code></pre></div>
+<p>Extend <code>BDGSparkCommand</code> class and implement the <code>run(SparkContext)</code> method. The <code>MyCommandArgs</code> class defined above is provided in the constructor and specifies the generic type for <code>BDGSparkCommand</code>. The companion object defined above is declared as a field. For access to an <a href="http://www.slf4j.org/">slf4j</a> Logger via the <code>log</code> field, specify <code>with Logging</code>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">class</span> <span class="fu">MyCommand</span>(<span class="kw">protected</span> <span class="kw">val</span> args: MyCommandArgs) <span class="kw">extends</span> BDGSparkCommand[MyCommandArgs] <span class="kw">with</span> Logging {
+  <span class="kw">val</span> companion = MyCommand
+
+  <span class="kw">def</span> <span class="fu">run</span>(sc: SparkContext) {
+    log.<span class="fu">info</span>(<span class="st">&quot;Doing something...&quot;</span>)
+    <span class="co">// do something</span>
+  }
+}</code></pre></div>
+<p>Add the new command to the default list of commands in <code>ADAMMain</code>.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">  <span class="kw">val</span> defaultCommandGroups =
+    List(
+      <span class="fu">CommandGroup</span>(
+        <span class="st">&quot;ADAM ACTIONS&quot;</span>,
+        List(
+          MyCommand,
+          CountReadKmers,
+          CountContigKmers, ...</code></pre></div>
+<p>Build ADAM and run the new command via <code>adam-submit</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mvn</span> install
+$ <span class="kw">./bin/adam-submit</span> --help
+<span class="kw">Using</span> ADAM_MAIN=org.bdgenomics.adam.cli.ADAMMain
+<span class="kw">Using</span> SPARK_SUBMIT=/usr/local/bin/spark-submit
+
+       <span class="kw">e</span>         888~-_          e             e    e
+      <span class="kw">d8b</span>        888   <span class="dt">\ </span>       d8b           d8b  d8b
+     <span class="kw">/Y88b</span>       888    <span class="kw">|</span>      <span class="kw">/Y88b</span>         d888bdY88b
+    <span class="kw">/</span>  Y88b      888    <span class="kw">|</span>     <span class="kw">/</span>  Y88b       / Y88Y Y888b
+   <span class="kw">/____Y88b</span>     888   /     /____Y88b     /   YY   Y888b
+  <span class="kw">/</span>      Y88b    888_-~     /      Y88b   /          Y888b
+
+<span class="kw">Usage</span>: adam-submit [<span class="kw">&lt;</span>spark-args<span class="kw">&gt;</span> --] <span class="kw">&lt;</span>adam-args<span class="kw">&gt;</span>
+
+<span class="kw">Choose</span> one of the following commands:
+
+<span class="kw">ADAM</span> ACTIONS
+           <span class="kw">myCommand</span> : My command example.
+          <span class="kw">countKmers</span> : Counts the k-mers/q-mers from a read dataset.
+    <span class="kw">countContigKmers</span> : Counts the k-mers/q-mers from a read dataset.
+<span class="kw">...</span>
+
+$ <span class="kw">./bin/adam-submit</span> myCommand input.foo</code></pre></div>
+<p>Then consider making a pull request to include the new command in ADAM!</p>
+<h2 id="external-commands">Extend the ADAM CLI by adding new commands in an external repository</h2>
+<p>To extend the ADAM CLI by adding new commands in an external repository, instead of editing <code>ADAMMain</code> to add new commands as above, create a new object with a <code>main(args: Array[String])</code> method that delegates to <code>ADAMMain</code> and provides additional command(s) via its constructor.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">cli</span>.{ ADAMMain, CommandGroup }
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">cli</span>.<span class="fu">ADAMMain</span>.<span class="fu">defaultCommandGroups</span>
+
+<span class="kw">object</span> MyCommandsMain {
+  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]) {
+    <span class="kw">val</span> commandGroup = List(<span class="fu">CommandGroup</span>(<span class="st">&quot;MY COMMANDS&quot;</span>, List(MyCommand1, MyCommand2)))
+    <span class="kw">new</span> <span class="fu">ADAMMain</span>(defaultCommandGroups.<span class="fu">union</span>(commandGroup))(args)
+  }
+}</code></pre></div>
+<p>Build the project and run the new external commands via <code>adam-submit</code>, specifying <code>ADAM_MAIN</code> environment variable as the new main class, and providing the jar file in the Apache Spark <code>--jars</code> argument.</p>
+<p>Note the <code>--</code> argument separator between Apache Spark arguments and ADAM arguments.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ot">ADAM_MAIN=</span>MyCommandsMain <span class="kw">\</span>
+  <span class="kw">adam-submit</span> \
+  --jars my-commands.jar \
+  -- \
+  --help
+
+<span class="kw">Using</span> ADAM_MAIN=MyCommandsMain
+<span class="kw">Using</span> SPARK_SUBMIT=/usr/local/bin/spark-submit
+
+       <span class="kw">e</span>         888~-_          e             e    e
+      <span class="kw">d8b</span>        888   <span class="dt">\ </span>       d8b           d8b  d8b
+     <span class="kw">/Y88b</span>       888    <span class="kw">|</span>      <span class="kw">/Y88b</span>         d888bdY88b
+    <span class="kw">/</span>  Y88b      888    <span class="kw">|</span>     <span class="kw">/</span>  Y88b       / Y88Y Y888b
+   <span class="kw">/____Y88b</span>     888   /     /____Y88b     /   YY   Y888b
+  <span class="kw">/</span>      Y88b    888_-~     /      Y88b   /          Y888b
+
+<span class="kw">Usage</span>: adam-submit [<span class="kw">&lt;</span>spark-args<span class="kw">&gt;</span> --] <span class="kw">&lt;</span>adam-args<span class="kw">&gt;</span>
+
+<span class="kw">Choose</span> one of the following commands:
+<span class="kw">...</span>
+
+<span class="kw">MY</span> COMMANDS
+          <span class="kw">myCommand1</span> : My command example 1.
+          <span class="kw">myCommand2</span> : My command example 2.
+
+$ <span class="ot">ADAM_MAIN=</span>MyCommandsMain <span class="kw">\</span>
+  <span class="kw">adam-submit</span> \
+  --jars my-commands.jar \
+  -- \
+  myCommand1 input.foo</code></pre></div>
+<p>A complete example of this pattern can be found in the <a href="https://github.com/heuermh/adam-examples">heuermh/adam-commands</a> repository.</p>
+<h2 id="library">Use ADAM as a library in new applications</h2>
+<p>To use ADAM as a library in new applications:</p>
+<p>Create an object with a <code>main(args: Array[String])</code> method and handle command line arguments. Feel free to use the <a href="http://www.slf4j.org/">args4j library</a> or any other argument parsing library.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> MyExample {
+  <span class="kw">def</span> <span class="fu">main</span>(args: Array[String]) {
+    <span class="kw">if</span> (args.<span class="fu">length</span> &lt; <span class="dv">1</span>) {
+      System.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;at least one argument required, e.g. input.foo&quot;</span>)
+      System.<span class="fu">exit</span>(<span class="dv">1</span>)
+    }</code></pre></div>
+<p>Create an Apache Spark configuration <code>SparkConf</code> and use it to create a new <code>SparkContext</code>. The following serialization configuration needs to be present to register ADAM classes. If any additional <a href="https://github.com/EsotericSoftware/kryo">Kyro serializers</a> need to be registered, <a href="#registrator">create a registrator that delegates to the ADAM registrator</a>. You might want to provide your own serializer registrator if you need custom serializers for a class in your code that either has a complex structure that Kryo fails to serialize properly via Kryo’s serializer inference, or if you want to require registration of all classes in your application to improve performance.</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala">    <span class="kw">val</span> conf = <span class="kw">new</span> <span class="fu">SparkConf</span>()
+      .<span class="fu">setAppName</span>(<span class="st">&quot;MyCommand&quot;</span>)
+      .<span class="fu">set</span>(<span class="st">&quot;spark.serializer&quot;</span>, <span class="st">&quot;org.apache.spark.serializer.KryoSerializer&quot;</span>)
+      .<span class="fu">set</span>(<span class="st">&quot;spark.kryo.registrator&quot;</span>, <span class="st">&quot;org.bdgenomics.adam.serialization.ADAMKryoRegistrator&quot;</span>)
+      .<span class="fu">set</span>(<span class="st">&quot;spark.kryo.referenceTracking&quot;</span>, <span class="st">&quot;true&quot;</span>)
+
+    <span class="kw">val</span> sc = <span class="kw">new</span> <span class="fu">SparkContext</span>(conf)
+    <span class="co">// do something</span></code></pre></div>
+<p>Configure the new application build to create a fat jar artifact with ADAM and its transitive dependencies included. For example, this <code>maven-shade-plugin</code> configuration would work for an Apache Maven build.</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;plugin&gt;</span>
+  <span class="kw">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="kw">&lt;/groupId&gt;</span>
+  <span class="kw">&lt;artifactId&gt;</span>maven-shade-plugin<span class="kw">&lt;/artifactId&gt;</span>
+  <span class="kw">&lt;configuration&gt;</span>
+    <span class="kw">&lt;createDependencyReducedPom&gt;</span>false<span class="kw">&lt;/createDependencyReducedPom&gt;</span>
+    <span class="kw">&lt;filters&gt;</span>
+      <span class="kw">&lt;filter&gt;</span>
+        <span class="kw">&lt;artifact&gt;</span>*:*<span class="kw">&lt;/artifact&gt;</span>
+        <span class="kw">&lt;excludes&gt;</span>
+          <span class="kw">&lt;exclude&gt;</span>META-INF/*.SF<span class="kw">&lt;/exclude&gt;</span>
+          <span class="kw">&lt;exclude&gt;</span>META-INF/*.DSA<span class="kw">&lt;/exclude&gt;</span>
+          <span class="kw">&lt;exclude&gt;</span>META-INF/*.RSA<span class="kw">&lt;/exclude&gt;</span>
+        <span class="kw">&lt;/excludes&gt;</span>
+      <span class="kw">&lt;/filter&gt;</span>
+    <span class="kw">&lt;/filters&gt;</span>
+  <span class="kw">&lt;/configuration&gt;</span>
+  <span class="kw">&lt;executions&gt;</span>
+    <span class="kw">&lt;execution&gt;</span>
+      <span class="kw">&lt;phase&gt;</span>package<span class="kw">&lt;/phase&gt;</span>
+      <span class="kw">&lt;goals&gt;</span>
+        <span class="kw">&lt;goal&gt;</span>shade<span class="kw">&lt;/goal&gt;</span>
+      <span class="kw">&lt;/goals&gt;</span>
+      <span class="kw">&lt;configuration&gt;</span>
+        <span class="kw">&lt;transformers&gt;</span>
+          <span class="kw">&lt;transformer</span><span class="ot"> implementation=</span><span class="st">&quot;org.apache.maven.plugins.shade.resource.ServicesResourceTransformer&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;/transformers&gt;</span>
+      <span class="kw">&lt;/configuration&gt;</span>
+    <span class="kw">&lt;/execution&gt;</span>
+  <span class="kw">&lt;/executions&gt;</span>
+<span class="kw">&lt;/plugin&gt;</span></code></pre></div>
+<p>Build the new application and run via <code>spark-submit</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">spark-submit</span> \
+  --class MyCommand \
+  target/my-command.jar \
+  input.foo</code></pre></div>
+<p>A complete example of this pattern can be found in the <a href="https://github.com/heuermh/adam-examples">heuermh/adam-examples</a> repository.</p>
+<h3 id="registrator">Writing your own registrator that calls the ADAM registrator</h3>
+<p>As we do in ADAM, an application may want to provide its own Kryo serializer registrator. The custom registrator may be needed in order to register custom serializers, or because the application’s configuration requires all serializers to be registered. In either case, the application will need to provide its own Kryo registrator. While this registrator can manually register ADAM’s serializers, it is simpler to call to the ADAM registrator from within the registrator. As an example, this pattern looks like the following code:</p>
+<div class="sourceCode"><pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> com.<span class="fu">esotericsoftware</span>.<span class="fu">kryo</span>.<span class="fu">Kryo</span>
+<span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">serializer</span>.<span class="fu">KryoRegistrator</span>
+<span class="kw">import</span> org.<span class="fu">bdgenomics</span>.<span class="fu">adam</span>.<span class="fu">serialization</span>.<span class="fu">ADAMKryoRegistrator</span>
+
+<span class="kw">class</span> MyCommandKryoRegistrator <span class="kw">extends</span> KryoRegistrator {
+
+  <span class="kw">private</span> <span class="kw">val</span> akr = <span class="kw">new</span> <span class="fu">ADAMKryoRegistrator</span>()
+
+  <span class="kw">override</span> <span class="kw">def</span> <span class="fu">registerClasses</span>(kryo: Kryo) {
+
+    <span class="co">// register adam&#39;s requirements</span>
+    akr.<span class="fu">registerClasses</span>(kryo)
+
+    <span class="co">// ... register any other classes I need ...</span>
+  }
+}</code></pre></div>
+<h1 id="algorithms">Core Algorithms</h1>
+<h2 id="read-preprocessing-algorithms">Read Preprocessing Algorithms</h2>
+<p>In ADAM, we have implemented the three most-commonly used pre-processing stages from the GATK pipeline <span class="citation">(DePristo et al. 2011)</span>. In this section, we describe the stages that we have implemented, and the techniques we have used to improve performance and accuracy when running on a distributed system. These pre-processing stages include:</p>
+<ul>
+<li><em>Duplicate Removal:</em> During the process of preparing DNA for sequencing, reads are duplicated by errors during the sample preparation and polymerase chain reaction stages. Detection of duplicate reads requires matching all reads by their position and orientation after read alignment. Reads with identical position and orientation are assumed to be duplicates. When a group of duplicate reads is found, each read is scored, and all but the highest quality read are marked as duplicates. We have validated our duplicate removal code against Picard <span class="citation">(The Broad Institute of Harvard and MIT 2014)</span>, which is used by the GATK for Marking Duplicates. Our implementation is fully concordant with the Picard/GATK duplicate removal engine, except we are able to perform duplicate marking for chimeric read pairs.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Specifically, because Picard’s traversal engine is restricted to processing linearly sorted alignments, Picard mishandles these alignments. Since our engine is not constrained by the underlying layout of data on disk, we are able to properly handle chimeric read pairs.</li>
+<li><em>Local Realignment:</em> In local realignment, we correct areas where variant alleles cause reads to be locally misaligned from the reference genome.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> In this algorithm, we first identify regions as targets for realignment. In the GATK, this identification is done by traversing sorted read alignments. In our implementation, we fold over partitions where we generate targets, and then we merge the tree of targets. This process allows us to eliminate the data shuffle needed to achieve the sorted ordering. As part of this fold, we must compute the convex hull of overlapping regions in parallel. We discuss this in more detail later in this section. After we have generated the targets, we associate reads to the overlapping target, if one exists. After associating reads to realignment targets, we run a heuristic realignment algorithm that works by minimizing the quality-score weighted number of bases that mismatch against the reference.</li>
+<li><em>Base Quality Score Recalibration (BQSR):</em> During the sequencing process, systemic errors occur that lead to the incorrect assignment of base quality scores. In this step, we label each base that we have sequenced with an error covariate. For each covariate, we count the total number of bases that we saw, as well as the total number of bases within the covariate that do not match the reference genome. From this data, we apply a correction by estimating the error probability for each set of covariates under a beta-binomial model with uniform prior. We have validated the concordance of our BQSR implementation against the GATK. Across both tools, only 5000 of the 180B bases (<span class="math inline">\(&lt;0.0001\%\)</span>) in the high-coverage NA12878 genome dataset differ. After investigating this discrepancy, we have determined that this is due to an error in the GATK, where paired-end reads are mishandled if the two reads in the pair overlap.</li>
+</ul>
+<p>In the rest of this section, we discuss the high level implementations of these algorithms.</p>
+<h3 id="bqsr">BQSR Implementation</h3>
+<p>Base quality score recalibration seeks to identify and correct correlated errors in base quality score estimates. At a high level, this is done by associating sequenced bases with possible error covariates, and estimating the true error rate of this covariate. Once the true error rate of all covariates has been estimated, we then apply the corrected covariate.</p>
+<p>Our system is generic and places no limitation on the number or type of covariates that can be applied. A covariate describes a parameter space where variation in the covariate parameter may be correlated with a sequencing error. We provide two common covariates that map to common sequencing errors <span class="citation">(Nakamura et al. 2011)</span>:</p>
+<ul>
+<li><em>CycleCovariate:</em> This covariate expresses which cycle the base was sequenced in. Read errors are known to occur most frequently at the start or end of reads.</li>
+<li><em>DinucCovariate:</em> This covariate covers biases due to the sequence context surrounding a site. The two-mer ending at the sequenced base is used as the covariate parameter value.</li>
+</ul>
+<p>To generate the covariate observation table, we aggregate together the number of observed and error bases per covariate. Algorithms  and  demonstrate this process.</p>
+\begin{algorithm}
+\caption{Emit Observed Covariates}
+\label{alg:emit-observations}
+\begin{algorithmic}
+\STATE $read \leftarrow$ the read to observe
+\STATE $covariates \leftarrow$ covariates to use for recalibration
+\STATE $sites \leftarrow$ sites of known variation
+\STATE $observations \leftarrow \emptyset$
+\FOR{$base \in read$}
+\STATE $covariate \leftarrow$ identifyCovariate($base$)
+\IF{isUnknownSNP($base, sites$)}
+\STATE $observation \leftarrow$ Observation($1, 1$)
+\ELSE
+\STATE $observation \leftarrow$ Observation($1, 0$)
+\ENDIF
+\STATE $observations$.append($(covariate, observation)$)
+\ENDFOR
+\RETURN $observations$
+\end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+\caption{Create Covariate Table}
+\label{alg:create-table}
+\begin{algorithmic}
+\STATE $reads \leftarrow$ input dataset
+\STATE $covariates \leftarrow$ covariates to use for recalibration
+\STATE $sites \leftarrow$ known variant sites
+\STATE $sites$.broadcast()
+\STATE $observations \leftarrow reads$.map($read \Rightarrow$ emitObservations($read, covariates, sites$))
+\STATE $table \leftarrow$ $observations$.aggregate(CovariateTable(), mergeCovariates)
+\RETURN $table$
+\end{algorithmic}
+\end{algorithm}
+<p>In Algorithm , the <code>Observation</code> class stores the number of bases seen and the number of errors seen. For example, <code>Observation(1, 1)</code> creates an <code>Observation</code> object that has seen one base, which was an erroneous base.</p>
+<p>Once we have computed the observations that correspond to each covariate, we estimate the observed base quality using the below equation. This represents a Bayesian model of the mismatch probability with Binomial likelihood and a Beta(1, 1) prior.</p>
+<p><span class="math display">\[
+\mathbf{E}(P_{err}|{cov}) = \frac{\text{\#errors}(cov) + 1}{\text{\#observations}(cov) + 2}
+\]</span></p>
+<p>After these probabilities are estimated, we go back across the input read dataset and reconstruct the quality scores of the read by using the covariate assigned to the read to look into the covariate table.</p>
+<h3 id="realignment">Indel Realignment Implementation</h3>
+<p>Although global alignment will frequently succeed at aligning reads to the proper region of the genome, the local alignment of the read may be incorrect. Specifically, the error models used by aligners may penalize local alignments containing INDELs more than a local alignment that converts the alignment to a series of mismatches. To correct for this, we perform local realignment of the reads against consensus sequences in a three step process. In the first step, we identify candidate sites that have evidence of an insertion or deletion. We then compute the convex hull of these candidate sites, to determine the windows we need to realign over. After these regions are identified, we generate candidate haplotype sequences, and realign reads to minimize the overall quantity of mismatches in the region.</p>
+<h4 id="realignment-target-identification">Realignment Target Identification</h4>
+<p>To identify target regions for realignment, we simply map across all the reads. If a read contains INDEL evidence, we then emit a region corresponding to the region covered by that read.</p>
+<h4 id="convex-hull-finding">Convex-Hull Finding</h4>
+<p>Once we have identified the target realignment regions, we must then find the maximal convex hulls across the set of regions. For a set <span class="math inline">\(R\)</span> of regions, we define a maximal convex hull as the largest region <span class="math inline">\(\hat{r}\)</span> that satisfies the following properties:</p>
+\begin{align}
+\hat{r} &amp;= \cup_{r_i \in \hat{R}} r_i \\
+\hat{r} \cap r_i &amp;\ne \emptyset, \forall r_i \in \hat{R} \\
+\hat{R} &amp;\subset R
+\end{align}
+<p>In our problem, we seek to find all of the maximal convex hulls, given a set of regions. For genomics, the convexity constraint described by equation  is trivial to check: specifically, the genome is assembled out of reference contigs that define disparate 1-D coordinate spaces. If two regions exist on different contigs, they are known not to overlap. If two regions are on a single contig, we simply check to see if they overlap on that contig’s 1-D coordinate plane.</p>
+<p>Given this realization, we can define Algorithm , which is a data parallel algorithm for finding the maximal convex hulls that describe a genomic dataset.</p>
+\begin{algorithm}
+\caption{Find Convex Hulls in Parallel}
+\label{alg:parallel-convex-hull}
+\begin{algorithmic}
+\STATE $data \leftarrow$ input dataset
+\STATE $regions \leftarrow data$.map($data \Rightarrow $generateTarget($data$))
+\STATE $regions \leftarrow regions$.sort()
+\STATE $hulls \leftarrow regions$.fold($r_1, r_2 \Rightarrow$ mergeTargetSets($r_1, r_2$))
+\RETURN $hulls$
+\end{algorithmic}
+\end{algorithm}
+<p>The <code>generateTarget</code> function projects each datapoint into a Red-Black tree that contains a single region. The performance of the fold depends on the efficiency of the merge function. We achieve efficient merges with the tail-call recursive <code>mergeTargetSets</code> function that is described in Algorithm .</p>
+\begin{algorithm}
+\caption{Merge Hull Sets}
+\label{alg:join-targets}
+\begin{algorithmic}
+\STATE $first \leftarrow$ first target set to merge
+\STATE $second \leftarrow$ second target set to merge
+\REQUIRE $first$ and $second$ are sorted
+\IF{$first = \emptyset \wedge second = \emptyset$}
+\RETURN $\emptyset$
+\ELSIF{$first = \emptyset$}
+\RETURN $second$
+\ELSIF{$second = \emptyset$}
+\RETURN $first$
+\ELSE
+\IF{last($first$) $\cap$ head($second$) $= \emptyset$}
+\RETURN $first$ + $second$
+\ELSE
+\STATE $mergeItem \leftarrow$ (last($first$) $\cup$ head($second$))
+\STATE $mergeSet \leftarrow$ allButLast($first$) $\cup mergeItem$
+\STATE $trimSecond \leftarrow$ allButFirst($second$)
+\RETURN mergeTargetSets($mergeSet$, $trimSecond$)
+\ENDIF
+\ENDIF
+\end{algorithmic}
+\end{algorithm}
+<p>The set returned by this function is used as an index for mapping reads directly to realignment targets.</p>
+<h4 id="consensus-model">Candidate Generation and Realignment</h4>
+<p>Once we have generated the target set, we map across all the reads and check to see if the read overlaps a realignment target. We then group together all reads that map to a given realignment target; reads that don’t map to a target are randomly assigned to a ``null’’ target. We do not attempt realignment for reads mapped to null targets.</p>
+<p>To process non-null targets, we must first generate candidate haplotypes to realign against. We support several processes for generating these consensus sequences:</p>
+<ul>
+<li><em>Use known INDELs:</em> Here, we use known variants that were provided by the user to generate consensus sequences. These are typically derived from a source of common variants such as dbSNP <span class="citation">(Sherry et al. 2001)</span>.</li>
+<li><em>Generate consensuses from reads:</em> In this process, we take all INDELs that are contained in the alignment of a read in this target region.</li>
+<li><em>Generate consensuses using Smith-Waterman:</em> With this method, we take all reads that were aligned in the region and perform an exact Smith-Waterman alignment <span class="citation">(Smith and Waterman 1981)</span> against the reference in this site. We then take the INDELs that were observed in these realignments as possible consensuses.</li>
+</ul>
+<p>From these consensuses, we generate new haplotypes by inserting the INDEL consensus into the reference sequence of the region. Per haplotype, we then take each read and compute the quality score weighted Hamming edit distance of the read placed at each site in the consensus sequence. We then take the minimum quality score weighted edit versus the consensus sequence and the reference genome. We aggregate these scores together for all reads against this consensus sequence. Given a consensus sequence <span class="math inline">\(c\)</span>, a reference sequence <span class="math inline">\(R\)</span>, and a set of reads <span class="math inline">\(\mathbf{r}\)</span>, we calculate this score using the equation below.</p>
+\begin{align}
+q_{i, j} &amp;= \sum_{k = 0}^{l_{r_i}} Q_k I[r_I(k) = c(j + k)] \forall r_i \in \mathbf{R}, j \in \{0, \dots, l_c - l_{r_i}\} \\
+q_{i, R} &amp;= \sum_{k = 0}^{l_{r_i}} Q_k I[r_I(k) = c(j + k)] \forall r_i \in \mathbf{R}, j = \text{pos}(r_i | R) \\
+q_i &amp;= \min(q_{i, R}, \min_{j \in \{0, \dots, l_c - l_{r_i}\}} q_{i, j}) \\
+q_c &amp;= \sum_{r_i \in \mathbf{r}} q_i
+\end{align}
+<p>In the above equation, <span class="math inline">\(s(i)\)</span> denotes the base at position <span class="math inline">\(i\)</span> of sequence <span class="math inline">\(s\)</span>, and <span class="math inline">\(l_s\)</span> denotes the length of sequence <span class="math inline">\(s\)</span>. We pick the consensus sequence that minimizes the <span class="math inline">\(q_c\)</span> value. If the chosen consensus has a log-odds ratio (LOD) that is greater than <span class="math inline">\(5.0\)</span> with respect to the reference, we realign the reads. This is done by recomputing the CIGAR and MDTag for each new alignment. Realigned reads have their mapping quality score increased by 10 in the Phred scale.</p>
+<h3 id="duplicate-marking">Duplicate Marking Implementation</h3>
+<p>Reads may be duplicated during sequencing, either due to clonal duplication via PCR before sequencing, or due to optical duplication while on the sequencer. To identify duplicated reads, we apply a heuristic algorithm that looks at read fragments that have a consistent mapping signature. First, we bucket together reads that are from the same sequenced fragment by grouping reads together on the basis of read name and record group. Per read bucket, we then identify the 5’ mapping positions of the primarily aligned reads. We mark as duplicates all read pairs that have the same pair alignment locations, and all unpaired reads that map to the same sites. Only the highest scoring read/read pair is kept, where the score is the sum of all quality scores in the read that are greater than 15.</p>
+<div id="references" class="references">
+<div id="ref-depristo11">
+<p>DePristo, Mark A, Eric Banks, Ryan Poplin, Kiran V Garimella, Jared R Maguire, Christopher Hartl, Anthony A Philippakis, et al. 2011. “A Framework for Variation Discovery and Genotyping Using Next-Generation DNA Sequencing Data.” <em>Nature Genetics</em> 43 (5). Nature Publishing Group: 491–98.</p>
+</div>
+<div id="ref-li10">
+<p>Li, Heng, and Richard Durbin. 2010. “Fast and Accurate Long-Read Alignment with Burrows-Wheeler Transform.” <em>Bioinformatics</em> 26 (5). Oxford Univ Press: 589–95.</p>
+</div>
+<div id="ref-nakamura11">
+<p>Nakamura, Kensuke, Taku Oshima, Takuya Morimoto, Shun Ikeda, Hirofumi Yoshikawa, Yuh Shiwa, Shu Ishikawa, et al. 2011. “Sequence-Specific Error Profile of Illumina Sequencers.” <em>Nucleic Acids Research</em>. Oxford Univ Press, gkr344.</p>
+</div>
+<div id="ref-sherry01">
+<p>Sherry, Stephen T, M-H Ward, M Kholodov, J Baker, Lon Phan, Elizabeth M Smigielski, and Karl Sirotkin. 2001. “dbSNP: The NCBI Database of Genetic Variation.” <em>Nucleic Acids Research</em> 29 (1). Oxford Univ Press: 308–11.</p>
+</div>
+<div id="ref-smith81">
+<p>Smith, Temple F, and Michael S Waterman. 1981. “Identification of Common Molecular Subsequences.” <em>Journal of Molecular Biology</em> 147 (1). Elsevier: 195–97.</p>
+</div>
+<div id="ref-picard">
+<p>The Broad Institute of Harvard and MIT. 2014. “Picard.” <a href="http://broadinstitute.github.io/picard/" class="uri">http://broadinstitute.github.io/picard/</a>.</p>
+</div>
+<div id="ref-vavilapalli13">
+<p>Vavilapalli, Vinod Kumar, Arun C Murthy, Chris Douglas, Sharad Agarwal, Mahadev Konar, Robert Evans, Thomas Graves, et al. 2013. “Apache Hadoop YARN: Yet Another Resource Negotiator.” In <em>Proceedings of the Symposium on Cloud Computing (SoCC ’13)</em>, 5. ACM.</p>
+</div>
+<div id="ref-vivian16">
+<p>Vivian, John, Arjun Rao, Frank Austin Nothaft, Christopher Ketchum, Joel Armstrong, Adam Novak, Jacob Pfeil, et al. 2016. “Rapid and Efficient Analysis of 20,000 RNA-Seq Samples with Toil.” <em>BioRxiv</em>. Cold Spring Harbor Labs Journals.</p>
+</div>
+<div id="ref-zaharia12">
+<p>Zaharia, Matei, Mosharaf Chowdhury, Tathagata Das, Ankur Dave, Justin Ma, Murphy McCauley, Michael Franklin, Scott Shenker, and Ion Stoica. 2012. “Resilient Distributed Datasets: A Fault-Tolerant Abstraction for in-Memory Cluster Computing.” In <em>Proceedings of the Conference on Networked Systems Design and Implementation (NSDI ’12)</em>, 2. USENIX Association.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>These containers are published on <a href="https://quay.io/repository/ucsc_cgl">Quay</a>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>In a chimeric read pair, the two reads in the read pairs align to different chromosomes; see Li et al <span class="citation">(Li and Durbin 2010)</span>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>This is typically caused by the presence of insertion/deletion (INDEL) variants; see DePristo et al <span class="citation">(DePristo et al. 2011)</span>.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

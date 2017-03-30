@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>read - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.rdd.read</title>
+          <meta name="description" content="read - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.rdd.read" />
+          <meta name="keywords" content="read ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.rdd.read" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.bdgenomics.adam.rdd.read.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../../package.html" class="extype" name="org.bdgenomics.adam">adam</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam.rdd">rdd</a></p>
+        <h1>read</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.read.ADAMBAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMBAMOutputFormat[K]extendsKeyIgnoringBAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMBAMOutputFormat[K]:ADAMBAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMBAMOutputFormat.html"><span class="name">ADAMBAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringBAMOutputFormat">KeyIgnoringBAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMBAMOutputFormat.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.ADAMBAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMBAMOutputFormatHeaderLess[K]extendsKeyIgnoringBAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMBAMOutputFormatHeaderLess[K]:ADAMBAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMBAMOutputFormatHeaderLess.html"><span class="name">ADAMBAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringBAMOutputFormat">KeyIgnoringBAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMBAMOutputFormatHeaderLess.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.ADAMCRAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMCRAMOutputFormat[K]extendsKeyIgnoringCRAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMCRAMOutputFormat[K]:ADAMCRAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMCRAMOutputFormat.html"><span class="name">ADAMCRAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringCRAMOutputFormat">KeyIgnoringCRAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMCRAMOutputFormat.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.ADAMCRAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMCRAMOutputFormatHeaderLess[K]extendsKeyIgnoringCRAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMCRAMOutputFormatHeaderLess[K]:ADAMCRAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMCRAMOutputFormatHeaderLess.html"><span class="name">ADAMCRAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringCRAMOutputFormat">KeyIgnoringCRAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMCRAMOutputFormatHeaderLess.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.ADAMSAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMSAMOutputFormat[K]extendsKeyIgnoringAnySAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMSAMOutputFormat[K]:ADAMSAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMSAMOutputFormat.html"><span class="name">ADAMSAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringAnySAMOutputFormat">KeyIgnoringAnySAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMSAMOutputFormat.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.ADAMSAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMSAMOutputFormatHeaderLess[K]extendsKeyIgnoringAnySAMOutputFormat[K]withSerializable"></a>
+      <a id="ADAMSAMOutputFormatHeaderLess[K]:ADAMSAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMSAMOutputFormatHeaderLess.html"><span class="name">ADAMSAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringAnySAMOutputFormat">KeyIgnoringAnySAMOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ADAMSAMOutputFormatHeaderLess.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AlignmentRecordRDDextendsAvroReadGroupGenomicRDD[org.bdgenomics.formats.avro.AlignmentRecord,org.bdgenomics.adam.rdd.read.AlignmentRecordRDD]withProductwithSerializable"></a>
+      <a id="AlignmentRecordRDD:AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AlignmentRecordRDD.html"><span class="name">AlignmentRecordRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="recordGroups">recordGroups: <a href="../../models/RecordGroupDictionary.html" class="extype" name="org.bdgenomics.adam.models.RecordGroupDictionary">RecordGroupDictionary</a></span>)</span><span class="result"> extends <a href="../AvroReadGroupGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD">AvroReadGroupGenomicRDD</a>[<span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span>, <a href="AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnySAMInFormatter[T&lt;:org.bdgenomics.adam.rdd.read.AnySAMInFormatter[T]]extendsInFormatter[org.bdgenomics.formats.avro.AlignmentRecord,org.bdgenomics.adam.rdd.read.AlignmentRecordRDD,T]"></a>
+      <a id="AnySAMInFormatter[T&lt;:AnySAMInFormatter[T]]:AnySAMInFormatter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AnySAMInFormatter.html"><span class="name">AnySAMInFormatter</span></a><span class="tparams">[<span name="T">T &lt;: <a href="AnySAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter">AnySAMInFormatter</a>[<span class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter.T">T</span>]</span>]</span><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span>, <a href="AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a>, <span class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter.T">T</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait that writes reads using an Htsjdk SAMFileWriter.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.AnySAMInFormatterCompanion" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnySAMInFormatterCompanion[T&lt;:org.bdgenomics.adam.rdd.read.AnySAMInFormatter[T]]extendsInFormatterCompanion[org.bdgenomics.formats.avro.AlignmentRecord,org.bdgenomics.adam.rdd.read.AlignmentRecordRDD,T]"></a>
+      <a id="AnySAMInFormatterCompanion[T&lt;:AnySAMInFormatter[T]]:AnySAMInFormatterCompanion[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AnySAMInFormatterCompanion.html"><span class="name">AnySAMInFormatterCompanion</span></a><span class="tparams">[<span name="T">T &lt;: <a href="AnySAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter">AnySAMInFormatter</a>[<span class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatterCompanion.T">T</span>]</span>]</span><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span>, <a href="AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a>, <span class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatterCompanion.T">T</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object that builds an InFormatter that writes data where the metadata
+is contained in a SAMFileHeaderWritable.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.AnySAMOutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AnySAMOutFormatterextendsOutFormatter[org.bdgenomics.formats.avro.AlignmentRecord]"></a>
+      <a id="AnySAMOutFormatter:AnySAMOutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AnySAMOutFormatter.html"><span class="name">AnySAMOutFormatter</span></a><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">An OutFormatter that automatically infers whether the piped input is SAM or
+BAM.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.BAMInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BAMInFormatterextendsAnySAMInFormatter[org.bdgenomics.adam.rdd.read.BAMInFormatter]withProductwithSerializable"></a>
+      <a id="BAMInFormatter:BAMInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BAMInFormatter.html"><span class="name">BAMInFormatter</span></a><span class="result"> extends <a href="AnySAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter">AnySAMInFormatter</a>[<a href="BAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.BAMInFormatter">BAMInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.IncorrectMDTagException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IncorrectMDTagExceptionextendsExceptionwithProductwithSerializable"></a>
+      <a id="IncorrectMDTagException:IncorrectMDTagException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="IncorrectMDTagException.html"><span class="name">IncorrectMDTagException</span></a><span class="params">(<span name="read">read: <span class="extype" name="org.bdgenomics.formats.avro.AlignmentRecord">AlignmentRecord</span></span>, <span name="mdTag">mdTag: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A class describing an exception where a read's MD tag was recomputed and did
+not match the MD tag originally attached to the read.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMBAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMBAMOutputFormat[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMBAMOutputFormat[K]:InstrumentedADAMBAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMBAMOutputFormat.html"><span class="name">InstrumentedADAMBAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMBAMOutputFormat.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper that adds instrumentation to the BAM output format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMBAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMBAMOutputFormatHeaderLess[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMBAMOutputFormatHeaderLess[K]:InstrumentedADAMBAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMBAMOutputFormatHeaderLess.html"><span class="name">InstrumentedADAMBAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMBAMOutputFormatHeaderLess.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper that adds instrumentation to the SAM output format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMCRAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMCRAMOutputFormat[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMCRAMOutputFormat[K]:InstrumentedADAMCRAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMCRAMOutputFormat.html"><span class="name">InstrumentedADAMCRAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMCRAMOutputFormat.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper that adds instrumentation to the CRAM output format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMCRAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMCRAMOutputFormatHeaderLess[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMCRAMOutputFormatHeaderLess[K]:InstrumentedADAMCRAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMCRAMOutputFormatHeaderLess.html"><span class="name">InstrumentedADAMCRAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMCRAMOutputFormatHeaderLess.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper that adds instrumentation to the CRAM output format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMSAMOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMSAMOutputFormat[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMSAMOutputFormat[K]:InstrumentedADAMSAMOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMSAMOutputFormat.html"><span class="name">InstrumentedADAMSAMOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMSAMOutputFormat.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.InstrumentedADAMSAMOutputFormatHeaderLess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstrumentedADAMSAMOutputFormatHeaderLess[K]extendsInstrumentedOutputFormat[K,org.seqdoop.hadoop_bam.SAMRecordWritable]"></a>
+      <a id="InstrumentedADAMSAMOutputFormatHeaderLess[K]:InstrumentedADAMSAMOutputFormatHeaderLess[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InstrumentedADAMSAMOutputFormatHeaderLess.html"><span class="name">InstrumentedADAMSAMOutputFormatHeaderLess</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.InstrumentedOutputFormat">InstrumentedOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.InstrumentedADAMSAMOutputFormatHeaderLess.K">K</span>, <span class="extype" name="org.seqdoop.hadoop_bam.SAMRecordWritable">SAMRecordWritable</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.ReferencePositionPairSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferencePositionPairSerializerextendsSerializer[org.bdgenomics.adam.rdd.read.ReferencePositionPair]"></a>
+      <a id="ReferencePositionPairSerializer:ReferencePositionPairSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferencePositionPairSerializer.html"><span class="name">ReferencePositionPairSerializer</span></a><span class="result"> extends <span class="extype" name="com.esotericsoftware.kryo.Serializer">Serializer</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.ReferencePositionPair">ReferencePositionPair</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.SAMInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SAMInFormatterextendsAnySAMInFormatter[org.bdgenomics.adam.rdd.read.SAMInFormatter]withProductwithSerializable"></a>
+      <a id="SAMInFormatter:SAMInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SAMInFormatter.html"><span class="name">SAMInFormatter</span></a><span class="result"> extends <a href="AnySAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatter">AnySAMInFormatter</a>[<a href="SAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.SAMInFormatter">SAMInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.SingleReadBucketSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SingleReadBucketSerializerextendsSerializer[org.bdgenomics.adam.rdd.read.SingleReadBucket]"></a>
+      <a id="SingleReadBucketSerializer:SingleReadBucketSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SingleReadBucketSerializer.html"><span class="name">SingleReadBucketSerializer</span></a><span class="result"> extends <span class="extype" name="com.esotericsoftware.kryo.Serializer">Serializer</span>[<span class="extype" name="org.bdgenomics.adam.rdd.read.SingleReadBucket">SingleReadBucket</span>]</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AlignmentRecordRDD"></a>
+      <a id="AlignmentRecordRDD:AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AlignmentRecordRDD$.html"><span class="name">AlignmentRecordRDD</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read.BAMInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BAMInFormatter"></a>
+      <a id="BAMInFormatter:BAMInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BAMInFormatter$.html"><span class="name">BAMInFormatter</span></a><span class="result"> extends <a href="AnySAMInFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatterCompanion">AnySAMInFormatterCompanion</a>[<a href="BAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.BAMInFormatter">BAMInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion for building an InFormatter that streams BAM.</p>
+    </li><li name="org.bdgenomics.adam.rdd.read.SAMInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SAMInFormatter"></a>
+      <a id="SAMInFormatter:SAMInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SAMInFormatter$.html"><span class="name">SAMInFormatter</span></a><span class="result"> extends <a href="AnySAMInFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.read.AnySAMInFormatterCompanion">AnySAMInFormatterCompanion</a>[<a href="SAMInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.read.SAMInFormatter">SAMInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion for building an InFormatter that streams SAM.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../../lib/template.js"></script>
+    </body>
+      </html>

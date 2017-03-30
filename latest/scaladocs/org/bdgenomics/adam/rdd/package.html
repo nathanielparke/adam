@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>rdd - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.rdd</title>
+          <meta name="description" content="rdd - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.rdd" />
+          <meta name="keywords" content="rdd ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.rdd" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.bdgenomics.adam.rdd.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam">adam</a></p>
+        <h1>rdd</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rdd</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.ADAMContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMContextextendsSerializablewithLogging"></a>
+      <a id="ADAMContext:ADAMContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMContext.html"><span class="name">ADAMContext</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The ADAMContext provides functions on top of a SparkContext for loading genomic data.</p>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMSaveAnyArgs" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ADAMSaveAnyArgsextendsSaveArgs"></a>
+      <a id="ADAMSaveAnyArgs:ADAMSaveAnyArgs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMSaveAnyArgs.html"><span class="name">ADAMSaveAnyArgs</span></a><span class="result"> extends <span class="extype" name="org.bdgenomics.utils.cli.SaveArgs">SaveArgs</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Argument configuration for saving any output format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.AvroGenomicRDD" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AvroGenomicRDD[T,U&lt;:org.bdgenomics.adam.rdd.AvroGenomicRDD[T,U]]extendsADAMRDDFunctions[T]withGenomicRDD[T,U]"></a>
+      <a id="AvroGenomicRDD[T,U&lt;:AvroGenomicRDD[T,U]]:AvroGenomicRDD[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AvroGenomicRDD.html"><span class="name">AvroGenomicRDD</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="AvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD">AvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD.U">U</span>]</span>]</span><span class="result"> extends <span class="extype" name="org.bdgenomics.adam.rdd.ADAMRDDFunctions">ADAMRDDFunctions</span>[<span class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD.T">T</span>] with <a href="GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD.U">U</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">An abstract class that extends GenomicRDD and where the underlying data is
+Avro IndexedRecords.</p>
+    </li><li name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AvroReadGroupGenomicRDD[T,U&lt;:org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD[T,U]]extendsAvroGenomicRDD[T,U]"></a>
+      <a id="AvroReadGroupGenomicRDD[T,U&lt;:AvroReadGroupGenomicRDD[T,U]]:AvroReadGroupGenomicRDD[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AvroReadGroupGenomicRDD.html"><span class="name">AvroReadGroupGenomicRDD</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="AvroReadGroupGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD">AvroReadGroupGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD.U">U</span>]</span>]</span><span class="result"> extends <a href="AvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD">AvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.AvroReadGroupGenomicRDD.U">U</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">An abstract class describing a GenomicRDD where:</p>
+    </li><li name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FullOuterShuffleRegionJoin[T,U]extendsShuffleRegionJoin[T,U,Option[T],Option[U]]withProductwithSerializable"></a>
+      <a id="FullOuterShuffleRegionJoin[T,U]:FullOuterShuffleRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FullOuterShuffleRegionJoin.html"><span class="name">FullOuterShuffleRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$9">evidence$9: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.T">T</span>]</span>, <span name="evidence$10">evidence$10: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.U">U</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.T">T</span>], <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.FullOuterShuffleRegionJoin.U">U</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement a full outer join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomeBins" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenomeBinsextendsSerializablewithProduct"></a>
+      <a id="GenomeBins:GenomeBins"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomeBins.html"><span class="name">GenomeBins</span></a><span class="params">(<span name="binSize">binSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="seqLengths">seqLengths: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Partition a genome into a set of bins.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomicPositionPartitioner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenomicPositionPartitionerextendsPartitionerwithLoggingwithProductwithSerializable"></a>
+      <a id="GenomicPositionPartitioner:GenomicPositionPartitioner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomicPositionPartitioner.html"><span class="name">GenomicPositionPartitioner</span></a><span class="params">(<span name="numParts">numParts: <span class="extype" name="scala.Int">Int</span></span>, <span name="seqLengths">seqLengths: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.Partitioner">Partitioner</span> with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">GenomicPositionPartitioner partitions ReferencePosition objects into separate, spatially-coherent
+regions of the genome.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomicRDD" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenomicRDD[T,U&lt;:org.bdgenomics.adam.rdd.GenomicRDD[T,U]]extendsAnyRef"></a>
+      <a id="GenomicRDD[T,U&lt;:GenomicRDD[T,U]]:GenomicRDD[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomicRDD.html"><span class="name">GenomicRDD</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD.U">U</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait that wraps an RDD of genomic data with helpful metadata.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomicRegionPartitioner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenomicRegionPartitionerextendsPartitionerwithLoggingwithProductwithSerializable"></a>
+      <a id="GenomicRegionPartitioner:GenomicRegionPartitioner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomicRegionPartitioner.html"><span class="name">GenomicRegionPartitioner</span></a><span class="params">(<span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="seqLengths">seqLengths: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Long">Long</span>]</span>, <span name="start">start: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.Partitioner">Partitioner</span> with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A partitioner for ReferenceRegion-keyed data.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InFormatter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InFormatter[T,U&lt;:org.bdgenomics.adam.rdd.GenomicRDD[T,U],V&lt;:org.bdgenomics.adam.rdd.InFormatter[T,U,V]]extendsSerializable"></a>
+      <a id="InFormatter[T,U&lt;:GenomicRDD[T,U],V&lt;:InFormatter[T,U,V]]:InFormatter[T,U,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="InFormatter.html"><span class="name">InFormatter</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InFormatter.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatter.U">U</span>]</span>, <span name="V">V &lt;: <a href="InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InFormatter.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatter.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatter.V">V</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Formats data going into a pipe to an invoked process.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InFormatterCompanion" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InFormatterCompanion[T,U&lt;:org.bdgenomics.adam.rdd.GenomicRDD[T,U],V&lt;:org.bdgenomics.adam.rdd.InFormatter[T,U,V]]extendsAnyRef"></a>
+      <a id="InFormatterCompanion[T,U&lt;:GenomicRDD[T,U],V&lt;:InFormatter[T,U,V]]:InFormatterCompanion[T,U,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="InFormatterCompanion.html"><span class="name">InFormatterCompanion</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion.U">U</span>]</span>, <span name="V">V &lt;: <a href="InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion.V">V</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait for singleton objects that build an InFormatter from a GenomicRDD.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InnerShuffleRegionJoin[T,U]extendsShuffleRegionJoin[T,U,T,U]withProductwithSerializable"></a>
+      <a id="InnerShuffleRegionJoin[T,U]:InnerShuffleRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InnerShuffleRegionJoin.html"><span class="name">InnerShuffleRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$3">evidence$3: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.T">T</span>]</span>, <span name="evidence$4">evidence$4: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoin.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement an inner join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InnerShuffleRegionJoinAndGroupByLeft[T,U]extendsShuffleRegionJoin[T,U,T,Iterable[U]]withProductwithSerializable"></a>
+      <a id="InnerShuffleRegionJoinAndGroupByLeft[T,U]:InnerShuffleRegionJoinAndGroupByLeft[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InnerShuffleRegionJoinAndGroupByLeft.html"><span class="name">InnerShuffleRegionJoinAndGroupByLeft</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$11">evidence$11: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.T">T</span>]</span>, <span name="evidence$12">evidence$12: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.T">T</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerShuffleRegionJoinAndGroupByLeft.U">U</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement an inner join followed by
+grouping by the left value.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InnerTreeRegionJoin[T,U]extendsRegionJoin[T,U,T,U]withTreeRegionJoin[T,U]withProductwithSerializable"></a>
+      <a id="InnerTreeRegionJoin[T,U]:InnerTreeRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InnerTreeRegionJoin.html"><span class="name">InnerTreeRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$1">evidence$1: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.T">T</span>]</span>, <span name="evidence$2">evidence$2: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="RegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.RegionJoin">RegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.U">U</span>] with <a href="TreeRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.TreeRegionJoin">TreeRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoin.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implements an inner region join where the left side of the join is broadcast.</p>
+    </li><li name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InnerTreeRegionJoinAndGroupByRight[T,U]extendsRegionJoin[T,U,Iterable[T],U]withTreeRegionJoin[T,U]withProductwithSerializable"></a>
+      <a id="InnerTreeRegionJoinAndGroupByRight[T,U]:InnerTreeRegionJoinAndGroupByRight[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InnerTreeRegionJoinAndGroupByRight.html"><span class="name">InnerTreeRegionJoinAndGroupByRight</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$5">evidence$5: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.T">T</span>]</span>, <span name="evidence$6">evidence$6: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.U">U</span>]</span>)</span><span class="result"> extends <a href="RegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.RegionJoin">RegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.U">U</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.T">T</span>], <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.U">U</span>] with <a href="TreeRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.TreeRegionJoin">TreeRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.InnerTreeRegionJoinAndGroupByRight.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Performs an inner region join, followed logically by grouping by the right
+value.</p>
+    </li><li name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LeftOuterShuffleRegionJoin[T,U]extendsShuffleRegionJoin[T,U,T,Option[U]]withProductwithSerializable"></a>
+      <a id="LeftOuterShuffleRegionJoin[T,U]:LeftOuterShuffleRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LeftOuterShuffleRegionJoin.html"><span class="name">LeftOuterShuffleRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$5">evidence$5: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.T">T</span>]</span>, <span name="evidence$6">evidence$6: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.T">T</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.LeftOuterShuffleRegionJoin.U">U</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement a left outer join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MultisampleAvroGenomicRDD[T,U&lt;:org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD[T,U]]extendsAvroGenomicRDD[T,U]withMultisampleGenomicRDD[T,U]"></a>
+      <a id="MultisampleAvroGenomicRDD[T,U&lt;:MultisampleAvroGenomicRDD[T,U]]:MultisampleAvroGenomicRDD[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MultisampleAvroGenomicRDD.html"><span class="name">MultisampleAvroGenomicRDD</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="MultisampleAvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD">MultisampleAvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.U">U</span>]</span>]</span><span class="result"> extends <a href="AvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD">AvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.U">U</span>] with <a href="MultisampleGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD">MultisampleGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD.U">U</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">An abstract class that extends the MultisampleGenomicRDD trait, where the data
+are Avro IndexedRecords.</p>
+    </li><li name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MultisampleGenomicRDD[T,U&lt;:org.bdgenomics.adam.rdd.MultisampleGenomicRDD[T,U]]extendsGenomicRDD[T,U]"></a>
+      <a id="MultisampleGenomicRDD[T,U&lt;:MultisampleGenomicRDD[T,U]]:MultisampleGenomicRDD[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MultisampleGenomicRDD.html"><span class="name">MultisampleGenomicRDD</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U &lt;: <a href="MultisampleGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD">MultisampleGenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD.U">U</span>]</span>]</span><span class="result"> extends <a href="GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<span class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD.U">U</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait describing a GenomicRDD with data from multiple samples.</p>
+    </li><li name="org.bdgenomics.adam.rdd.OutFormatter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OutFormatter[T]extendsSerializable"></a>
+      <a id="OutFormatter[T]:OutFormatter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OutFormatter.html"><span class="name">OutFormatter</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Deserializes data coming out of a pipe from an invoked process.</p>
+    </li><li name="org.bdgenomics.adam.rdd.ReferencePartitioner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferencePartitionerextendsPartitionerwithProductwithSerializable"></a>
+      <a id="ReferencePartitioner:ReferencePartitioner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferencePartitioner.html"><span class="name">ReferencePartitioner</span></a><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.Partitioner">Partitioner</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Repartitions objects that are keyed by a ReferencePosition or ReferenceRegion
+into a single partition per contig.</p>
+    </li><li name="org.bdgenomics.adam.rdd.RegionJoin" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RegionJoin[T,U,RT,RU]extendsSerializable"></a>
+      <a id="RegionJoin[T,U,RT,RU]:RegionJoin[T,U,RT,RU]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RegionJoin.html"><span class="name">RegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>, <span name="RT">RT</span>, <span name="RU">RU</span>]</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait describing a join in the genomic coordinate space between two RDDs
+where the values are keyed by a ReferenceRegion.</p>
+    </li><li name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RightOuterShuffleRegionJoin[T,U]extendsShuffleRegionJoin[T,U,Option[T],U]withProductwithSerializable"></a>
+      <a id="RightOuterShuffleRegionJoin[T,U]:RightOuterShuffleRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightOuterShuffleRegionJoin.html"><span class="name">RightOuterShuffleRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$7">evidence$7: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.T">T</span>]</span>, <span name="evidence$8">evidence$8: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.U">U</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.T">T</span>], <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoin.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement a right outer join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RightOuterShuffleRegionJoinAndGroupByLeft[T,U]extendsShuffleRegionJoin[T,U,Option[T],Iterable[U]]withProductwithSerializable"></a>
+      <a id="RightOuterShuffleRegionJoinAndGroupByLeft[T,U]:RightOuterShuffleRegionJoinAndGroupByLeft[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightOuterShuffleRegionJoinAndGroupByLeft.html"><span class="name">RightOuterShuffleRegionJoinAndGroupByLeft</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="sd">sd: <a href="../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="partitionSize">partitionSize: <span class="extype" name="scala.Long">Long</span></span>, <span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$13">evidence$13: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.T">T</span>]</span>, <span name="evidence$14">evidence$14: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.U">U</span>]</span>)</span><span class="result"> extends <a href="ShuffleRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin">ShuffleRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.U">U</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.T">T</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterShuffleRegionJoinAndGroupByLeft.U">U</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends the ShuffleRegionJoin trait to implement a right outer join followed by
+grouping by all non-null left values.</p>
+    </li><li name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RightOuterTreeRegionJoin[T,U]extendsRegionJoin[T,U,Option[T],U]withTreeRegionJoin[T,U]withProductwithSerializable"></a>
+      <a id="RightOuterTreeRegionJoin[T,U]:RightOuterTreeRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightOuterTreeRegionJoin.html"><span class="name">RightOuterTreeRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$3">evidence$3: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.T">T</span>]</span>, <span name="evidence$4">evidence$4: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.U">U</span>]</span>)</span><span class="result"> extends <a href="RegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.RegionJoin">RegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.U">U</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.T">T</span>], <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.U">U</span>] with <a href="TreeRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.TreeRegionJoin">TreeRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoin.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implements a right outer region join where the left side of the join is
+broadcast.</p>
+    </li><li name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RightOuterTreeRegionJoinAndGroupByRight[T,U]extendsRegionJoin[T,U,Iterable[T],U]withTreeRegionJoin[T,U]withProductwithSerializable"></a>
+      <a id="RightOuterTreeRegionJoinAndGroupByRight[T,U]:RightOuterTreeRegionJoinAndGroupByRight[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightOuterTreeRegionJoinAndGroupByRight.html"><span class="name">RightOuterTreeRegionJoinAndGroupByRight</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$7">evidence$7: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.T">T</span>]</span>, <span name="evidence$8">evidence$8: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.U">U</span>]</span>)</span><span class="result"> extends <a href="RegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.RegionJoin">RegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.U">U</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.T">T</span>], <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.U">U</span>] with <a href="TreeRegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.TreeRegionJoin">TreeRegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.RightOuterTreeRegionJoinAndGroupByRight.U">U</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Performs a right outer region join, followed logically by grouping by the right
+value.</p>
+    </li><li name="org.bdgenomics.adam.rdd.ShuffleRegionJoin" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ShuffleRegionJoin[T,U,RT,RU]extendsRegionJoin[T,U,RT,RU]"></a>
+      <a id="ShuffleRegionJoin[T,U,RT,RU]:ShuffleRegionJoin[T,U,RT,RU]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ShuffleRegionJoin.html"><span class="name">ShuffleRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>, <span name="RT">RT</span>, <span name="RU">RU</span>]</span><span class="result"> extends <a href="RegionJoin.html" class="extype" name="org.bdgenomics.adam.rdd.RegionJoin">RegionJoin</a>[<span class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin.T">T</span>, <span class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin.U">U</span>, <span class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin.RT">RT</span>, <span class="extype" name="org.bdgenomics.adam.rdd.ShuffleRegionJoin.RU">RU</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait describing join implementations that are based on a sort-merge join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.TreeRegionJoin" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TreeRegionJoin[T,U]extendsAnyRef"></a>
+      <a id="TreeRegionJoin[T,U]:TreeRegionJoin[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TreeRegionJoin.html"><span class="name">TreeRegionJoin</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implements a shuffle free (broadcast) region join.</p>
+    </li><li name="org.bdgenomics.adam.rdd.Unaligned" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UnalignedextendsAnyRef"></a>
+      <a id="Unaligned:Unaligned"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Unaligned.html"><span class="name">Unaligned</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A trait for genomic data that is not aligned to a reference (e.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.ADAMContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMContext"></a>
+      <a id="ADAMContext:ADAMContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMContext$.html"><span class="name">ADAMContext</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This singleton provides an implicit conversion from a SparkContext to the
+ADAMContext, as well as implicit functions for the Pipe API.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomicPositionPartitioner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenomicPositionPartitioner"></a>
+      <a id="GenomicPositionPartitioner:GenomicPositionPartitioner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomicPositionPartitioner$.html"><span class="name">GenomicPositionPartitioner</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper for creating genomic position partitioners.</p>
+    </li><li name="org.bdgenomics.adam.rdd.GenomicRegionPartitioner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenomicRegionPartitioner"></a>
+      <a id="GenomicRegionPartitioner:GenomicRegionPartitioner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GenomicRegionPartitioner$.html"><span class="name">GenomicRegionPartitioner</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper object for creating GenomicRegionPartitioners.</p>
+    </li><li name="org.bdgenomics.adam.rdd.contig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="contig"></a>
+      <a id="contig:contig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="contig/package.html"><span class="name">contig</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="feature"></a>
+      <a id="feature:feature"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="feature/package.html"><span class="name">feature</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.fragment" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fragment"></a>
+      <a id="fragment:fragment"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="fragment/package.html"><span class="name">fragment</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.read" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="read"></a>
+      <a id="read:read"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="read/package.html"><span class="name">read</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.variant" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="variant"></a>
+      <a id="variant:variant"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="variant/package.html"><span class="name">variant</span></a>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

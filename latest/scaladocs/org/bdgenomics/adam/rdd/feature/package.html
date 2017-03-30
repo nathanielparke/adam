@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>feature - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.rdd.feature</title>
+          <meta name="description" content="feature - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.rdd.feature" />
+          <meta name="keywords" content="feature ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.rdd.feature" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.bdgenomics.adam.rdd.feature.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../../package.html" class="extype" name="org.bdgenomics.adam">adam</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam.rdd">rdd</a></p>
+        <h1>feature</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">feature</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.feature.BEDInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BEDInFormatterextendsInFormatter[org.bdgenomics.formats.avro.Feature,org.bdgenomics.adam.rdd.feature.FeatureRDD,org.bdgenomics.adam.rdd.feature.BEDInFormatter]withProductwithSerializable"></a>
+      <a id="BEDInFormatter:BEDInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BEDInFormatter.html"><span class="name">BEDInFormatter</span></a><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="BEDInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.BEDInFormatter">BEDInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature.BEDOutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BEDOutFormatterextendsOutFormatter[org.bdgenomics.formats.avro.Feature]withProductwithSerializable"></a>
+      <a id="BEDOutFormatter:BEDOutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BEDOutFormatter.html"><span class="name">BEDOutFormatter</span></a><span class="params">()</span><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">OutFormatter that reads streaming BED format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.CoverageRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoverageRDDextendsGenomicRDD[org.bdgenomics.adam.models.Coverage,org.bdgenomics.adam.rdd.feature.CoverageRDD]withProductwithSerializable"></a>
+      <a id="CoverageRDD:CoverageRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CoverageRDD.html"><span class="name">CoverageRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<a href="../../models/Coverage.html" class="extype" name="org.bdgenomics.adam.models.Coverage">Coverage</a>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>)</span><span class="result"> extends <a href="../GenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.GenomicRDD">GenomicRDD</a>[<a href="../../models/Coverage.html" class="extype" name="org.bdgenomics.adam.models.Coverage">Coverage</a>, <a href="CoverageRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.CoverageRDD">CoverageRDD</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An RDD containing Coverage data.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.FeatureRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FeatureRDDextendsAvroGenomicRDD[org.bdgenomics.formats.avro.Feature,org.bdgenomics.adam.rdd.feature.FeatureRDD]withLoggingwithProductwithSerializable"></a>
+      <a id="FeatureRDD:FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FeatureRDD.html"><span class="name">FeatureRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>)</span><span class="result"> extends <a href="../AvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD">AvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>] with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A GenomicRDD that wraps Feature data.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.GFF3InFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GFF3InFormatterextendsInFormatter[org.bdgenomics.formats.avro.Feature,org.bdgenomics.adam.rdd.feature.FeatureRDD,org.bdgenomics.adam.rdd.feature.GFF3InFormatter]withProductwithSerializable"></a>
+      <a id="GFF3InFormatter:GFF3InFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GFF3InFormatter.html"><span class="name">GFF3InFormatter</span></a><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="GFF3InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.GFF3InFormatter">GFF3InFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature.GFF3OutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GFF3OutFormatterextendsOutFormatter[org.bdgenomics.formats.avro.Feature]withProductwithSerializable"></a>
+      <a id="GFF3OutFormatter:GFF3OutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GFF3OutFormatter.html"><span class="name">GFF3OutFormatter</span></a><span class="params">()</span><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">OutFormatter that reads streaming GFF3 format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.GTFInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GTFInFormatterextendsInFormatter[org.bdgenomics.formats.avro.Feature,org.bdgenomics.adam.rdd.feature.FeatureRDD,org.bdgenomics.adam.rdd.feature.GTFInFormatter]withProductwithSerializable"></a>
+      <a id="GTFInFormatter:GTFInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GTFInFormatter.html"><span class="name">GTFInFormatter</span></a><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="GTFInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.GTFInFormatter">GTFInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature.GTFOutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GTFOutFormatterextendsOutFormatter[org.bdgenomics.formats.avro.Feature]withProductwithSerializable"></a>
+      <a id="GTFOutFormatter:GTFOutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GTFOutFormatter.html"><span class="name">GTFOutFormatter</span></a><span class="params">()</span><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">OutFormatter that reads streaming GTF format.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.NarrowPeakInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NarrowPeakInFormatterextendsInFormatter[org.bdgenomics.formats.avro.Feature,org.bdgenomics.adam.rdd.feature.FeatureRDD,org.bdgenomics.adam.rdd.feature.NarrowPeakInFormatter]withProductwithSerializable"></a>
+      <a id="NarrowPeakInFormatter:NarrowPeakInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NarrowPeakInFormatter.html"><span class="name">NarrowPeakInFormatter</span></a><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="NarrowPeakInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.NarrowPeakInFormatter">NarrowPeakInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature.NarrowPeakOutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NarrowPeakOutFormatterextendsOutFormatter[org.bdgenomics.formats.avro.Feature]withProductwithSerializable"></a>
+      <a id="NarrowPeakOutFormatter:NarrowPeakOutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NarrowPeakOutFormatter.html"><span class="name">NarrowPeakOutFormatter</span></a><span class="params">()</span><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">OutFormatter that reads streaming NarrowPeak format.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.feature.BEDInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BEDInFormatter"></a>
+      <a id="BEDInFormatter:BEDInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BEDInFormatter$.html"><span class="name">BEDInFormatter</span></a><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="BEDInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.BEDInFormatter">BEDInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion that builds a BEDInFormatter to write features in BED format to a pipe.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.FeatureRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FeatureRDD"></a>
+      <a id="FeatureRDD:FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FeatureRDD$.html"><span class="name">FeatureRDD</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.feature.GFF3InFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GFF3InFormatter"></a>
+      <a id="GFF3InFormatter:GFF3InFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GFF3InFormatter$.html"><span class="name">GFF3InFormatter</span></a><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="GFF3InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.GFF3InFormatter">GFF3InFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion that builds a GFF3InFormatter to write features in GFF3 format to a pipe.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.GTFInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GTFInFormatter"></a>
+      <a id="GTFInFormatter:GTFInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GTFInFormatter$.html"><span class="name">GTFInFormatter</span></a><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="GTFInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.GTFInFormatter">GTFInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion that builds a GTFInFormatter to write features in GTF format to a pipe.</p>
+    </li><li name="org.bdgenomics.adam.rdd.feature.NarrowPeakInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NarrowPeakInFormatter"></a>
+      <a id="NarrowPeakInFormatter:NarrowPeakInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NarrowPeakInFormatter$.html"><span class="name">NarrowPeakInFormatter</span></a><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<span class="extype" name="org.bdgenomics.formats.avro.Feature">Feature</span>, <a href="FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a>, <a href="NarrowPeakInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.feature.NarrowPeakInFormatter">NarrowPeakInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion that builds a NarrowPeakInFormatter to write features in NarrowPeak format to a pipe.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../../lib/template.js"></script>
+    </body>
+      </html>

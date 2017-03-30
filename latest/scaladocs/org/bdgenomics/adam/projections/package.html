@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>projections - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.projections</title>
+          <meta name="description" content="projections - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.projections" />
+          <meta name="keywords" content="projections ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.projections" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.bdgenomics.adam.projections.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam">adam</a></p>
+        <h1>projections</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">projections</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.projections.FieldEnumeration" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FieldEnumerationextendsEnumeration"></a>
+      <a id="FieldEnumeration:FieldEnumeration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldEnumeration.html"><span class="name">FieldEnumeration</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Abstract class that all record-specific enumerations extend.</p>
+    </li><li name="org.bdgenomics.adam.projections.FieldValue" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FieldValueextendsAnyRef"></a>
+      <a id="FieldValue:FieldValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldValue.html"><span class="name">FieldValue</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The FieldValue trait (and its sister abstract class, FieldEnumeration) are meant to help
+clean up the use of Projection when dealing with field enumeration classes like
+ADAMRecordField.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.projections.AlignmentRecordField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AlignmentRecordField"></a>
+      <a id="AlignmentRecordField:AlignmentRecordField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AlignmentRecordField$.html"><span class="name">AlignmentRecordField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of AlignmentRecord field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.ContigField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ContigField"></a>
+      <a id="ContigField:ContigField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ContigField$.html"><span class="name">ContigField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Contig field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.DbxrefField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DbxrefField"></a>
+      <a id="DbxrefField:DbxrefField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DbxrefField$.html"><span class="name">DbxrefField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Dbxref field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.FeatureField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FeatureField"></a>
+      <a id="FeatureField:FeatureField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FeatureField$.html"><span class="name">FeatureField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Feature field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.Filter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Filter"></a>
+      <a id="Filter:Filter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Filter$.html"><span class="name">Filter</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper object to create a projection that excludes fields from a schema.</p>
+    </li><li name="org.bdgenomics.adam.projections.FragmentField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FragmentField"></a>
+      <a id="FragmentField:FragmentField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FragmentField$.html"><span class="name">FragmentField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Fragment field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.GenotypeField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenotypeField"></a>
+      <a id="GenotypeField:GenotypeField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GenotypeField$.html"><span class="name">GenotypeField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Genotype field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.NucleotideContigFragmentField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NucleotideContigFragmentField"></a>
+      <a id="NucleotideContigFragmentField:NucleotideContigFragmentField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NucleotideContigFragmentField$.html"><span class="name">NucleotideContigFragmentField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of NucleotideContigFragment field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.OntologyTermField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OntologyTermField"></a>
+      <a id="OntologyTermField:OntologyTermField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OntologyTermField$.html"><span class="name">OntologyTermField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of OntologyTerm field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.Projection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Projection"></a>
+      <a id="Projection:Projection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Projection$.html"><span class="name">Projection</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Avro utility object to create a projection of a Schema.</p>
+    </li><li name="org.bdgenomics.adam.projections.ReadField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadField"></a>
+      <a id="ReadField:ReadField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadField$.html"><span class="name">ReadField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Read field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.RecordGroupMetadataField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RecordGroupMetadataField"></a>
+      <a id="RecordGroupMetadataField:RecordGroupMetadataField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RecordGroupMetadataField$.html"><span class="name">RecordGroupMetadataField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of RecordGroupMetadata field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.SampleField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SampleField"></a>
+      <a id="SampleField:SampleField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SampleField$.html"><span class="name">SampleField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Sample field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.SequenceField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SequenceField"></a>
+      <a id="SequenceField:SequenceField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SequenceField$.html"><span class="name">SequenceField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Sequence field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.SliceField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SliceField"></a>
+      <a id="SliceField:SliceField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SliceField$.html"><span class="name">SliceField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Slice field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.TranscriptEffectField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TranscriptEffectField"></a>
+      <a id="TranscriptEffectField:TranscriptEffectField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TranscriptEffectField$.html"><span class="name">TranscriptEffectField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of TranscriptEffect field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.VariantAnnotationField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantAnnotationField"></a>
+      <a id="VariantAnnotationField:VariantAnnotationField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantAnnotationField$.html"><span class="name">VariantAnnotationField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of VariantAnnotation field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.VariantCallingAnnotationsField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantCallingAnnotationsField"></a>
+      <a id="VariantCallingAnnotationsField:VariantCallingAnnotationsField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantCallingAnnotationsField$.html"><span class="name">VariantCallingAnnotationsField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of VariantCallingAnnotations field names for predicates and projections.</p>
+    </li><li name="org.bdgenomics.adam.projections.VariantField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantField"></a>
+      <a id="VariantField:VariantField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantField$.html"><span class="name">VariantField</span></a><span class="result"> extends <a href="FieldEnumeration.html" class="extype" name="org.bdgenomics.adam.projections.FieldEnumeration">FieldEnumeration</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration of Variant field names for predicates and projections.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

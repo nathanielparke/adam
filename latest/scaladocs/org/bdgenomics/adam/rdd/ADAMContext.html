@@ -1,0 +1,1249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>ADAMContext - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.rdd.ADAMContext</title>
+          <meta name="description" content="ADAMContext - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.rdd.ADAMContext" />
+          <meta name="keywords" content="ADAMContext ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.rdd.ADAMContext" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.bdgenomics.adam.rdd.ADAMContext';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="ADAMContext$.html" title="Go to companion"><img src="../../../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam">adam</a>.<a href="package.html" class="extype" name="org.bdgenomics.adam.rdd">rdd</a></p>
+        <h1><a href="ADAMContext$.html" title="Go to companion">ADAMContext</a></h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ADAMContext</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The ADAMContext provides functions on top of a SparkContext for loading genomic data.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.bdgenomics.adam.rdd.ADAMContext"><span>ADAMContext</span></li><li class="in" name="org.bdgenomics.utils.misc.Logging"><span>Logging</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.ADAMContext#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(sc:org.apache.spark.SparkContext):org.bdgenomics.adam.rdd.ADAMContext"></a>
+      <a id="&lt;init&gt;:ADAMContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ADAMContext</span><span class="params">(<span name="sc">sc: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>)</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">sc</dt><dd class="cmt"><p>The SparkContext to wrap.
+</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#getFiles" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getFiles(path:org.apache.hadoop.fs.Path,fs:org.apache.hadoop.fs.FileSystem):Array[org.apache.hadoop.fs.Path]"></a>
+      <a id="getFiles(Path,FileSystem):Array[Path]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFiles</span><span class="params">(<span name="path">path: <span class="extype" name="org.apache.hadoop.fs.Path">Path</span></span>, <span name="fs">fs: <span class="extype" name="org.apache.hadoop.fs.FileSystem">FileSystem</span></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="org.apache.hadoop.fs.Path">Path</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Elaborates out a directory/glob/plain path.</p><div class="fullcomment"><div class="comment cmt"><p>Elaborates out a directory/glob/plain path.
+</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>Path to elaborate.</p></dd><dt class="param">fs</dt><dd class="cmt"><p>The underlying file system that this path is on.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an array of Paths to load.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Exceptions thrown</dt><dd><span class="cmt">FileNotFoundException<p>if the path does not match any files.
+</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>getFsAndFiles
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#getFsAndFiles" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getFsAndFiles(path:org.apache.hadoop.fs.Path):Array[org.apache.hadoop.fs.Path]"></a>
+      <a id="getFsAndFiles(Path):Array[Path]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFsAndFiles</span><span class="params">(<span name="path">path: <span class="extype" name="org.apache.hadoop.fs.Path">Path</span></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="org.apache.hadoop.fs.Path">Path</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Elaborates out a directory/glob/plain path.</p><div class="fullcomment"><div class="comment cmt"><p>Elaborates out a directory/glob/plain path.
+</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>Path to elaborate.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an array of Paths to load.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Exceptions thrown</dt><dd><span class="cmt">FileNotFoundException<p>if the path does not match any files.
+</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>getFiles
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#getFsAndFilesWithFilter" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getFsAndFilesWithFilter(filename:String,filter:org.apache.hadoop.fs.PathFilter):Array[org.apache.hadoop.fs.Path]"></a>
+      <a id="getFsAndFilesWithFilter(String,PathFilter):Array[Path]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFsAndFilesWithFilter</span><span class="params">(<span name="filename">filename: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="filter">filter: <span class="extype" name="org.apache.hadoop.fs.PathFilter">PathFilter</span></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="org.apache.hadoop.fs.Path">Path</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Elaborates out a directory/glob/plain path.</p><div class="fullcomment"><div class="comment cmt"><p>Elaborates out a directory/glob/plain path.
+</p></div><dl class="paramcmts block"><dt class="param">filename</dt><dd class="cmt"><p>Path to elaborate.</p></dd><dt class="param">filter</dt><dd class="cmt"><p>Filter to discard paths.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an array of Paths to load.
+</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Exceptions thrown</dt><dd><span class="cmt">FileNotFoundException<p>if the path does not match any files.
+</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>getFiles
+</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#isTraceEnabled" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isTraceEnabled():Boolean"></a>
+      <a id="isTraceEnabled():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isTraceEnabled</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadAlignments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadAlignments(filePath:String,projection:Option[org.apache.avro.Schema],filePath2Opt:Option[String],recordGroupOpt:Option[String],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadAlignments(String,Option[Schema],Option[String],Option[String],ValidationStringency):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadAlignments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>, <span name="filePath2Opt">filePath2Opt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="recordGroupOpt">recordGroupOpt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads alignments from a given path, and infers the input type.</p><div class="fullcomment"><div class="comment cmt"><p>Loads alignments from a given path, and infers the input type.</p><p>This method can load:</p><p>* AlignmentRecords via Parquet (default)
+* SAM/BAM/CRAM (.sam, .bam, .cram)
+* FASTQ (interleaved, single end, paired end) (.ifq, .fq/.fastq)
+* FASTA (.fa, .fasta)
+* NucleotideContigFragments via Parquet (.contig.adam)</p><p>As hinted above, the input type is inferred from the file path extension.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>Path to load data from.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>The fields to project; ignored if not Parquet.</p></dd><dt class="param">filePath2Opt</dt><dd class="cmt"><p>The path to load a second end of FASTQ data from.
+ Ignored if not FASTQ.</p></dd><dt class="param">recordGroupOpt</dt><dd class="cmt"><p>Optional record group name to set if loading FASTQ.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Validation stringency used on FASTQ import/merging.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an AlignmentRecordRDD which wraps the RDD of reads,
+  sequence dictionary representing the contigs these reads are aligned to
+  if the reads are aligned, and the record group dictionary for the reads
+  if one is available.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadFasta
+</p></span><span class="cmt"><p>loadFastq</p></span><span class="cmt"><p>loadInterleavedFastq</p></span><span class="cmt"><p>loadParquetAlignments</p></span><span class="cmt"><p>loadBam</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadBam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadBam(filePath:String,validationStringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadBam(String,ValidationStringency):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadBam</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="validationStringency">validationStringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads a SAM/BAM file.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a SAM/BAM file.</p><p>This reads the sequence and record group dictionaries from the SAM/BAM file
+header. SAMRecords are read from the file and converted to the
+AlignmentRecord schema.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>Path to the file on disk.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an AlignmentRecordRDD which wraps the RDD of reads,
+  sequence dictionary representing the contigs these reads are aligned to
+  if the reads are aligned, and the record group dictionary for the reads
+  if one is available.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadAlignments
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadBed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadBed(filePath:String,optStorageLevel:Option[org.apache.spark.storage.StorageLevel],minPartitions:Option[Int],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadBed(String,Option[StorageLevel],Option[Int],ValidationStringency):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadBed</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="optStorageLevel">optStorageLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">Some(StorageLevel.MEMORY_ONLY)</a></span></span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.LENIENT</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads features stored in BED6/12 format.</p><div class="fullcomment"><div class="comment cmt"><p>Loads features stored in BED6/12 format.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">optStorageLevel</dt><dd class="cmt"><p>Optional storage level to use for cache before building the SequenceDictionary.
+  Defaults to StorageLevel.MEMORY_ONLY.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to load. If
+  not set, falls back to the configured Spark default parallelism.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Optional stringency to pass. LENIENT stringency will warn
+  when a malformed line is encountered, SILENT will ignore the malformed
+  line, STRICT will throw an exception.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadCoverage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadCoverage(filePath:String):org.bdgenomics.adam.rdd.feature.CoverageRDD"></a>
+      <a id="loadCoverage(String):CoverageRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadCoverage</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="feature/CoverageRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.CoverageRDD">CoverageRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads file of Features to a CoverageRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Loads file of Features to a CoverageRDD.
+Coverage is stored in the score attribute of Feature.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>File path to load coverage from.</p></dd><dt>returns</dt><dd class="cmt"><p>CoverageRDD containing an RDD of Coverage
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadFasta" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadFasta(filePath:String,fragmentLength:Long):org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD"></a>
+      <a id="loadFasta(String,Long):NucleotideContigFragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadFasta</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fragmentLength">fragmentLength: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="contig/NucleotideContigFragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD">NucleotideContigFragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads a FASTA file.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a FASTA file.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load from.</p></dd><dt class="param">fragmentLength</dt><dd class="cmt"><p>The length to split contigs into. This sets the
+  parallelism achievable.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a NucleotideContigFragmentRDD containing the contigs.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadFastq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadFastq(filePath1:String,filePath2Opt:Option[String],recordGroupOpt:Option[String],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadFastq(String,Option[String],Option[String],ValidationStringency):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadFastq</span><span class="params">(<span name="filePath1">filePath1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="filePath2Opt">filePath2Opt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="recordGroupOpt">recordGroupOpt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads (possibly paired) FASTQ data.</p><div class="fullcomment"><div class="comment cmt"><p>Loads (possibly paired) FASTQ data.
+</p></div><dl class="paramcmts block"><dt class="param">filePath1</dt><dd class="cmt"><p>The path where the first set of reads are.</p></dd><dt class="param">filePath2Opt</dt><dd class="cmt"><p>The path where the second set of reads are, if provided.</p></dd><dt class="param">recordGroupOpt</dt><dd class="cmt"><p>The optional record group name to associate to the
+  reads.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the reads.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the reads as an unaligned AlignmentRecordRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadUnpairedFastq
+</p></span><span class="cmt"><p>loadPairedFastq</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadFeatures" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadFeatures(filePath:String,optStorageLevel:Option[org.apache.spark.storage.StorageLevel],projection:Option[org.apache.avro.Schema],minPartitions:Option[Int]):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadFeatures(String,Option[StorageLevel],Option[Schema],Option[Int]):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadFeatures</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="optStorageLevel">optStorageLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">Some(StorageLevel.MEMORY_ONLY)</a></span></span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Features from a file, autodetecting the file type.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Features from a file, autodetecting the file type.</p><p>Loads files ending in .bed as BED6/12, .gff3 as GFF3, .gtf/.gff as
+GTF/GFF2, .narrow[pP]eak as NarrowPeak, and .interval_list as
+IntervalList. If none of these match, we fall back to Parquet.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">optStorageLevel</dt><dd class="cmt"><p>Optional storage level to use for cache before building the SequenceDictionary.
+  Defaults to StorageLevel.MEMORY_ONLY.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to push down.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to use. For
+  textual formats, if this is None, we fall back to the Spark default
+  parallelism.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadParquetFeatures
+</p></span><span class="cmt"><p>loadIntervalList</p></span><span class="cmt"><p>loadNarrowPeak</p></span><span class="cmt"><p>loadGff3</p></span><span class="cmt"><p>loadGtf</p></span><span class="cmt"><p>loadBed</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadFragments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadFragments(filePath:String):org.bdgenomics.adam.rdd.fragment.FragmentRDD"></a>
+      <a id="loadFragments(String):FragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadFragments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="fragment/FragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.fragment.FragmentRDD">FragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Auto-detects the file type and loads a FragmentRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Auto-detects the file type and loads a FragmentRDD.</p><p>This method can load:</p><p>* Fragments via Parquet (default)
+* SAM/BAM/CRAM (.sam, .bam, .cram)
+* FASTQ (interleaved only --&gt; .ifq)
+* Autodetects AlignmentRecord as Parquet with .reads.adam extension.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>Path to load data from.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the loaded data as a FragmentRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadGenotypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadGenotypes(filePath:String,projection:Option[org.apache.avro.Schema],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.variant.GenotypeRDD"></a>
+      <a id="loadGenotypes(String,Option[Schema],ValidationStringency):GenotypeRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadGenotypes</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="variant/GenotypeRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.GenotypeRDD">GenotypeRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Auto-detects the file type and loads a GenotypeRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Auto-detects the file type and loads a GenotypeRDD.</p><p>If the file has a .vcf/.vcf.gz/.vcf.bgzf/.vcf.bgz extension, loads as VCF. Else, falls back to
+Parquet.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional subset of fields to load.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the VCF.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a GenotypeRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadParquetGenotypes
+</p></span><span class="cmt"><p>loadVcf</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadGff3" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadGff3(filePath:String,optStorageLevel:Option[org.apache.spark.storage.StorageLevel],minPartitions:Option[Int],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadGff3(String,Option[StorageLevel],Option[Int],ValidationStringency):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadGff3</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="optStorageLevel">optStorageLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">Some(StorageLevel.MEMORY_ONLY)</a></span></span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.LENIENT</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads features stored in GFF3 format.</p><div class="fullcomment"><div class="comment cmt"><p>Loads features stored in GFF3 format.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">optStorageLevel</dt><dd class="cmt"><p>Optional storage level to use for cache before building the SequenceDictionary.
+  Defaults to StorageLevel.MEMORY_ONLY.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to load. If
+  not set, falls back to the configured Spark default parallelism.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Optional stringency to pass. LENIENT stringency will warn
+  when a malformed line is encountered, SILENT will ignore the malformed
+  line, STRICT will throw an exception.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadGtf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadGtf(filePath:String,optStorageLevel:Option[org.apache.spark.storage.StorageLevel],minPartitions:Option[Int],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadGtf(String,Option[StorageLevel],Option[Int],ValidationStringency):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadGtf</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="optStorageLevel">optStorageLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">Some(StorageLevel.MEMORY_ONLY)</a></span></span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.LENIENT</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads features stored in GFF2/GTF format.</p><div class="fullcomment"><div class="comment cmt"><p>Loads features stored in GFF2/GTF format.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">optStorageLevel</dt><dd class="cmt"><p>Optional storage level to use for cache before building the SequenceDictionary.
+  Defaults to StorageLevel.MEMORY_ONLY.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to load. If
+  not set, falls back to the configured Spark default parallelism.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Optional stringency to pass. LENIENT stringency will warn
+  when a malformed line is encountered, SILENT will ignore the malformed
+  line, STRICT will throw an exception.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadIndexedBam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadIndexedBam(filePath:String,viewRegions:Iterable[org.bdgenomics.adam.models.ReferenceRegion])(implicits:DummyImplicit):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadIndexedBam(String,Iterable[ReferenceRegion])(DummyImplicit):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadIndexedBam</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="viewRegions">viewRegions: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="../models/ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="s">s: <span class="extype" name="scala.Predef.DummyImplicit">DummyImplicit</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Functions like loadBam, but uses bam index files to look at fewer blocks,
+and only returns records within the specified ReferenceRegions.</p><div class="fullcomment"><div class="comment cmt"><p>Functions like loadBam, but uses bam index files to look at fewer blocks,
+and only returns records within the specified ReferenceRegions. Bam index file required.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the input data. Currently this path must correspond to
+       a single Bam file. The bam index file associated needs to have the same name.</p></dd><dt class="param">viewRegions</dt><dd class="cmt"><p>Iterable of ReferenceRegions we are filtering on
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadIndexedBam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadIndexedBam(filePath:String,viewRegion:org.bdgenomics.adam.models.ReferenceRegion):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadIndexedBam(String,ReferenceRegion):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadIndexedBam</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="viewRegion">viewRegion: <a href="../models/ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Functions like loadBam, but uses bam index files to look at fewer blocks,
+and only returns records within a specified ReferenceRegion.</p><div class="fullcomment"><div class="comment cmt"><p>Functions like loadBam, but uses bam index files to look at fewer blocks,
+and only returns records within a specified ReferenceRegion. Bam index file required.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the input data. Currently this path must correspond to
+       a single Bam file. The bam index file associated needs to have the same name.</p></dd><dt class="param">viewRegion</dt><dd class="cmt"><p>The ReferenceRegion we are filtering on
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadIndexedVcf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadIndexedVcf(filePath:String,viewRegions:Iterable[org.bdgenomics.adam.models.ReferenceRegion],stringency:htsjdk.samtools.ValidationStringency)(implicits:DummyImplicit):org.bdgenomics.adam.rdd.variant.VariantContextRDD"></a>
+      <a id="loadIndexedVcf(String,Iterable[ReferenceRegion],ValidationStringency)(DummyImplicit):VariantContextRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadIndexedVcf</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="viewRegions">viewRegions: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="../models/ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>]</span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="s">s: <span class="extype" name="scala.Predef.DummyImplicit">DummyImplicit</span></span>)</span><span class="result">: <a href="variant/VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads a VCF file indexed by a tabix (tbi) file into an RDD.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a VCF file indexed by a tabix (tbi) file into an RDD.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The file to load.</p></dd><dt class="param">viewRegions</dt><dd class="cmt"><p>Iterator of ReferenceRegions we are filtering on.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the VCF.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a VariantContextRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadIndexedVcf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadIndexedVcf(filePath:String,viewRegion:org.bdgenomics.adam.models.ReferenceRegion):org.bdgenomics.adam.rdd.variant.VariantContextRDD"></a>
+      <a id="loadIndexedVcf(String,ReferenceRegion):VariantContextRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadIndexedVcf</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="viewRegion">viewRegion: <a href="../models/ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a></span>)</span><span class="result">: <a href="variant/VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads a VCF file indexed by a tabix (tbi) file into an RDD.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a VCF file indexed by a tabix (tbi) file into an RDD.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The file to load.</p></dd><dt class="param">viewRegion</dt><dd class="cmt"><p>ReferenceRegions we are filtering on.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a VariantContextRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadInterleavedFastq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadInterleavedFastq(filePath:String):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadInterleavedFastq(String):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadInterleavedFastq</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads reads from interleaved FASTQ.</p><div class="fullcomment"><div class="comment cmt"><p>Loads reads from interleaved FASTQ.</p><p>In interleaved FASTQ, the two reads from a paired sequencing protocol are
+interleaved in a single file. This is a zipped representation of the
+typical paired FASTQ.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>Path to load.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the file as an unaligned AlignmentRecordRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadInterleavedFastqAsFragments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadInterleavedFastqAsFragments(filePath:String):org.bdgenomics.adam.rdd.fragment.FragmentRDD"></a>
+      <a id="loadInterleavedFastqAsFragments(String):FragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadInterleavedFastqAsFragments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="fragment/FragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.fragment.FragmentRDD">FragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads interleaved FASTQ data as Fragments.</p><div class="fullcomment"><div class="comment cmt"><p>Loads interleaved FASTQ data as Fragments.</p><p>Fragments represent all of the reads from a single sequenced fragment as
+a single object, which is a useful representation for some tasks.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FragmentRDD containing the paired reads grouped by
+  sequencing fragment.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadIntervalList" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadIntervalList(filePath:String,minPartitions:Option[Int],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadIntervalList(String,Option[Int],ValidationStringency):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadIntervalList</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.LENIENT</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads features stored in IntervalList format.</p><div class="fullcomment"><div class="comment cmt"><p>Loads features stored in IntervalList format.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to load. If
+  not set, falls back to the configured Spark default parallelism.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Optional stringency to pass. LENIENT stringency will warn
+  when a malformed line is encountered, SILENT will ignore the malformed
+  line, STRICT will throw an exception.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadNarrowPeak" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadNarrowPeak(filePath:String,optStorageLevel:Option[org.apache.spark.storage.StorageLevel],minPartitions:Option[Int],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadNarrowPeak(String,Option[StorageLevel],Option[Int],ValidationStringency):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadNarrowPeak</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="optStorageLevel">optStorageLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">Some(StorageLevel.MEMORY_ONLY)</a></span></span></span>, <span name="minPartitions">minPartitions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.LENIENT</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads features stored in NarrowPeak format.</p><div class="fullcomment"><div class="comment cmt"><p>Loads features stored in NarrowPeak format.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to the file to load.</p></dd><dt class="param">optStorageLevel</dt><dd class="cmt"><p>Optional storage level to use for cache before building the SequenceDictionary.
+  Defaults to StorageLevel.MEMORY_ONLY.</p></dd><dt class="param">minPartitions</dt><dd class="cmt"><p>An optional minimum number of partitions to load. If
+  not set, falls back to the configured Spark default parallelism.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>Optional stringency to pass. LENIENT stringency will warn
+  when a malformed line is encountered, SILENT will ignore the malformed
+  line, STRICT will throw an exception.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadPairedFastq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadPairedFastq(filePath1:String,filePath2:String,recordGroupOpt:Option[String],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadPairedFastq(String,String,Option[String],ValidationStringency):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadPairedFastq</span><span class="params">(<span name="filePath1">filePath1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="filePath2">filePath2: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="recordGroupOpt">recordGroupOpt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads paired FASTQ data from two files.</p><div class="fullcomment"><div class="comment cmt"><p>Loads paired FASTQ data from two files.
+</p></div><dl class="paramcmts block"><dt class="param">filePath1</dt><dd class="cmt"><p>The path where the first set of reads are.</p></dd><dt class="param">filePath2</dt><dd class="cmt"><p>The path where the second set of reads are.</p></dd><dt class="param">recordGroupOpt</dt><dd class="cmt"><p>The optional record group name to associate to the
+  reads.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the reads.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the reads as an unaligned AlignmentRecordRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadFastq
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquet" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquet[T](filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema])(implicitev1:T=&gt;org.apache.avro.specific.SpecificRecord,implicitev2:Manifest[T]):org.apache.spark.rdd.RDD[T]"></a>
+      <a id="loadParquet[T](String,Option[FilterPredicate],Option[Schema])((T)⇒SpecificRecord,Manifest[T]):RDD[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquet</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: (<span class="extype" name="org.bdgenomics.adam.rdd.ADAMContext.loadParquet.T">T</span>) ⇒ <span class="extype" name="org.apache.avro.specific.SpecificRecord">SpecificRecord</span></span>, <span name="ev2">ev2: <span class="extype" name="scala.Predef.Manifest">Manifest</span>[<span class="extype" name="org.bdgenomics.adam.rdd.ADAMContext.loadParquet.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.bdgenomics.adam.rdd.ADAMContext.loadParquet.T">T</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">This method will create a new RDD.</p><div class="fullcomment"><div class="comment cmt"><p>This method will create a new RDD.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>The type of records to return</p></dd><dt class="param">filePath</dt><dd class="cmt"><p>The path to the input data</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional pushdown predicate to use when reading the data</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An option projection schema to use when reading the data</p></dd><dt>returns</dt><dd class="cmt"><p>An RDD with records of the specified type
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetAlignments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetAlignments(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadParquetAlignments(String,Option[FilterPredicate],Option[Schema]):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetAlignments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads alignment data from a Parquet file.</p><div class="fullcomment"><div class="comment cmt"><p>Loads alignment data from a Parquet file.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path of the file to load.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional schema designating the fields to project.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns an AlignmentRecordRDD which wraps the RDD of reads,
+  sequence dictionary representing the contigs these reads are aligned to
+  if the reads are aligned, and the record group dictionary for the reads
+  if one is available.</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The sequence dictionary is read from an avro file stored at
+  filePath/_seqdict.avro and the record group dictionary is read from an
+  avro file stored at filePath/_rgdict.avro. These files are pure avro,
+  not Parquet.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>loadAlignments
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetContigFragments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetContigFragments(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD"></a>
+      <a id="loadParquetContigFragments(String,Option[FilterPredicate],Option[Schema]):NucleotideContigFragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetContigFragments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="contig/NucleotideContigFragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD">NucleotideContigFragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads NucleotideContigFragments stored in Parquet, with metadata.</p><div class="fullcomment"><div class="comment cmt"><p>Loads NucleotideContigFragments stored in Parquet, with metadata.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load files from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to use for reading.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a NucleotideContigFragmentRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetCoverage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetCoverage(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate]):org.bdgenomics.adam.rdd.feature.CoverageRDD"></a>
+      <a id="loadParquetCoverage(String,Option[FilterPredicate]):CoverageRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetCoverage</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="feature/CoverageRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.CoverageRDD">CoverageRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Parquet file of Features to a CoverageRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Parquet file of Features to a CoverageRDD.
+Coverage is stored in the score attribute of Feature.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>File path to load coverage from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt>returns</dt><dd class="cmt"><p>CoverageRDD containing an RDD of Coverage
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetFeatures" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetFeatures(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.feature.FeatureRDD"></a>
+      <a id="loadParquetFeatures(String,Option[FilterPredicate],Option[Schema]):FeatureRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetFeatures</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="feature/FeatureRDD.html" class="extype" name="org.bdgenomics.adam.rdd.feature.FeatureRDD">FeatureRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Features stored in Parquet, with accompanying metadata.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Features stored in Parquet, with accompanying metadata.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load files from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to use for reading.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FeatureRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetFragments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetFragments(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.fragment.FragmentRDD"></a>
+      <a id="loadParquetFragments(String,Option[FilterPredicate],Option[Schema]):FragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetFragments</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="fragment/FragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.fragment.FragmentRDD">FragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Fragments stored in Parquet, with accompanying metadata.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Fragments stored in Parquet, with accompanying metadata.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load files from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to use for reading.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a FragmentRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetGenotypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetGenotypes(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.variant.GenotypeRDD"></a>
+      <a id="loadParquetGenotypes(String,Option[FilterPredicate],Option[Schema]):GenotypeRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetGenotypes</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="variant/GenotypeRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.GenotypeRDD">GenotypeRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Genotypes stored in Parquet with accompanying metadata.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Genotypes stored in Parquet with accompanying metadata.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load files from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to use for reading.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a GenotypeRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadParquetVariants" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadParquetVariants(filePath:String,predicate:Option[org.apache.parquet.filter2.predicate.FilterPredicate],projection:Option[org.apache.avro.Schema]):org.bdgenomics.adam.rdd.variant.VariantRDD"></a>
+      <a id="loadParquetVariants(String,Option[FilterPredicate],Option[Schema]):VariantRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadParquetVariants</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="predicate">predicate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span>] = <span class="symbol">None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="variant/VariantRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantRDD">VariantRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads Variants stored in Parquet with accompanying metadata.</p><div class="fullcomment"><div class="comment cmt"><p>Loads Variants stored in Parquet with accompanying metadata.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load files from.</p></dd><dt class="param">predicate</dt><dd class="cmt"><p>An optional predicate to push down into the file.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional projection to use for reading.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a VariantRDD.
+</p></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadReferenceFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadReferenceFile(filePath:String,fragmentLength:Long):org.bdgenomics.adam.util.ReferenceFile"></a>
+      <a id="loadReferenceFile(String,Long):ReferenceFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadReferenceFile</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fragmentLength">fragmentLength: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="../util/ReferenceFile.html" class="extype" name="org.bdgenomics.adam.util.ReferenceFile">ReferenceFile</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Auto-detects the file type and loads a broadcastable ReferenceFile.</p><div class="fullcomment"><div class="comment cmt"><p>Auto-detects the file type and loads a broadcastable ReferenceFile.</p><p>If the file type is 2bit, loads a 2bit file. Else, uses loadSequences
+to load the reference as an RDD, which is then collected to the driver.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load.</p></dd><dt class="param">fragmentLength</dt><dd class="cmt"><p>The length of fragment to use for splitting.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a broadcastable ReferenceFile.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadSequences
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadSequences" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadSequences(filePath:String,projection:Option[org.apache.avro.Schema],fragmentLength:Long):org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD"></a>
+      <a id="loadSequences(String,Option[Schema],Long):NucleotideContigFragmentRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadSequences</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>, <span name="fragmentLength">fragmentLength: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">10000</span></span>)</span><span class="result">: <a href="contig/NucleotideContigFragmentRDD.html" class="extype" name="org.bdgenomics.adam.rdd.contig.NucleotideContigFragmentRDD">NucleotideContigFragmentRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Auto-detects the file type and loads contigs as a NucleotideContigFragmentRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Auto-detects the file type and loads contigs as a NucleotideContigFragmentRDD.</p><p>Loads files ending in .fa/.fasta/.fa.gz/.fasta.gz as FASTA, else, falls
+back to Parquet.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional subset of fields to load.</p></dd><dt class="param">fragmentLength</dt><dd class="cmt"><p>The length of fragment to use for splitting.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a NucleotideContigFragmentRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadReferenceFile
+</p></span><span class="cmt"><p>loadParquetContigFragments</p></span><span class="cmt"><p>loadFasta</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadUnpairedFastq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadUnpairedFastq(filePath:String,recordGroupOpt:Option[String],setFirstOfPair:Boolean,setSecondOfPair:Boolean,stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.read.AlignmentRecordRDD"></a>
+      <a id="loadUnpairedFastq(String,Option[String],Boolean,Boolean,ValidationStringency):AlignmentRecordRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadUnpairedFastq</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="recordGroupOpt">recordGroupOpt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="setFirstOfPair">setFirstOfPair: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="setSecondOfPair">setSecondOfPair: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="read/AlignmentRecordRDD.html" class="extype" name="org.bdgenomics.adam.rdd.read.AlignmentRecordRDD">AlignmentRecordRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads unpaired FASTQ data from two files.</p><div class="fullcomment"><div class="comment cmt"><p>Loads unpaired FASTQ data from two files.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path where the first set of reads are.</p></dd><dt class="param">recordGroupOpt</dt><dd class="cmt"><p>The optional record group name to associate to the
+  reads.</p></dd><dt class="param">setFirstOfPair</dt><dd class="cmt"><p>If true, sets the read as first from the fragment.</p></dd><dt class="param">setSecondOfPair</dt><dd class="cmt"><p>If true, sets the read as second from the fragment.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the reads.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the reads as an unaligned AlignmentRecordRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadFastq
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadVariants" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadVariants(filePath:String,projection:Option[org.apache.avro.Schema],stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.variant.VariantRDD"></a>
+      <a id="loadVariants(String,Option[Schema],ValidationStringency):VariantRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadVariants</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.apache.avro.Schema">Schema</span>] = <span class="symbol">None</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="variant/VariantRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantRDD">VariantRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Auto-detects the file type and loads a VariantRDD.</p><div class="fullcomment"><div class="comment cmt"><p>Auto-detects the file type and loads a VariantRDD.</p><p>If the file has a .vcf/.vcf.gz/.vcf.bgzf/.vcf.bgz extension, loads as VCF. Else, falls back to
+Parquet.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The path to load.</p></dd><dt class="param">projection</dt><dd class="cmt"><p>An optional subset of fields to load.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the VCF.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a VariantRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadParquetVariants
+</p></span><span class="cmt"><p>loadVcf</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#loadVcf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadVcf(filePath:String,stringency:htsjdk.samtools.ValidationStringency):org.bdgenomics.adam.rdd.variant.VariantContextRDD"></a>
+      <a id="loadVcf(String,ValidationStringency):VariantContextRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadVcf</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="stringency">stringency: <span class="extype" name="htsjdk.samtools.ValidationStringency">ValidationStringency</span> = <span class="symbol">ValidationStringency.STRICT</span></span>)</span><span class="result">: <a href="variant/VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads a VCF file into an RDD.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a VCF file into an RDD.
+</p></div><dl class="paramcmts block"><dt class="param">filePath</dt><dd class="cmt"><p>The file to load.</p></dd><dt class="param">stringency</dt><dd class="cmt"><p>The validation stringency to use when validating the VCF.</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a VariantContextRDD.
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>loadVcfAnnotations
+</p></span></dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log:org.slf4j.Logger"></a>
+      <a id="log:Logger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="result">: <span class="extype" name="org.slf4j.Logger">Logger</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logDebug(msg:=&gt;String,throwable:Throwable):Unit"></a>
+      <a id="logDebug(⇒String,Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logDebug(msg:=&gt;String):Unit"></a>
+      <a id="logDebug(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logError(msg:=&gt;String,throwable:Throwable):Unit"></a>
+      <a id="logError(⇒String,Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logError(msg:=&gt;String):Unit"></a>
+      <a id="logError(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logInfo(msg:=&gt;String,throwable:Throwable):Unit"></a>
+      <a id="logInfo(⇒String,Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logInfo(msg:=&gt;String):Unit"></a>
+      <a id="logInfo(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logName:String"></a>
+      <a id="logName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logTrace(msg:=&gt;String,throwable:Throwable):Unit"></a>
+      <a id="logTrace(⇒String,Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logTrace(msg:=&gt;String):Unit"></a>
+      <a id="logTrace(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logWarning(msg:=&gt;String,throwable:Throwable):Unit"></a>
+      <a id="logWarning(⇒String,Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.bdgenomics.utils.misc.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logWarning(msg:=&gt;String):Unit"></a>
+      <a id="logWarning(⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.bdgenomics.adam.rdd.ADAMContext#sc" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sc:org.apache.spark.SparkContext"></a>
+      <a id="sc:SparkContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sc</span><span class="result">: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The SparkContext to wrap.</p>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="org.bdgenomics.utils.misc.Logging">
+              <h3>Inherited from <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span></h3>
+            </div><div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

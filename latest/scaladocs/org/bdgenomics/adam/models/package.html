@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>models - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.models</title>
+          <meta name="description" content="models - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.models" />
+          <meta name="keywords" content="models ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.models" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.bdgenomics.adam.models.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam">adam</a></p>
+        <h1>models</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">models</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.models.Alphabet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AlphabetextendsAnyRef"></a>
+      <a id="Alphabet:Alphabet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Alphabet.html"><span class="name">Alphabet</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An alphabet of symbols and related operations
+</p>
+    </li><li name="org.bdgenomics.adam.models.Attribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AttributeextendsProductwithSerializable"></a>
+      <a id="Attribute:Attribute"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Attribute.html"><span class="name">Attribute</span></a><span class="params">(<span name="tag">tag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tagType">tagType: <a href="TagType$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="org.bdgenomics.adam.models.TagType.Value">TagType.Value</a></span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A wrapper around the attrTuple (key) and value pair seen in many formats.</p>
+    </li><li name="org.bdgenomics.adam.models.Coverage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoverageextendsProductwithSerializable"></a>
+      <a id="Coverage:Coverage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Coverage.html"><span class="name">Coverage</span></a><span class="params">(<span name="contigName">contigName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="start">start: <span class="extype" name="scala.Long">Long</span></span>, <span name="end">end: <span class="extype" name="scala.Long">Long</span></span>, <span name="count">count: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Coverage record for CoverageRDD.</p>
+    </li><li name="org.bdgenomics.adam.models.DNAAlphabet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DNAAlphabetextendsAlphabet"></a>
+      <a id="DNAAlphabet:DNAAlphabet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DNAAlphabet.html"><span class="name">DNAAlphabet</span></a><span class="result"> extends <a href="Alphabet.html" class="extype" name="org.bdgenomics.adam.models.Alphabet">Alphabet</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The standard DNA alphabet with A,T,C, and G
+</p>
+    </li><li name="org.bdgenomics.adam.models.MdTag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MdTagextendsProductwithSerializable"></a>
+      <a id="MdTag:MdTag"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MdTag.html"><span class="name">MdTag</span></a><span class="params">(<span name="start">start: <span class="extype" name="scala.Long">Long</span></span>, <span name="matches">matches: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="scala.collection.immutable.NumericRange">NumericRange</span>[<span class="extype" name="scala.Long">Long</span>]]</span>, <span name="mismatches">mismatches: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Char">Char</span>]</span>, <span name="deletions">deletions: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents the mismatches and deletions present in a read that has been
+aligned to a reference genome.</p>
+    </li><li name="org.bdgenomics.adam.models.OptionalReferenceOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OptionalReferenceOrdering[T&lt;:org.bdgenomics.adam.models.ReferenceRegion]extendsOrdering[Option[T]]"></a>
+      <a id="OptionalReferenceOrdering[T&lt;:ReferenceRegion]:OptionalReferenceOrdering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionalReferenceOrdering.html"><span class="name">OptionalReferenceOrdering</span></a><span class="tparams">[<span name="T">T &lt;: <a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a></span>]</span><span class="result"> extends <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.bdgenomics.adam.models.OptionalReferenceOrdering.T">T</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.models.RecordGroup" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RecordGroupextendsProductwithSerializable"></a>
+      <a id="RecordGroup:RecordGroup"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RecordGroup.html"><span class="name">RecordGroup</span></a><span class="params">(<span name="sample">sample: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="recordGroupName">recordGroupName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sequencingCenter">sequencingCenter: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="description">description: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="runDateEpoch">runDateEpoch: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="flowOrder">flowOrder: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="keySequence">keySequence: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="library">library: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="predictedMedianInsertSize">predictedMedianInsertSize: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="platform">platform: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="platformUnit">platformUnit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A record group represents a set of reads that were
+sequenced/processed/prepped/analyzed together.</p>
+    </li><li name="org.bdgenomics.adam.models.RecordGroupDictionary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RecordGroupDictionaryextendsProductwithSerializable"></a>
+      <a id="RecordGroupDictionary:RecordGroupDictionary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RecordGroupDictionary.html"><span class="name">RecordGroupDictionary</span></a><span class="params">(<span name="recordGroups">recordGroups: <span class="extype" name="scala.Seq">Seq</span>[<a href="RecordGroup.html" class="extype" name="org.bdgenomics.adam.models.RecordGroup">RecordGroup</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Builds a dictionary containing record groups.</p>
+    </li><li name="org.bdgenomics.adam.models.ReferenceOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReferenceOrdering[T&lt;:org.bdgenomics.adam.models.ReferenceRegion]extendsOrdering[T]"></a>
+      <a id="ReferenceOrdering[T&lt;:ReferenceRegion]:ReferenceOrdering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferenceOrdering.html"><span class="name">ReferenceOrdering</span></a><span class="tparams">[<span name="T">T &lt;: <a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a></span>]</span><span class="result"> extends <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="org.bdgenomics.adam.models.ReferenceOrdering.T">T</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.models.ReferencePosition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferencePositionextendsReferenceRegion"></a>
+      <a id="ReferencePosition:ReferencePosition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferencePosition.html"><span class="name">ReferencePosition</span></a><span class="result"> extends <a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A single genomic locus.</p>
+    </li><li name="org.bdgenomics.adam.models.ReferencePositionSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferencePositionSerializerextendsSerializer[org.bdgenomics.adam.models.ReferencePosition]"></a>
+      <a id="ReferencePositionSerializer:ReferencePositionSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferencePositionSerializer.html"><span class="name">ReferencePositionSerializer</span></a><span class="result"> extends <span class="extype" name="com.esotericsoftware.kryo.Serializer">Serializer</span>[<a href="ReferencePosition.html" class="extype" name="org.bdgenomics.adam.models.ReferencePosition">ReferencePosition</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.models.ReferenceRegion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferenceRegionextendsComparable[org.bdgenomics.adam.models.ReferenceRegion]withInterval[org.bdgenomics.adam.models.ReferenceRegion]withProductwithSerializable"></a>
+      <a id="ReferenceRegion:ReferenceRegion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferenceRegion.html"><span class="name">ReferenceRegion</span></a><span class="params">(<span name="referenceName">referenceName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="start">start: <span class="extype" name="scala.Long">Long</span></span>, <span name="end">end: <span class="extype" name="scala.Long">Long</span></span>, <span name="strand">strand: <span class="extype" name="org.bdgenomics.formats.avro.Strand">Strand</span> = <span class="defval" name="org.bdgenomics.formats.avro.Strand.INDEPENDENT">...</span></span>)</span><span class="result"> extends <span class="extype" name="java.lang.Comparable">Comparable</span>[<a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>] with <span class="extype" name="org.bdgenomics.utils.interval.array.Interval">Interval</span>[<a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents a contiguous region of the reference genome.</p>
+    </li><li name="org.bdgenomics.adam.models.ReferenceRegionSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferenceRegionSerializerextendsSerializer[org.bdgenomics.adam.models.ReferenceRegion]"></a>
+      <a id="ReferenceRegionSerializer:ReferenceRegionSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferenceRegionSerializer.html"><span class="name">ReferenceRegionSerializer</span></a><span class="result"> extends <span class="extype" name="com.esotericsoftware.kryo.Serializer">Serializer</span>[<a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.models.SequenceDictionary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SequenceDictionaryextendsSerializable"></a>
+      <a id="SequenceDictionary:SequenceDictionary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SequenceDictionary.html"><span class="name">SequenceDictionary</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A SequenceDictionary contains metadata about the reference build genomic data
+is aligned against.</p>
+    </li><li name="org.bdgenomics.adam.models.SequenceRecord" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SequenceRecordextendsSerializablewithProduct"></a>
+      <a id="SequenceRecord:SequenceRecord"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SequenceRecord.html"><span class="name">SequenceRecord</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="length">length: <span class="extype" name="scala.Long">Long</span></span>, <span name="url">url: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="md5">md5: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="refseq">refseq: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="genbank">genbank: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="assembly">assembly: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="species">species: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="referenceIndex">referenceIndex: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Metadata about a single reference contig.</p>
+    </li><li name="org.bdgenomics.adam.models.SnpTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnpTableextendsSerializablewithLogging"></a>
+      <a id="SnpTable:SnpTable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SnpTable.html"><span class="name">SnpTable</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A table containing all of the SNPs in a known variation dataset.</p>
+    </li><li name="org.bdgenomics.adam.models.Symbol" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SymbolextendsProductwithSerializable"></a>
+      <a id="Symbol:Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Symbol.html"><span class="name">Symbol</span></a><span class="params">(<span name="label">label: <span class="extype" name="scala.Char">Char</span></span>, <span name="complement">complement: <span class="extype" name="scala.Char">Char</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A symbol in an alphabet.</p>
+    </li><li name="org.bdgenomics.adam.models.VariantContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantContextextendsSerializable"></a>
+      <a id="VariantContext:VariantContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantContext.html"><span class="name">VariantContext</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A representation of all variation data at a single variant.</p>
+    </li><li name="org.bdgenomics.adam.models.VariantContextSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantContextSerializerextendsSerializer[org.bdgenomics.adam.models.VariantContext]"></a>
+      <a id="VariantContextSerializer:VariantContextSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantContextSerializer.html"><span class="name">VariantContextSerializer</span></a><span class="result"> extends <span class="extype" name="com.esotericsoftware.kryo.Serializer">Serializer</span>[<a href="VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>]</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.models.Alphabet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Alphabet"></a>
+      <a id="Alphabet:Alphabet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Alphabet$.html"><span class="name">Alphabet</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Singleton object with references to all supported alphabets.</p>
+    </li><li name="org.bdgenomics.adam.models.MdTag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MdTag"></a>
+      <a id="MdTag:MdTag"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MdTag$.html"><span class="name">MdTag</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object to MdTag case class.</p>
+    </li><li name="org.bdgenomics.adam.models.MdTagEvent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MdTagEvent"></a>
+      <a id="MdTagEvent:MdTagEvent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MdTagEvent$.html"><span class="name">MdTagEvent</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumeration describing sequence events in an MD tag:</p>
+    </li><li name="org.bdgenomics.adam.models.OptionalPositionOrdering" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionalPositionOrdering"></a>
+      <a id="OptionalPositionOrdering:OptionalPositionOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionalPositionOrdering$.html"><span class="name">OptionalPositionOrdering</span></a><span class="result"> extends <a href="OptionalReferenceOrdering.html" class="extype" name="org.bdgenomics.adam.models.OptionalReferenceOrdering">OptionalReferenceOrdering</a>[<a href="ReferencePosition.html" class="extype" name="org.bdgenomics.adam.models.ReferencePosition">ReferencePosition</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A sort order that orders all given positions lexicographically by contig and
+numerically within a single contig, and puts all non-provided positions at
+the end.</p>
+    </li><li name="org.bdgenomics.adam.models.OptionalRegionOrdering" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionalRegionOrdering"></a>
+      <a id="OptionalRegionOrdering:OptionalRegionOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionalRegionOrdering$.html"><span class="name">OptionalRegionOrdering</span></a><span class="result"> extends <a href="OptionalReferenceOrdering.html" class="extype" name="org.bdgenomics.adam.models.OptionalReferenceOrdering">OptionalReferenceOrdering</a>[<a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A sort order that orders all given regions lexicographically by contig and
+numerically within a single contig, and puts all non-provided regions at
+the end.</p>
+    </li><li name="org.bdgenomics.adam.models.PositionOrdering" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PositionOrdering"></a>
+      <a id="PositionOrdering:PositionOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PositionOrdering$.html"><span class="name">PositionOrdering</span></a><span class="result"> extends <a href="ReferenceOrdering.html" class="extype" name="org.bdgenomics.adam.models.ReferenceOrdering">ReferenceOrdering</a>[<a href="ReferencePosition.html" class="extype" name="org.bdgenomics.adam.models.ReferencePosition">ReferencePosition</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A sort order that orders all positions lexicographically by contig and
+numerically within a single contig.</p>
+    </li><li name="org.bdgenomics.adam.models.RecordGroup" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RecordGroup"></a>
+      <a id="RecordGroup:RecordGroup"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RecordGroup$.html"><span class="name">RecordGroup</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Singleton object for creating RecordGroups.</p>
+    </li><li name="org.bdgenomics.adam.models.RecordGroupDictionary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RecordGroupDictionary"></a>
+      <a id="RecordGroupDictionary:RecordGroupDictionary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RecordGroupDictionary$.html"><span class="name">RecordGroupDictionary</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Singleton object for creating dictionaries of record groups.</p>
+    </li><li name="org.bdgenomics.adam.models.ReferencePosition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferencePosition"></a>
+      <a id="ReferencePosition:ReferencePosition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferencePosition$.html"><span class="name">ReferencePosition</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object for creating and sorting ReferencePositions.</p>
+    </li><li name="org.bdgenomics.adam.models.ReferenceRegion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReferenceRegion"></a>
+      <a id="ReferenceRegion:ReferenceRegion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferenceRegion$.html"><span class="name">ReferenceRegion</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A companion object for creating and ordering ReferenceRegions.</p>
+    </li><li name="org.bdgenomics.adam.models.RegionOrdering" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RegionOrdering"></a>
+      <a id="RegionOrdering:RegionOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RegionOrdering$.html"><span class="name">RegionOrdering</span></a><span class="result"> extends <a href="ReferenceOrdering.html" class="extype" name="org.bdgenomics.adam.models.ReferenceOrdering">ReferenceOrdering</a>[<a href="ReferenceRegion.html" class="extype" name="org.bdgenomics.adam.models.ReferenceRegion">ReferenceRegion</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A sort order that orders all given regions lexicographically by contig and
+numerically within a single contig, and puts all non-provided regions at
+the end.</p>
+    </li><li name="org.bdgenomics.adam.models.SequenceDictionary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SequenceDictionary"></a>
+      <a id="SequenceDictionary:SequenceDictionary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SequenceDictionary$.html"><span class="name">SequenceDictionary</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Singleton object for creating SequenceDictionaries.</p>
+    </li><li name="org.bdgenomics.adam.models.SequenceRecord" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SequenceRecord"></a>
+      <a id="SequenceRecord:SequenceRecord"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SequenceRecord$.html"><span class="name">SequenceRecord</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object for creating Sequence Records.</p>
+    </li><li name="org.bdgenomics.adam.models.SnpTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnpTable"></a>
+      <a id="SnpTable:SnpTable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SnpTable$.html"><span class="name">SnpTable</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object with helper functions for building SNP tables.</p>
+    </li><li name="org.bdgenomics.adam.models.TagType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TagType"></a>
+      <a id="TagType:TagType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TagType$.html"><span class="name">TagType</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An enumeration that describes the different data types that can be stored in
+an attribute.</p>
+    </li><li name="org.bdgenomics.adam.models.VariantContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantContext"></a>
+      <a id="VariantContext:VariantContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantContext$.html"><span class="name">VariantContext</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Singleton object for building VariantContexts.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

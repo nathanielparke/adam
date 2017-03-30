@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>variant - ADAM_2.10: Core 0.21.1-SNAPSHOT API - org.bdgenomics.adam.rdd.variant</title>
+          <meta name="description" content="variant - ADAM 2.10 Core 0.21.1 - SNAPSHOT API - org.bdgenomics.adam.rdd.variant" />
+          <meta name="keywords" content="variant ADAM 2.10 Core 0.21.1 SNAPSHOT API org.bdgenomics.adam.rdd.variant" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.bdgenomics.adam.rdd.variant.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.bdgenomics">bdgenomics</a>.<a href="../../package.html" class="extype" name="org.bdgenomics.adam">adam</a>.<a href="../package.html" class="extype" name="org.bdgenomics.adam.rdd">rdd</a></p>
+        <h1>variant</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">variant</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.variant.ADAMHeaderlessVCFOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMHeaderlessVCFOutputFormat[K]extendsKeyIgnoringVCFOutputFormat[K]withSerializable"></a>
+      <a id="ADAMHeaderlessVCFOutputFormat[K]:ADAMHeaderlessVCFOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMHeaderlessVCFOutputFormat.html"><span class="name">ADAMHeaderlessVCFOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringVCFOutputFormat">KeyIgnoringVCFOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.variant.ADAMHeaderlessVCFOutputFormat.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.variant.ADAMVCFOutputFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ADAMVCFOutputFormat[K]extendsKeyIgnoringVCFOutputFormat[K]withSerializable"></a>
+      <a id="ADAMVCFOutputFormat[K]:ADAMVCFOutputFormat[K]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ADAMVCFOutputFormat.html"><span class="name">ADAMVCFOutputFormat</span></a><span class="tparams">[<span name="K">K</span>]</span><span class="result"> extends <span class="extype" name="org.seqdoop.hadoop_bam.KeyIgnoringVCFOutputFormat">KeyIgnoringVCFOutputFormat</span>[<span class="extype" name="org.bdgenomics.adam.rdd.variant.ADAMVCFOutputFormat.K">K</span>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper for Hadoop-BAM to work around requirement for no-args constructor.</p>
+    </li><li name="org.bdgenomics.adam.rdd.variant.GenotypeRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenotypeRDDextendsMultisampleAvroGenomicRDD[org.bdgenomics.formats.avro.Genotype,org.bdgenomics.adam.rdd.variant.GenotypeRDD]withProductwithSerializable"></a>
+      <a id="GenotypeRDD:GenotypeRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenotypeRDD.html"><span class="name">GenotypeRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.bdgenomics.formats.avro.Genotype">Genotype</span>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="samples">samples: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.bdgenomics.formats.avro.Sample">Sample</span>]</span>, <span name="headerLines">headerLines: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="htsjdk.variant.vcf.VCFHeaderLine">VCFHeaderLine</span>] = <span class="defval" name="org.bdgenomics.adam.converters.DefaultHeaderLines.allHeaderLines">...</span></span>)</span><span class="result"> extends <a href="../MultisampleAvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.MultisampleAvroGenomicRDD">MultisampleAvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.formats.avro.Genotype">Genotype</span>, <a href="GenotypeRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.GenotypeRDD">GenotypeRDD</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An RDD containing genotypes called in a set of samples against a given
+reference genome.</p>
+    </li><li name="org.bdgenomics.adam.rdd.variant.VCFInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VCFInFormatterextendsInFormatter[org.bdgenomics.adam.models.VariantContext,org.bdgenomics.adam.rdd.variant.VariantContextRDD,org.bdgenomics.adam.rdd.variant.VCFInFormatter]withProductwithSerializable"></a>
+      <a id="VCFInFormatter:VCFInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VCFInFormatter.html"><span class="name">VCFInFormatter</span></a><span class="result"> extends <a href="../InFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatter">InFormatter</a>[<a href="../../models/VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>, <a href="VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a>, <a href="VCFInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VCFInFormatter">VCFInFormatter</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.bdgenomics.adam.rdd.variant.VCFOutFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VCFOutFormatterextendsOutFormatter[org.bdgenomics.adam.models.VariantContext]withProductwithSerializable"></a>
+      <a id="VCFOutFormatter:VCFOutFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VCFOutFormatter.html"><span class="name">VCFOutFormatter</span></a><span class="params">(<span name="headerLines">headerLines: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="htsjdk.variant.vcf.VCFHeaderLine">VCFHeaderLine</span>]</span>)</span><span class="result"> extends <a href="../OutFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.OutFormatter">OutFormatter</a>[<a href="../../models/VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">OutFormatter that reads streaming VCF.</p>
+    </li><li name="org.bdgenomics.adam.rdd.variant.VariantContextRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantContextRDDextendsMultisampleGenomicRDD[org.bdgenomics.adam.models.VariantContext,org.bdgenomics.adam.rdd.variant.VariantContextRDD]withLoggingwithProductwithSerializable"></a>
+      <a id="VariantContextRDD:VariantContextRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantContextRDD.html"><span class="name">VariantContextRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<a href="../../models/VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="samples">samples: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.bdgenomics.formats.avro.Sample">Sample</span>]</span>, <span name="headerLines">headerLines: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="htsjdk.variant.vcf.VCFHeaderLine">VCFHeaderLine</span>] = <span class="defval" name="org.bdgenomics.adam.converters.DefaultHeaderLines.allHeaderLines">...</span></span>)</span><span class="result"> extends <a href="../MultisampleGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.MultisampleGenomicRDD">MultisampleGenomicRDD</a>[<a href="../../models/VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>, <a href="VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a>] with <span class="extype" name="org.bdgenomics.utils.misc.Logging">Logging</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An RDD containing VariantContexts attached to a reference and samples.</p>
+    </li><li name="org.bdgenomics.adam.rdd.variant.VariantRDD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariantRDDextendsAvroGenomicRDD[org.bdgenomics.formats.avro.Variant,org.bdgenomics.adam.rdd.variant.VariantRDD]withProductwithSerializable"></a>
+      <a id="VariantRDD:VariantRDD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VariantRDD.html"><span class="name">VariantRDD</span></a><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.bdgenomics.formats.avro.Variant">Variant</span>]</span>, <span name="sequences">sequences: <a href="../../models/SequenceDictionary.html" class="extype" name="org.bdgenomics.adam.models.SequenceDictionary">SequenceDictionary</a></span>, <span name="headerLines">headerLines: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="htsjdk.variant.vcf.VCFHeaderLine">VCFHeaderLine</span>] = <span class="defval" name="org.bdgenomics.adam.converters.DefaultHeaderLines.allHeaderLines">...</span></span>)</span><span class="result"> extends <a href="../AvroGenomicRDD.html" class="extype" name="org.bdgenomics.adam.rdd.AvroGenomicRDD">AvroGenomicRDD</a>[<span class="extype" name="org.bdgenomics.formats.avro.Variant">Variant</span>, <a href="VariantRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantRDD">VariantRDD</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">An RDD containing variants called against a given reference genome.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.bdgenomics.adam.rdd.variant.VCFInFormatter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VCFInFormatter"></a>
+      <a id="VCFInFormatter:VCFInFormatter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VCFInFormatter$.html"><span class="name">VCFInFormatter</span></a><span class="result"> extends <a href="../InFormatterCompanion.html" class="extype" name="org.bdgenomics.adam.rdd.InFormatterCompanion">InFormatterCompanion</a>[<a href="../../models/VariantContext.html" class="extype" name="org.bdgenomics.adam.models.VariantContext">VariantContext</a>, <a href="VariantContextRDD.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VariantContextRDD">VariantContextRDD</a>, <a href="VCFInFormatter.html" class="extype" name="org.bdgenomics.adam.rdd.variant.VCFInFormatter">VCFInFormatter</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">InFormatter companion that builds a VCFInFormatter to write VCF to a pipe.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../../lib/template.js"></script>
+    </body>
+      </html>
