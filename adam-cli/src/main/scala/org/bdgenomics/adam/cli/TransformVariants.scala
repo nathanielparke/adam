@@ -66,6 +66,9 @@ class TransformVariantsArgs extends Args4jBase with ADAMSaveAnyArgs with Parquet
 
   // must be defined due to ADAMSaveAnyArgs, but unused here
   var sortFastqOutput: Boolean = false
+
+  @Args4jOption(required = false, name = "-inputVariantContextRDD", usage = "The input is ADAM formatted VariantContextRDD saved as parquet.")
+  var inputIsVariantContextRDD: Boolean = false
 }
 
 /**
@@ -117,16 +120,26 @@ class TransformVariants(val args: TransformVariantsArgs)
     require(!(args.sort && args.sortLexicographically),
       "Cannot set both -sort_on_save and -sort_lexicographically_on_save.")
 
-    val variants = sc.loadVariants(
-      args.inputPath,
-      optPredicate = None,
-      optProjection = None,
-      stringency = stringency)
+    if (!args.inputIsVariantContextRDD){
+      val variants = sc.loadVariants(
+        args.inputPath,
+        optPredicate = None,
+        optProjection = None,
+        stringency = stringency)
 
-    if (args.outputPath.endsWith(".vcf")) {
-      maybeSort(maybeCoalesce(variants.toVariantContexts)).saveAsVcf(args, stringency)
+      if (args.outputPath.endsWith(".vcf")) {
+        maybeSort(maybeCoalesce(variants.toVariantContexts)).saveAsVcf(args, stringency)
+      } else {
+        maybeSort(maybeCoalesce(variants)).saveAsParquet(args)
+      }
     } else {
-      maybeSort(maybeCoalesce(variants)).saveAsParquet(args)
+      val variants = sc.loadVariantContexts(args.inputPath)
+
+      if (args.outputPath.endsWith(".vcf")) {
+        maybeSort(maybeCoalesce(variants)).saveAsVcf(args, stringency)
+      } else {
+        maybeSort(maybeCoalesce(variants)).saveAsParquet(args)
+      }
     }
   }
 }
